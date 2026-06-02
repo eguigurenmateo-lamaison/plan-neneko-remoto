@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Arranque · Semana 1 — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--sky:#0ea5e9;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:48px 0 42px;}
+  .back{display:inline-block;color:#6ee7b7;font-size:14px;font-weight:600;margin-bottom:18px;text-decoration:none;}
+  .back:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:34px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero p{color:#cbd5e1;font-size:17px;max-width:680px;}
+  section{padding:30px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .sec-num{width:42px;height:42px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 auto;}
+  .sec-head h2{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h3{font-size:20px;color:var(--ink);margin:26px 0 6px;}
+  h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:18px 0 7px;}
+  p{margin-bottom:11px;}
+  .lead{font-size:17px;margin-bottom:14px;}
+  ul{margin:0 0 14px 20px;} li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;}
+  .person{border-top:5px solid var(--primary);}
+  .person.soad{border-top-color:var(--indigo);}
+  .person h3{margin-top:0;display:flex;align-items:center;gap:10px;}
+  .tagname{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--primary);padding:4px 11px;border-radius:999px;}
+  .soad .tagname{background:var(--indigo);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:14px 18px;margin:16px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  /* copy blocks */
+  .copyblock{position:relative;margin:10px 0 18px;}
+  .copytext{white-space:pre-wrap;background:#0f172a;color:#e8edf4;border-radius:10px;padding:16px 18px;font-size:14.5px;line-height:1.6;border-left:3px solid var(--primary);font-family:"Segoe UI",system-ui,sans-serif;}
+  .copyblock.opt .copytext{background:#f8fafc;color:var(--slate);border:1px solid var(--line);border-left:3px solid var(--primary);}
+  .copybtn{margin-top:8px;font-size:13.5px;font-weight:600;color:#fff;background:var(--primary);border:none;border-radius:8px;padding:8px 16px;cursor:pointer;transition:background .15s;}
+  .copybtn:hover{background:var(--primary-d);}
+  .copybtn.ok{background:var(--ink);}
+  /* posts */
+  .post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin:16px 0;}
+  .post-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
+  .badge{font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;}
+  .b-pilar{background:var(--primary-l);color:var(--primary-d);}
+  .b-autor{background:var(--indigo-l);color:#3730a3;}
+  .b-fmt{background:var(--accent-l);color:#b45309;}
+  .post h3{margin:0 0 4px;font-size:18px;}
+  .note{font-size:13.5px;color:var(--muted);font-style:italic;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);}
+  thead th{background:var(--ink);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;}
+  tbody tr:last-child td{border-bottom:none;}
+  footer{background:var(--ink);color:#94a3b8;padding:30px 0;margin-top:36px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:26px;}.sec-head h2{font-size:20px;}}
+  @media print{body{background:#fff;}.copytext{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.copybtn{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <a class="back" href="https://eguigurenmateo-lamaison.github.io/plan-neneko-remoto/">← Volver al plan de acción</a>
+    <div><span class="eyebrow">Kit de arranque · Semana 1</span></div>
+    <h1>Perfiles + <span>primeros 10 posts</span><br>listos para copiar y pegar</h1>
+    <p>Todo lo de la Semana 1 en un solo lugar. Pulan las frases a su voz, sigan el calendario y a publicar. Cada bloque tiene botón de copiar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- CÓMO USAR -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">★</div><h2>Cómo usar este kit</h2></div>
+    <ul>
+      <li><strong>Púlanlo a su voz.</strong> Está al 90-95%. Cambien las frases que no suenen a ustedes, pero respeten la estructura (gancho → historia → giro → prueba → CTA).</li>
+      <li><strong>Sigan el calendario:</strong> 1 post/día por perfil las semanas 1-2, luego 2/día. Alternen autor (Stefano / Soad) y formato.</li>
+      <li><strong>El CTA va por comentario,</strong> nunca link en el cuerpo. Cuando alguien comente "REMOTO", la setter le entrega el video por DM (paso del embudo).</li>
+      <li><strong>Golden hour:</strong> respondan TODOS los comentarios en los primeros 60-90 min. Es la señal #1 para el alcance.</li>
+    </ul>
+    <div class="callout green"><p style="margin:0;"><strong>Regla de oro:</strong> vendan el <strong>resultado</strong> (dólares, libertad, elegir su vida), no el mecanismo (el "método de 90 días"). Si una frase explica cómo opera la mentoría, cámbienla por lo que <em>gana</em> la persona.</p></div>
+  </section>
+
+  <!-- PARTE A: PERFILES -->
+  <section>
+    <div class="sec-head"><div class="sec-num">A</div><h2>Plantillas de perfil</h2></div>
+    <p class="lead">El perfil tiene que "vender" en 3 segundos. Quien llega desde un post decide en el headline + banner si los sigue. Apliquen esto antes de empezar a publicar.</p>
+
+    <!-- STEFANO -->
+    <div class="card person">
+      <h3><span class="tagname">Stefano · el Neneko</span></h3>
+
+      <h4>Headline — opción principal (cópienla)</h4>
+      <div class="copyblock opt"><div class="copytext">Ayudo a profesionales bilingües de LatAm a conseguir trabajo remoto en USD $3–5K/mes 🌎 | +300 historias de libertad | Co-fundador de Neneko Remoto</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Headline — alternativas</h4>
+      <div class="copyblock opt"><div class="copytext">De facturar en pesos a cobrar en dólares trabajando remoto | He ayudado a +300 profesionales de LatAm a lograrlo | Neneko Remoto</div><button class="copybtn" type="button">Copiar texto</button></div>
+      <div class="copyblock opt"><div class="copytext">Te ayudo a vivir del trabajo remoto facturando en USD desde donde quieras | +300 casos reales | Co-fundador de Neneko Remoto</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Acerca de (sección "Acerca de")</h4>
+      <div class="copyblock"><div class="copytext">Hace unos años revisaba el saldo antes de pedir un café.
+
+Hoy escribo esto facturando en dólares mientras trabajo de forma remota — igual que los +300 profesionales de LatAm a los que he acompañado.
+
+No fue suerte. Fue dejar de creer dos mentiras:
+→ Que para ganar en dólares hay que irse del país.
+→ Que necesitas más certificados, más inglés, más "experiencia".
+
+La verdad es más simple (e incómoda): el talento que ya tienes vale en dólares. Lo que falta es posicionarlo para que una empresa de Estados Unidos o Europa te vea como la solución a su problema — y saber dónde están las vacantes reales.
+
+Eso es lo que hago en Neneko Remoto junto a Soad: ayudamos a profesionales bilingües de LatAm a conseguir trabajo remoto facturando USD $3.000–$5.000/mes, con acompañamiento 1:1.
+
+Si estás cansado de tener un techo salarial que decidió alguien más, da el primer paso:
+🎥 Mira el video (en mi sección Destacados) — te muestro el costo real de no moverte ahora y las rutas para cambiarlo.
+
+📩 ¿Listo para hablar? Comenta "REMOTO" o escríbeme por mensaje.</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Banner — texto a incluir en la imagen</h4>
+      <div class="copyblock opt"><div class="copytext">Trabajo remoto facturando USD $3–5K/mes
++300 profesionales de LatAm ya lo lograron
+🎥 Mira el video → (Destacados)</div><button class="copybtn" type="button">Copiar texto</button></div>
+      <p class="note">Concepto visual: foto de Stefano (vibra nómada + profesional, fondo limpio o de viaje), la promesa grande a la izquierda, y una flecha apuntando hacia abajo/Destacados.</p>
+
+      <h4>Destacados (Featured)</h4>
+      <ul>
+        <li>El <strong>video largo</strong> (lead magnet) fijado de primero.</li>
+        <li>2-3 <strong>casos de éxito</strong> (Mafe, Camilo, Gerardo).</li>
+        <li>Enlace para <strong>agendar llamada</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- SOAD -->
+    <div class="card person soad">
+      <h3><span class="tagname">Soad · la Neneka</span></h3>
+
+      <h4>Headline — opción principal (cópienla)</h4>
+      <div class="copyblock opt"><div class="copytext">Construí mi libertad desde el marketing — hoy ayudo a profesionales de LatAm a facturar en USD trabajando remoto 🌎 | Co-fundadora de Neneko Remoto</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Headline — alternativas</h4>
+      <div class="copyblock opt"><div class="copytext">8 años construyendo marcas me enseñaron a vender talento. Hoy ayudo a profesionales de LatAm a conseguir trabajo remoto en dólares | Neneko Remoto</div><button class="copybtn" type="button">Copiar texto</button></div>
+      <div class="copyblock opt"><div class="copytext">Ayudo a profesionales bilingües a posicionarse y facturar en USD trabajando remoto | Co-fundadora de Neneko Remoto | +300 historias</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Acerca de (sección "Acerca de")</h4>
+      <div class="copyblock"><div class="copytext">Pasé 8 años construyendo marcas para otros antes de entender algo:
+
+las mismas reglas que hacen que una marca venda… hacen que TÚ vendas tu talento en dólares.
+
+Hoy, junto a Stefano, ayudo a profesionales bilingües de LatAm a conseguir trabajo remoto facturando USD $3.000–$5.000/mes. Más de 300 personas ya dieron el salto.
+
+La mayoría no tiene un problema de talento. Tiene un problema de posicionamiento: hace un trabajo de $3.000 y lo presenta como uno de $300.
+
+Eso se arregla. Y cuando se arregla, cambia todo: eliges desde dónde trabajas, con quién y por cuánto.
+
+Si quieres ver cómo se ve ese camino (y el costo de quedarte donde estás), empieza por aquí:
+🎥 El video está en mi sección Destacados.
+
+Comenta "REMOTO" y te lo envío.</div><button class="copybtn" type="button">Copiar texto</button></div>
+
+      <h4>Banner — texto a incluir en la imagen</h4>
+      <div class="copyblock opt"><div class="copytext">Posiciona tu talento. Factura en USD.
+Trabajo remoto $3–5K/mes para profesionales de LatAm
+🎥 Mira el video → (Destacados)</div><button class="copybtn" type="button">Copiar texto</button></div>
+      <p class="note">Concepto visual: foto de Soad (cercana y profesional), promesa a un lado, coherente con el banner de Stefano (misma paleta) para que se note que son dúo.</p>
+
+      <h4>Destacados (Featured)</h4>
+      <ul>
+        <li>El <strong>video largo</strong> (lead magnet).</li>
+        <li>1-2 casos donde ella aporte el ángulo de marca/posicionamiento.</li>
+        <li>Enlace para <strong>agendar llamada</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="callout"><p style="margin:0;"><strong>Ajustes técnicos del perfil (ambos):</strong> activen <strong>Modo Creador</strong>, pongan una <strong>URL personalizada</strong> (ej. /in/stefano-neneko), foto profesional coherente entre ambos, y la ubicación visible. Eliminen/oculten los posts viejos de Stefano (JS/Cleanzy).</p></div>
+  </section>
+
+  <!-- PARTE B: LOTE 1 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">B</div><h2>Lote 1 — 10 posts listos</h2></div>
+    <p class="lead">Diez publicaciones para arrancar. Cada una con su pilar, autor sugerido y formato. Copien, pulan y publiquen según el calendario.</p>
+
+    <table>
+      <thead><tr><th>#</th><th>Pilar</th><th>Autor</th><th>Formato</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Prueba / Caso</td><td>Stefano</td><td>Texto-historia</td></tr>
+        <tr><td>2</td><td>Despertar</td><td>Stefano</td><td>Texto / imagen</td></tr>
+        <tr><td>3</td><td>Cómo se hace</td><td>Soad</td><td>Carrusel</td></tr>
+        <tr><td>4</td><td>Prueba / Caso</td><td>Soad</td><td>Texto-historia</td></tr>
+        <tr><td>5</td><td>Libertad / Lifestyle</td><td>Stefano</td><td>Video nativo</td></tr>
+        <tr><td>6</td><td>Personal / BTS</td><td>Soad</td><td>Texto-historia</td></tr>
+        <tr><td>7</td><td>Despertar</td><td>Stefano</td><td>Texto</td></tr>
+        <tr><td>8</td><td>Prueba / Caso</td><td>Stefano</td><td>Texto</td></tr>
+        <tr><td>9</td><td>Cómo se hace</td><td>Stefano</td><td>Texto</td></tr>
+        <tr><td>10</td><td>Lifestyle / Despertar</td><td>Soad</td><td>Texto</td></tr>
+      </tbody>
+    </table>
+
+    <!-- POST 1 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Prueba / Caso</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Texto-historia</span></div>
+      <h3>1 · El caso de Mafe</h3>
+      <div class="copyblock"><div class="copytext">Mafe tenía 24 años y peleaba por proyectos de $50 en Upwork.
+
+Aplicaba a 30 vacantes por semana. Le respondían 1. Y cuando le respondían, regateaban hasta dejar el trabajo en nada.
+
+No era un problema de talento. Era buena diseñadora. El problema era cómo se presentaba: hacía trabajo de $3.000 y lo vendía como uno de $50.
+
+Cambiamos tres cosas:
+→ Su perfil dejó de hablar de ella y empezó a hablar del problema que resuelve.
+→ Dejó de perseguir vacantes saturadas y fue por las que nadie veía.
+→ Aprendió a sostener su precio sin pedir perdón.
+
+90 días después facturaba $3.000 al mes desde su casa en Medellín. En dólares.
+
+La misma persona. El mismo talento. Otra forma de mostrarlo.
+
+Si estás aplicando a todo y no te responden, no es que sobre competencia. Es cómo te estás presentando.
+
+Comenta "REMOTO" y te envío el video donde explico exactamente lo que cambiamos 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 2 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Despertar</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Texto / imagen</span></div>
+      <h3>2 · El techo salarial</h3>
+      <div class="copyblock"><div class="copytext">El trabajo remoto no se trata de trabajar desde casa.
+
+Se trata de dejar de tener un techo salarial que decidió alguien más.
+
+En tu ciudad, tu trabajo vale X. Punto. No importa cuánto mejores: hay un tope, y lo puso el mercado local.
+
+Cruza la frontera (sin moverte de tu cuarto) y ese mismo trabajo vale 3, 5, 10 veces más. Porque ahora compites por presupuestos en dólares, no en moneda local.
+
+La pregunta no es si puedes. Es cuánto tiempo más vas a dejar que alguien más le ponga precio a tu talento.
+
+Comenta "REMOTO" y te muestro por dónde se empieza 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 3 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Cómo se hace</span><span class="badge b-autor">Soad</span><span class="badge b-fmt">Carrusel</span></div>
+      <h3>3 · 3 errores en tu perfil (carrusel)</h3>
+      <p class="note">Cada línea = una lámina del carrusel. El caption va aparte (abajo).</p>
+      <div class="copyblock opt"><div class="copytext">LÁMINA 1 (portada): 3 errores que veo en el 90% de los perfiles que quieren trabajo remoto (y cómo arreglarlos)
+
+LÁMINA 2: Error #1 — Tu perfil habla de TI. "Apasionada, responsable, proactiva." A nadie le importa. → Arréglalo: habla del PROBLEMA que resuelves y del RESULTADO que entregas.
+
+LÁMINA 3: Error #2 — Persigues vacantes saturadas. 800 aplicantes para un puesto = ya perdiste. → Arréglalo: ve por las vacantes que no están en las bolsas obvias.
+
+LÁMINA 4: Error #3 — Pides perdón por tu precio. "Cobro poquito, para empezar." Eso te ancla abajo para siempre. → Arréglalo: tu precio refleja el resultado, no tu inseguridad.
+
+LÁMINA 5 (cierre): Optimicé +300 perfiles con este enfoque. ¿Quieres el video completo? Comenta "REMOTO" 👇</div><button class="copybtn" type="button">Copiar láminas</button></div>
+      <h4>Caption del carrusel</h4>
+      <div class="copyblock"><div class="copytext">El 90% de los perfiles que reviso cometen estos 3 errores. Y por eso no consiguen trabajo remoto, aunque tengan el talento.
+
+Desliza 👉 y revisa si estás cometiendo alguno.
+
+¿Quieres el video donde explico cómo se arregla cada uno? Comenta "REMOTO" 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 4 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Prueba / Caso</span><span class="badge b-autor">Soad</span><span class="badge b-fmt">Texto-historia</span></div>
+      <h3>4 · El caso de Camilo</h3>
+      <div class="copyblock"><div class="copytext">Camilo tenía 33 años, un portafolio precioso… y un sueldo que no le alcanzaba.
+
+Diseñador de interiores, talentoso, con clientes locales que pagaban tarde y poco.
+
+Estaba convencido de que "lo suyo" no se podía hacer remoto. Que el diseño de interiores era presencial o nada.
+
+Se equivocaba.
+
+Hoy trabaja de forma remota para una empresa de Estados Unidos, facturando en dólares, desde el mismo escritorio donde antes hacía planos por migajas.
+
+No cambió de profesión. Cambió de mercado.
+
+Esa es la parte que casi nadie te dice: no necesitas reinventarte. Necesitas llevar lo que ya sabes a un mercado que paga lo que vales.
+
+Comenta "REMOTO" y te muestro cómo 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 5 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Libertad / Lifestyle</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Video nativo</span></div>
+      <h3>5 · Guion de video (30-45 seg)</h3>
+      <div class="copyblock opt"><div class="copytext">[A cámara, en un lugar lindo o caminando]
+
+Te grabo esto desde acá. Hace tres años no podía pagar este café sin revisar la cuenta del banco.
+
+La gente cree que la libertad es no trabajar. Mentira. Yo trabajo igual o más. La diferencia es que ahora elijo: desde dónde, con quién y por cuánto.
+
+Eso no me lo dio la suerte. Me lo dio aprender a facturar en dólares trabajando remoto.
+
+Y es replicable. Por eso lo enseñamos.
+
+Si quieres ver cómo, el primer paso está en mi perfil.</div><button class="copybtn" type="button">Copiar guion</button></div>
+      <h4>Caption del video</h4>
+      <div class="copyblock"><div class="copytext">Libertad no es no trabajar. Es trabajar en TUS términos.
+
+Y se construye con un sistema, no con suerte.
+
+Comenta "REMOTO" y te muestro el primer paso 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 6 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Personal / BTS</span><span class="badge b-autor">Soad</span><span class="badge b-fmt">Texto-historia</span></div>
+      <h3>6 · Emprender en pareja</h3>
+      <div class="copyblock"><div class="copytext">Stefano y yo construimos Neneko Remoto siendo pareja. Y te voy a ser honesta: casi nos cuesta la relación.
+
+Mezclar el amor con el trabajo es un deporte de riesgo. Discutíamos por cosas del negocio a las 11 de la noche, en la cama. No había botón de "apagar".
+
+Aprendimos tres cosas a los golpes:
+→ Separar la conversación de pareja de la de socios (aunque sea la misma mesa).
+→ Jugar con nuestras fortalezas: él, visión y estrategia; yo, marca y ejecución.
+→ Recordar para qué empezamos: libertad, no otra jaula.
+
+Hoy ayudamos a +300 personas a conseguir esa misma libertad. Y lo hacemos juntos.
+
+¿Tú emprenderías con tu pareja? Te leo 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 7 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Despertar</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Texto</span></div>
+      <h3>7 · El momento ideal</h3>
+      <div class="copyblock"><div class="copytext">Tu inglés no es el problema. Tu portafolio no es el problema.
+
+El problema es que llevas dos años esperando el "momento ideal" para intentarlo.
+
+El momento ideal no existe. Existe el momento en que te cansas lo suficiente de tu situación como para hacer algo distinto.
+
+Cada mes que esperas, alguien con la mitad de tu talento pero el doble de decisión te pasa por encima — y factura en dólares mientras tú lo piensas.
+
+No te falta preparación. Te falta empezar.
+
+Comenta "REMOTO" y te muestro el primer paso 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 8 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Prueba / Caso</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Texto</span></div>
+      <h3>8 · 300 personas después</h3>
+      <div class="copyblock"><div class="copytext">Llevamos +300 profesionales de LatAm al trabajo remoto en dólares.
+
+Diseñadores, marketers, asistentes, project managers. Gente de todas las edades.
+
+¿Sabes cuál es la única diferencia entre los que lo logran y los que se quedan?
+
+No es el inglés. (Algunos arrancaron con un inglés mediocre.)
+No es la experiencia. (Hubo quienes empezaron casi de cero.)
+No es la suerte.
+
+Es esto: los que lo logran toman la decisión ANTES de sentirse listos. Empiezan con miedo, con dudas, con el portafolio a medias — pero empiezan.
+
+Los que no… siguen esperando estar listos. Y nunca lo están.
+
+¿En cuál grupo estás hoy?
+
+Comenta "REMOTO" y te ayudo a dar el primer paso 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 9 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Cómo se hace</span><span class="badge b-autor">Stefano</span><span class="badge b-fmt">Texto</span></div>
+      <h3>9 · Dónde están las vacantes reales</h3>
+      <div class="copyblock"><div class="copytext">El error #1 de quien busca trabajo remoto: aplicar donde aplican todos.
+
+Las bolsas de empleo populares están saturadas. 800 personas peleando por el mismo puesto. Aunque seas bueno, eres una aguja en un pajar.
+
+Las vacantes que valen la pena casi nunca están ahí. Están:
+→ En las redes de los fundadores (que postean "busco a alguien" antes de abrir la vacante formal).
+→ En comunidades de nicho donde las empresas buscan en silencio.
+→ En tu propio perfil, cuando está tan bien posicionado que te buscan a ti.
+
+La meta no es aplicar a más. Es aplicar a las correctas — y que también te encuentren.
+
+¿Quieres el desglose completo? Comenta "REMOTO" 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <!-- POST 10 -->
+    <div class="post">
+      <div class="post-meta"><span class="badge b-pilar">Lifestyle / Despertar</span><span class="badge b-autor">Soad</span><span class="badge b-fmt">Texto</span></div>
+      <h3>10 · La libertad de verdad</h3>
+      <div class="copyblock"><div class="copytext">La gente me pregunta cómo es "no trabajar y viajar".
+
+No es eso. Yo trabajo. A veces mucho.
+
+La diferencia es que mi oficina fue una ciudad distinta el mes pasado, y mi casa esta semana. Y que cobro en una moneda que no se devalúa cada vez que prendo las noticias.
+
+Libertad no es ausencia de trabajo. Es trabajo en TUS términos: tu horario, tu lugar, tu precio.
+
+Y se construye. No con suerte — con un sistema.
+
+Si quieres conocer ese sistema, el primer paso está en mi perfil 👇</div><button class="copybtn" type="button">Copiar texto</button></div>
+    </div>
+
+    <div class="callout green"><p style="margin:0;"><strong>Siguiente lote:</strong> cuando tengamos los primeros datos de qué hook/pilar funcionó mejor, armo el Lote 2 con variantes de los ganadores (más de lo que funciona).</p></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Kit de Arranque · Semana 1 — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var block=btn.closest('.copyblock'); if(!block) return;
+    var el=block.querySelector('.copytext'); if(!el) return;
+    var text=el.innerText;
+    function ok(){ var o=btn.textContent; btn.textContent='✓ ¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('ok'); },1800); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var r=document.createRange(); r.selectNode(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand('copy'); ok(); }catch(e){}
+      s.removeAllRanges();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
