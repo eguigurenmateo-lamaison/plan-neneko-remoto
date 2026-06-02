@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guion · Video largo de YouTube — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--rose-l:#ffe4e6;--sky:#0ea5e9;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:48px 0 42px;}
+  .back{display:inline-block;color:#6ee7b7;font-size:14px;font-weight:600;margin-bottom:18px;text-decoration:none;}
+  .back:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:33px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero p{color:#cbd5e1;font-size:17px;max-width:680px;}
+  .hmeta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:#94a3b8;}
+  .hmeta b{color:#e2e8f0;font-weight:600;}
+  section{padding:28px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .sec-num{width:42px;height:42px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 auto;}
+  .sec-head h2{font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:16px 0 7px;}
+  p{margin-bottom:11px;} .lead{font-size:17px;margin-bottom:14px;}
+  ul{margin:0 0 14px 20px;} li{margin-bottom:6px;} strong{color:var(--ink);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:14px 18px;margin:16px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  .callout.rose{border-color:var(--rose);background:var(--rose-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .callout h4{margin-top:0;}
+  /* bloques de guion */
+  .block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;margin:16px 0;}
+  .block-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:4px;}
+  .ts{font-size:12px;font-weight:800;color:#fff;background:var(--primary);padding:3px 10px;border-radius:999px;letter-spacing:.03em;}
+  .block h3{font-size:18px;color:var(--ink);margin:0;}
+  .goal{font-size:13.5px;color:var(--muted);font-style:italic;margin:2px 0 8px;}
+  .dir{font-size:13.5px;color:var(--slate);background:#f8fafc;border:1px dashed var(--line);border-radius:9px;padding:9px 12px;margin:8px 0;}
+  .dir b{color:var(--ink);}
+  .copyblock{position:relative;margin:10px 0 6px;}
+  .copytext{white-space:pre-wrap;background:#0f172a;color:#e8edf4;border-radius:10px;padding:15px 17px;font-size:14.5px;line-height:1.62;border-left:3px solid var(--primary);font-family:"Segoe UI",system-ui,sans-serif;}
+  .copybtn{margin-top:8px;font-size:13.5px;font-weight:600;color:#fff;background:var(--primary);border:none;border-radius:8px;padding:8px 16px;cursor:pointer;transition:background .15s;}
+  .copybtn:hover{background:var(--primary-d);} .copybtn.ok{background:var(--ink);}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{background:var(--ink);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;}
+  tbody tr:last-child td{border-bottom:none;}
+  .note{font-size:13.5px;color:var(--muted);font-style:italic;}
+  footer{background:var(--ink);color:#94a3b8;padding:30px 0;margin-top:36px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:25px;}.sec-head h2{font-size:19px;}}
+  @media print{body{background:#fff;}.copytext{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.copybtn{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <a class="back" href="https://eguigurenmateo-lamaison.github.io/plan-neneko-remoto/">← Volver al plan de acción</a>
+    <div><span class="eyebrow">Pieza central del embudo</span></div>
+    <h1>Guion · <span>Video largo de YouTube</span><br>"La oportunidad que casi nadie te está contando"</h1>
+    <p>El video que sube el nivel de consciencia y prepara para la llamada. Pieza <strong>evergreen</strong>: explica algo que aún no sucede, así que no hay que regrabarlo en 1-2 años.</p>
+    <div class="hmeta">
+      <div><b>Narrador:</b> Stefano (Soad en cameo opcional)</div>
+      <div><b>Duración objetivo:</b> 9-12 min</div>
+      <div><b>Tono:</b> conversado, no sermón</div>
+      <div><b>Destino del CTA:</b> Instagram (palabra "YOUTUBE")</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- CÓMO USAR -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">★</div><h2>Cómo grabarlo (lean esto primero)</h2></div>
+    <ul>
+      <li><strong>Es una base al 90%.</strong> No lo lean palabra por palabra: entiendan la idea de cada bloque y cuéntenla con sus palabras. Eso se ve natural y construye confianza.</li>
+      <li><strong>No vende el método</strong>, vende <strong>la oportunidad</strong>. El objetivo es que alguien que ni sabía que esto era posible diga "esto es para mí". El cierre lo hace la llamada, no el video.</li>
+      <li><strong>El gancho de los primeros 30 segundos decide todo.</strong> Si arranca lento, se van. Empiecen por el bloque 0 sin preámbulos ("Hola, bienvenidos a mi canal" → fuera).</li>
+      <li><strong>Una sola idea por respiro.</strong> Frases cortas. Pausas. Dejen que el dato de la pirámide aterrice.</li>
+    </ul>
+    <div class="callout rose">
+      <h4>Regla de la descripción del video</h4>
+      <p style="margin:0;">En la descripción va <strong>UN solo link: Instagram</strong>. Nada más. <strong>Sin</strong> hashtags, <strong>sin</strong> timestamps, <strong>sin</strong> links a la web, <strong>sin</strong> "sígueme en…". Cero distracción: el único próximo paso es escribir "YOUTUBE" por Instagram. Si algún día se pierde la cuenta, se cambia <em>solo ese link</em> y el embudo sigue vivo.</p>
+    </div>
+  </section>
+
+  <!-- ESTRUCTURA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">①</div><h2>Estructura en una mirada</h2></div>
+    <table>
+      <thead><tr><th>Bloque</th><th>Qué hace</th><th>Aprox.</th></tr></thead>
+      <tbody>
+        <tr><td><b>0 · Cold open</b></td><td>Gancho que detiene el scroll. Promesa de curiosidad.</td><td>0:00–0:35</td></tr>
+        <tr><td><b>1 · El contexto</b></td><td>El trabajo local se está achicando. Describe la situación real.</td><td>0:35–2:15</td></tr>
+        <tr><td><b>2 · La pirámide invertida</b></td><td>El dato demográfico. Por qué el sistema no da.</td><td>2:15–4:45</td></tr>
+        <tr><td><b>3 · Qué significa para ti</b></td><td>Más edad de jubilación, más impuestos. El costo de no moverte.</td><td>4:45–6:15</td></tr>
+        <tr><td><b>4 · Los dos caminos</b></td><td>Emprender o ser trabajador remoto de valor. Dibuja la salida.</td><td>6:15–8:15</td></tr>
+        <tr><td><b>5 · Por qué ahora y por qué tú</b></td><td>Bilingüe + administrativo. Derriba objeciones.</td><td>8:15–10:00</td></tr>
+        <tr><td><b>6 · Cierre + CTA</b></td><td>Invitación suave a Instagram (palabra "YOUTUBE").</td><td>10:00–11:00</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- GUION -->
+  <section>
+    <div class="sec-head"><div class="sec-num">②</div><h2>El guion, bloque por bloque</h2></div>
+
+    <!-- BLOQUE 0 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">0:00–0:35</span><h3>Bloque 0 · Cold open (el gancho)</h3></div>
+      <p class="goal">Meta: en 30 segundos, que la persona sienta que esto le habla a ELLA. Sin intro de canal.</p>
+      <div class="dir"><b>Plano:</b> primer plano, mirando a cámara, en un lugar lindo o trabajando. <b>Texto en pantalla:</b> "¿Por qué nadie te explicó esto?"</div>
+      <div class="copyblock"><div class="copytext">Si estás en un trabajo que no te termina de cuadrar, y cada tanto piensas "tiene que haber algo mejor que esto"… quédate, porque te voy a explicar algo que casi nadie se sienta a pensar.
+
+No es una técnica. No es un truco para tu currículum.
+
+Es entender hacia dónde va el trabajo en los próximos 20 años — y por qué la persona que lo entiende HOY va a estar en una posición completamente distinta a la que sigue esperando.
+
+Yo hace unos años estaba donde quizás estás tú. Te cuento qué cambió.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 1 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">0:35–2:15</span><h3>Bloque 1 · El contexto (la situación real)</h3></div>
+      <p class="goal">Meta: nombrar el dolor que ya sienten sin saber explicarlo. Que asientan con la cabeza.</p>
+      <div class="dir"><b>B-roll:</b> calle, oficina, tráfico, alguien cansado llegando a casa. <b>Texto en pantalla:</b> "Menos trabajo formal. Más competencia."</div>
+      <div class="copyblock"><div class="copytext">Vamos a empezar por lo que ya estás viendo, aunque no le hayas puesto nombre.
+
+El trabajo en tu ciudad se está achicando. Las empresas contratan menos. Y el "trabajo formal" — ese donde te afilian, te dan prestaciones, estabilidad — cada vez es más raro.
+
+Entonces, ¿qué te queda? Cambiarte de empresa… dentro de la misma ciudad. Manejar la misma hora de tráfico. Para llegar a hacer prácticamente lo mismo, por un sueldo que tiene un techo que no pusiste tú.
+
+Llegas a casa cansado, ves a tu familia un rato, y al día siguiente otra vez. Y otra vez. Y así se va el año.
+
+No es que seas conformista. Es que en tu cabeza solo existe una opción: este mercado, esta ciudad, este techo.
+
+Y hoy te quiero mostrar que esa no es la única opción. Pero antes, necesito que entiendas por qué esto se va a poner más urgente — no menos.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 2 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">2:15–4:45</span><h3>Bloque 2 · La pirámide invertida (el dato)</h3></div>
+      <p class="goal">Meta: el momento "ajá". Aquí te posicionas como experto por pensar a largo plazo.</p>
+      <div class="dir"><b>Apoyo visual:</b> gráfico simple de la pirámide poblacional invirtiéndose; el número grande "42 → 2,8 → 2" en pantalla. <b>Verifica el dato en pantalla:</b> fuente SSA / Peterson Foundation.</div>
+      <div class="copyblock"><div class="copytext">Hay un cambio silencioso que casi nadie comenta, porque pasa tan lento que no se siente… hasta que se siente de golpe.
+
+Cada vez nacen menos niños. Familias más pequeñas. Eso significa que dentro de 20 años va a haber MENOS gente en edad de trabajar.
+
+Y al mismo tiempo, una generación enorme — la que nació en los años 60 y 70 — se está jubilando.
+
+Mira este número, porque es brutal. En 1945, en Estados Unidos, había alrededor de 42 trabajadores activos por cada jubilado. Cuarenta y dos personas sosteniendo a una.
+
+¿Hoy? Menos de tres.
+
+Y se proyecta que en pocos años sean dos. Dos trabajadores sosteniendo a un jubilado.
+
+Piénsalo. El sistema entero — pensiones, salud, prestaciones — se construyó cuando había decenas de personas aportando por cada una que cobraba. Ese sistema ya no tiene esos números. Y no los va a volver a tener.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 3 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">4:45–6:15</span><h3>Bloque 3 · Qué significa para ti</h3></div>
+      <p class="goal">Meta: traducir el dato a su vida. Urgencia sin miedo barato.</p>
+      <div class="dir"><b>Texto en pantalla:</b> "Más edad de jubilación. Más impuestos. O las dos."</div>
+      <div class="copyblock"><div class="copytext">¿Y esto qué tiene que ver contigo, que quizá tienes 30 y la jubilación te suena lejísimos?
+
+Tiene todo que ver. Porque cuando un sistema no tiene cómo pagar lo que prometió, solo le quedan tres caminos: subir la edad de jubilación, subir los impuestos, o hacer las dos al mismo tiempo.
+
+Eso no es pesimismo. Es matemática. Vas a trabajar más años, por una pensión más chica, pagando más impuestos en el camino.
+
+Ahora, no te cuento esto para asustarte. Te lo cuento porque hay una diferencia gigante entre las personas que entienden esto HOY y las que se van a enterar dentro de 15 años cuando ya no haya mucho margen para reaccionar.
+
+La buena noticia es que la salida no depende de que el sistema se arregle. Depende de ti. Y es más alcanzable de lo que crees.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 4 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">6:15–8:15</span><h3>Bloque 4 · Los dos caminos (la salida)</h3></div>
+      <p class="goal">Meta: dibujar las alternativas. Inclinar hacia el trabajador remoto de valor (el avatar).</p>
+      <div class="dir"><b>Texto en pantalla:</b> "Camino A: tu propio proyecto · Camino B: trabajador remoto de valor".</div>
+      <div class="copyblock"><div class="copytext">Si el problema es depender de un solo mercado local con un techo que no controlas, la solución es dejar de depender de él. Y para eso hay dos caminos.
+
+Camino uno: montar tu propio proyecto. Ser emprendedor. Es válido, pero no es para todo el mundo, ni para todo momento de la vida.
+
+Camino dos — y este es el que quiero que veas bien: convertirte en un trabajador que aporta valor real, pero ya no atado a la definición de "empleado de una empresa de mi ciudad". Un trabajador remoto. Puede ser para una sola empresa, o para varias. En Estados Unidos, en Europa. Cobrando en dólares.
+
+Fíjate en lo importante: NO te tienes que ir del país. No tienes que reinventarte ni cambiar de profesión. Lo que ya sabes hacer — administrar, organizar una operación, llevar números, coordinar un equipo — eso vale en dólares en cualquier empresa del mundo. Lo único que cambia es a quién se lo vendes.
+
+Porque hay algo que casi nadie te dice: los números no tienen idioma. Si eres bueno organizando, eres bueno organizando aquí y en una empresa de Texas. Lo único que falta es el puente.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 5 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">8:15–10:00</span><h3>Bloque 5 · Por qué ahora y por qué tú</h3></div>
+      <p class="goal">Meta: que el avatar administrativo/bilingüe se sienta el candidato ideal. Derribar objeciones.</p>
+      <div class="dir"><b>B-roll:</b> casos reales (capturas, fotos de alumnos trabajando). <b>Texto en pantalla:</b> "+300 profesionales de LatAm".</div>
+      <div class="copyblock"><div class="copytext">"Sí, Stefano, pero eso será para gente súper técnica, o para los que hablan inglés perfecto."
+
+Déjame romperte esa idea.
+
+El perfil que MÁS demanda tiene afuera no es el más vistoso. No es el diseñador de moda. Es el perfil administrativo: el que lleva la operación, las finanzas, la logística, el que coordina proyectos y personas. Justamente porque es un talento escaso. Hay muchísima gente que le huye a los números y a la organización — y las empresas de afuera pelean por quien sí es bueno en eso y, además, habla su idioma y está en su mismo horario.
+
+¿El inglés? Ayuda, no te voy a mentir. Pero he visto gente arrancar con un inglés mediocre y mejorarlo en el camino. El inglés casi nunca es el problema real.
+
+El problema real es esperar el momento ideal. Ese momento no llega nunca. Llega el momento en que te cansas lo suficiente como para hacer algo distinto.
+
+Nosotros ya acompañamos a más de 300 profesionales de Latinoamérica a dar exactamente este paso. Gente común, con miedo, con dudas, con el currículum a medias. La diferencia entre los que lo lograron y los que siguen esperando no fue el talento. Fue decidir antes de sentirse listos.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+
+    <!-- BLOQUE 6 -->
+    <div class="block">
+      <div class="block-top"><span class="ts">10:00–11:00</span><h3>Bloque 6 · Cierre + CTA (a Instagram)</h3></div>
+      <p class="goal">Meta: un solo siguiente paso, sin presión. Reconduce a Instagram, no a una venta.</p>
+      <div class="dir"><b>Texto en pantalla:</b> "Escríbeme la palabra YOUTUBE en Instagram → link abajo". <b>Recordatorio:</b> el único link de la descripción es Instagram.</div>
+      <div class="copyblock"><div class="copytext">Así que recapitulando: el mundo va hacia menos trabajadores, más jubilados y un sistema que va a apretar. Eso no lo decides tú. Lo que SÍ decides es de qué lado de ese cambio quieres estar.
+
+Y la salida no es irte del país ni reinventarte. Es llevar lo que ya sabes a un mercado que paga en dólares. Mientras antes lo entiendas, más fácil es.
+
+Si esto te hizo ruido y quieres saber cómo se da el primer paso — sin compromiso, solo para que entiendas cómo funciona — te dejo mi Instagram en la descripción, aquí abajo.
+
+Escríbeme ahí la palabra "YOUTUBE". Una sola palabra. Y del otro lado te respondo yo o mi equipo, en persona, para mostrarte por dónde empezarías según tu caso.
+
+Nos vemos del otro lado.</div><button class="copybtn" type="button">Copiar bloque</button></div>
+    </div>
+  </section>
+
+  <!-- DESCRIPCIÓN Y PUBLICACIÓN -->
+  <section>
+    <div class="sec-head"><div class="sec-num">③</div><h2>Descripción, título y publicación</h2></div>
+
+    <h4>Títulos sugeridos (probar)</h4>
+    <ul>
+      <li>"Por qué tu trabajo no te va a alcanzar en 20 años (y qué hacer hoy)"</li>
+      <li>"El cambio silencioso que va a redefinir el trabajo en LatAm"</li>
+      <li>"Cómo pasé de un techo salarial a facturar en dólares sin irme del país"</li>
+    </ul>
+
+    <h4>Descripción del video (cópienla tal cual)</h4>
+    <div class="copyblock"><div class="copytext">Si quieres saber cómo dar el primer paso hacia el trabajo remoto facturando en dólares, escríbeme la palabra YOUTUBE por aquí 👇
+
+[LINK DIRECTO A INSTAGRAM]</div><button class="copybtn" type="button">Copiar descripción</button></div>
+    <p class="note">Nada más. Sin hashtags, sin timestamps, sin más links. El único próximo paso posible es ir a Instagram.</p>
+
+    <div class="callout green">
+      <h4>Dónde vive este video</h4>
+      <p style="margin:0;">Es el <strong>link del perfil de LinkedIn</strong> (en Destacados) y el destino de los CTA "comenta REMOTO". Mientras se graba, el link del perfil apunta a la <strong>playlist de casos en YouTube</strong>; cuando este video esté publicado, se reemplaza por él.</p>
+    </div>
+
+    <h4>Checklist de grabación</h4>
+    <ul>
+      <li>Buena luz natural + audio limpio (micro de solapa si se puede). El audio importa más que la cámara.</li>
+      <li>Grabar bloque por bloque (no de corrido) para poder repetir sin regrabar todo.</li>
+      <li>Tener listos 3-4 clips de B-roll y las capturas de casos del bloque 5.</li>
+      <li>Subtítulos quemados o automáticos revisados (mucha gente lo ve en silencio).</li>
+      <li>Miniatura con una sola idea y la cara — coherente con la marca.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Guion · Video largo de YouTube — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo · Pieza evergreen del embudo
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var block=btn.closest('.copyblock'); if(!block) return;
+    var el=block.querySelector('.copytext'); if(!el) return;
+    var text=el.innerText;
+    function ok(){ var o=btn.textContent; btn.textContent='✓ ¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('ok'); },1800); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var r=document.createRange(); r.selectNode(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand('copy'); ok(); }catch(e){}
+      s.removeAllRanges();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
