@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Acción — LinkedIn | Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Plan de acción de estrategia orgánica de LinkedIn para Neneko Remoto.">
+<meta property="og:title" content="Plan de Acción — LinkedIn · Neneko Remoto">
+<meta property="og:description" content="Estrategia orgánica: LinkedIn como red de descubrimiento → video largo → llamada.">
+<meta property="og:type" content="website">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff;
+    --primary:#059669; --primary-l:#d1fae5; --primary-d:#047857;
+    --accent:#f59e0b; --accent-l:#fef3c7;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff;
+    --rose:#e11d48; --rose-l:#ffe4e6;
+    --radius:14px; --shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:64px 0 56px;}
+  .hero .wrap{position:relative;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:20px;}
+  .hero h1{font-size:40px;line-height:1.12;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero .sub{font-size:18px;color:#cbd5e1;max-width:680px;}
+  .hero .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:#94a3b8;}
+  .hero .meta b{color:#e2e8f0;font-weight:600;}
+
+  /* TOC */
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 26px;margin:-34px auto 44px;position:relative;}
+  .toc h3{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:14px;}
+  .toc ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 30px;counter-reset:toc;}
+  .toc li{counter-increment:toc;font-size:15px;padding:5px 0;border-bottom:1px dashed transparent;}
+  .toc li a{display:flex;gap:10px;color:var(--slate);}
+  .toc li a::before{content:counter(toc,decimal-leading-zero);color:var(--primary);font-weight:700;font-variant-numeric:tabular-nums;}
+  .toc li a:hover{color:var(--primary-d);text-decoration:none;}
+
+  /* SECTIONS */
+  section{padding:30px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+  .sec-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;}
+  .sec-head h2{font-size:25px;font-weight:800;letter-spacing:-.01em;color:var(--ink);}
+  .lead{font-size:17px;color:var(--slate);margin-bottom:18px;}
+  p{margin-bottom:12px;}
+  h4{font-size:17px;font-weight:700;color:var(--ink);margin:20px 0 8px;}
+  ul,ol{margin:0 0 14px 22px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+  .muted{color:var(--muted);}
+
+  /* CARDS / CALLOUTS */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .callout{border-left:4px solid var(--primary);background:var(--primary-l);border-radius:10px;padding:14px 18px;margin:16px 0;}
+  .callout.amber{border-color:var(--accent);background:var(--accent-l);}
+  .callout.rose{border-color:var(--rose);background:var(--rose-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .callout h4{margin-top:0;}
+  .callout p:last-child{margin-bottom:0;}
+
+  /* TABLES */
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{background:var(--ink);color:#fff;font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#f8fafc;}
+  td b{color:var(--ink);}
+
+  /* CHIPS */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;}
+  .chip{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--primary-l);color:var(--primary-d);border:1px solid rgba(5,150,105,.25);}
+  .chip.alt{background:var(--indigo-l);color:#3730a3;border-color:rgba(79,70,229,.25);}
+  .chip.warm{background:var(--accent-l);color:#b45309;border-color:rgba(245,158,11,.3);}
+
+  /* PILLARS */
+  .pillar{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--primary);border-radius:12px;padding:18px 22px;margin:14px 0;box-shadow:var(--shadow);}
+  .pillar .p-top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .pillar h4{margin:0;font-size:18px;}
+  .pillar .role{font-size:13px;font-weight:700;color:var(--primary-d);text-transform:uppercase;letter-spacing:.05em;}
+  .pillar .ej{margin:10px 0 0;}
+  .pillar .ej li{color:var(--slate);}
+  .pillar.p2{border-left-color:var(--rose);} .pillar.p2 .role{color:var(--rose);}
+  .pillar.p3{border-left-color:var(--indigo);} .pillar.p3 .role{color:#4338ca;}
+  .pillar.p4{border-left-color:var(--accent);} .pillar.p4 .role{color:#b45309;}
+  .pillar.p5{border-left-color:#0ea5e9;} .pillar.p5 .role{color:#0369a1;}
+
+  /* FUNNEL */
+  .funnel{margin:18px 0;}
+  .stage{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 20px;box-shadow:var(--shadow);position:relative;}
+  .stage b{display:block;color:var(--ink);font-size:16px;}
+  .stage span{font-size:14px;color:var(--muted);}
+  .stage .n{position:absolute;left:-10px;top:-10px;width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .arrow{text-align:center;color:var(--primary);font-size:22px;line-height:1;margin:6px 0;}
+  .stage.final{background:var(--ink);color:#fff;} .stage.final b{color:#fff;} .stage.final span{color:#94a3b8;}
+
+  /* HOOK BANK */
+  .hook{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:12px 16px;margin:8px 0;font-size:14.5px;border-left:3px solid var(--primary);}
+  .hook .var{color:#6ee7b7;font-weight:600;}
+  .badtag,.goodtag{font-weight:700;font-size:13px;padding:2px 8px;border-radius:6px;margin-right:6px;}
+  .badtag{background:var(--rose-l);color:var(--rose);}
+  .goodtag{background:var(--primary-l);color:var(--primary-d);}
+
+  /* MISC */
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0;}
+  .kpi{flex:1 1 200px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);}
+  .kpi .m{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  .kpi .v{font-size:16px;font-weight:700;color:var(--ink);margin-top:4px;}
+  footer{background:var(--ink);color:#94a3b8;padding:34px 0;margin-top:40px;font-size:14px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer b{color:#e2e8f0;}
+  .note{font-size:13.5px;color:var(--muted);font-style:italic;}
+  /* progreso + checklist */
+  .progwrap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0 20px;box-shadow:var(--shadow);}
+  .progmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;font-size:14px;}
+  .progmeta b{color:var(--ink);} .progmeta span{color:var(--primary-d);font-weight:700;font-variant-numeric:tabular-nums;}
+  .progtrack{height:12px;background:#e2e8f0;border-radius:999px;overflow:hidden;}
+  .progfill{height:100%;width:0;background:linear-gradient(90deg,#10b981,#059669);border-radius:999px;transition:width .35s ease;}
+  .phase-group{margin:18px 0;}
+  .phase-h{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+  .phase-tag{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 11px;border-radius:999px;}
+  .check{display:flex;gap:12px;align-items:flex-start;padding:11px 15px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:7px 0;cursor:pointer;transition:background .15s,border-color .15s;}
+  .check:hover{background:#f8fafc;border-color:#cbd5e1;}
+  .check input{margin-top:2px;width:19px;height:19px;accent-color:var(--primary);flex:0 0 auto;cursor:pointer;}
+  .check span{font-size:15px;line-height:1.5;}
+  .check input:checked ~ span{color:var(--muted);text-decoration:line-through;}
+  .reset-btn{display:inline-block;margin-top:8px;font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;}
+  .reset-btn:hover{color:var(--rose);border-color:var(--rose);}
+
+  @media (max-width:680px){
+    .hero h1{font-size:30px;} .toc ol{grid-template-columns:1fr;} .grid2{grid-template-columns:1fr;}
+    .sec-head h2{font-size:21px;}
+  }
+  @media print{
+    body{background:#fff;} .toc{box-shadow:none;} .card,table,.kpi,.pillar,.stage{box-shadow:none;}
+    .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{page-break-inside:avoid;} thead th,.sec-num,.stage.final,.hook{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Plan de acción · Estrategia orgánica</span>
+    <h1>LinkedIn para <span>Neneko Remoto</span><br>como motor de descubrimiento</h1>
+    <p class="sub">De perfiles dormidos a una máquina de descubrimiento orgánico que alimenta un video largo de YouTube y agenda llamadas para FREEDOM — con setting 100% humano.</p>
+    <div class="meta">
+      <div><b>Cliente:</b> Stefano Manzi &amp; Soad Marun</div>
+      <div><b>Preparado por:</b> Mateo Eguiguren</div>
+      <div><b>Fecha:</b> Junio 2026</div>
+      <div><b>Horizonte:</b> 90 días</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h3>Contenido</h3>
+    <ol>
+      <li><a href="#s1">Diagnóstico: dónde están hoy</a></li>
+      <li><a href="#s2">Objetivo y embudo</a></li>
+      <li><a href="#s3">Posicionamiento y mensaje</a></li>
+      <li><a href="#s4">Reposicionamiento de perfiles</a></li>
+      <li><a href="#s5">Pilares de contenido</a></li>
+      <li><a href="#s6">Formatos y banco de hooks</a></li>
+      <li><a href="#s7">Ritmo de publicación</a></li>
+      <li><a href="#s8">Identificación de ganadores</a></li>
+      <li><a href="#s9">Embudo de setting y SOP</a></li>
+      <li><a href="#s10">Hoja de ruta 90 días</a></li>
+      <li><a href="#s11">Roles y cadencia de trabajo</a></li>
+      <li><a href="#s12">KPIs y metas</a></li>
+      <li><a href="#s13">Anexos y fuentes</a></li>
+    </ol>
+  </nav>
+
+  <!-- RESUMEN EJECUTIVO -->
+  <section id="s0" style="border-top:none;padding-top:6px;">
+    <div class="sec-head"><div class="sec-num">★</div><h2>Resumen ejecutivo</h2></div>
+    <p class="lead">A Neneko Remoto le cerraron <strong>dos canales clave casi al mismo tiempo: la cuenta publicitaria de LinkedIn y la cuenta de Instagram</strong>. Eso eliminó de golpe su tracción pagada y su principal motor de descubrimiento orgánico. La oferta (FREEDOM) y el resto del embudo siguen intactos — lo que falta es <strong>reconstruir el descubrimiento</strong>.</p>
+    <p>La jugada: convertir LinkedIn —la red donde vive exactamente su avatar (profesionales bilingües que quieren facturar en USD)— en <strong>red de descubrimiento orgánica, 100% bajo su control</strong>. LinkedIn no vende: <strong>descubre y califica</strong>. El cierre lo hace un <strong>video largo de YouTube</strong> (a crear) que eleva la consciencia y termina invitando a <strong>agendar una llamada</strong>, atendida por una <strong>setter humana</strong> (sin chatbots).</p>
+    <div class="callout">
+      <p style="margin:0;"><strong>El cambio en una frase:</strong> dejar de depender de un canal que nos pueden apagar (ads/IG) y construir un activo propio —perfiles de Stefano y Soad— que genere descubrimiento todos los días, modelando el método orgánico de <strong>Lucas Saud / Job Surfers</strong>: historias en primera persona + casos con nombres y cifras.</p>
+    </div>
+  </section>
+
+  <!-- 1. DIAGNÓSTICO -->
+  <section id="s1">
+    <div class="sec-head"><div class="sec-num">1</div><h2>Diagnóstico: dónde están hoy</h2></div>
+
+    <h4>Qué pasó</h4>
+    <p>Cierre simultáneo de la <strong>cuenta publicitaria de LinkedIn</strong> y de la <strong>cuenta de Instagram</strong>. Resultado: se cae el paid y el principal canal de descubrimiento orgánico. La dependencia de canales que no controlamos es justamente el riesgo que este plan elimina.</p>
+
+    <h4>Qué sigue vivo y funcionando</h4>
+    <table>
+      <thead><tr><th>Canal / activo</th><th>Estado</th><th>Rol en la estrategia</th></tr></thead>
+      <tbody>
+        <tr><td><b>Oferta FREEDOM</b> (mentoría 1:1, 90 días)</td><td>Intacta · +300 alumnos</td><td>El destino final. No se toca.</td></tr>
+        <tr><td><b>VSL / embudo</b> (freedom.losnenekos.com)</td><td>Activo · 2 pasos</td><td>Convierte la llamada. Base sólida.</td></tr>
+        <tr><td><b>YouTube</b> (@LosNenekos)</td><td>Vivo pero mezclado (casos + podcast lifestyle + música)</td><td>Aquí vive el <b>video largo</b> que prepara para comprar.</td></tr>
+        <tr><td><b>TikTok</b> (@nenekoremoto)</td><td>Vivo</td><td>Fuente de hooks/ganadores a reciclar en LinkedIn.</td></tr>
+        <tr><td><b>Podcast</b> (24 eps.)</td><td>Temporada 1 cerrada · lifestyle</td><td>Nurturing y contenido de autoridad/relación.</td></tr>
+        <tr><td><b>LinkedIn</b> (Stefano + Soad)</td><td><b>Muerto / desalineado</b></td><td><b>El gran espacio en blanco</b> que vamos a activar.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>El estado real de LinkedIn hoy</h4>
+    <ul>
+      <li><strong>Stefano:</strong> el perfil quedó con posts <em>legacy</em> de JavaScript y una startup ("Cleanzy"). Headline, banner y "Acerca de" no apuntan a la oferta.</li>
+      <li><strong>Soad:</strong> aparece como co-fundadora del programa, pero subexpuesta. Su historia (8 años con su propia agencia de branding) es autoridad real sin explotar.</li>
+      <li><strong>Sin página de empresa</strong> y <strong>LinkedIn fuera del embudo</strong>: descubrimiento profesional de alta intención desperdiciado.</li>
+    </ul>
+
+    <div class="callout amber">
+      <h4>Correcciones al brief (verificadas en la investigación)</h4>
+      <p style="margin:0;">Marca = <strong>Neneko Remoto / Los Nenekos</strong> · Base = <strong>Colombia</strong> · Soad = <strong>Soad Marun</strong> ("la Neneka"), background fuerte de marketing/branding · Stefano = admin/MBA ("el Neneko" / "Freedom Guru").</p>
+    </div>
+
+    <div class="callout">
+      <h4>La oportunidad</h4>
+      <p style="margin:0;">LinkedIn es la red de <strong>mayor intención profesional</strong> y donde está su avatar exacto. Un referente directo —<strong>Lucas Saud (Job Surfers)</strong>— construyó ~52k seguidores y un negocio del mismo nicho <strong>100% orgánico</strong>. El terreno está libre y es nuestro para tomarlo.</p>
+    </div>
+  </section>
+
+  <!-- 2. OBJETIVO Y EMBUDO -->
+  <section id="s2">
+    <div class="sec-head"><div class="sec-num">2</div><h2>Objetivo y embudo</h2></div>
+    <p class="lead"><strong>Objetivo:</strong> que LinkedIn funcione como red de descubrimiento que lleva al prospecto a un video largo de YouTube que lo prepara para comprar y lo invita a agendar una llamada — cerrada con setting manual.</p>
+
+    <div class="funnel">
+      <div class="stage"><span class="n">1</span><b>Descubrimiento — LinkedIn</b><span>Posts de Stefano + Soad sobre los 5 pilares. Aquí el desconocido te encuentra.</span></div>
+      <div class="arrow">▼</div>
+      <div class="stage"><span class="n">2</span><b>CTA por comentario</b><span>"Comenta REMOTO y te envío el video" — sin links en el cuerpo (protege el alcance).</span></div>
+      <div class="arrow">▼</div>
+      <div class="stage"><span class="n">3</span><b>Lead magnet = Video largo de YouTube</b> <span>Eleva consciencia: <b>el costo de NO actuar ahora</b> + las rutas para resolverlo (no el "cómo" al 100%).</span></div>
+      <div class="arrow">▼</div>
+      <div class="stage"><span class="n">4</span><b>CTA final del video → Agendar llamada</b><span>El video cierra invitando a dar el siguiente paso.</span></div>
+      <div class="arrow">▼</div>
+      <div class="stage"><span class="n">5</span><b>Setting manual — Setter humana</b><span>Responde, califica, agenda. Sin chatbots: siempre hablas con una persona.</span></div>
+      <div class="arrow">▼</div>
+      <div class="stage final"><span class="n">6</span><b>Llamada de aplicación → FREEDOM</b><span>El cierre ocurre donde ya funciona.</span></div>
+    </div>
+
+    <div class="callout indigo">
+      <p style="margin:0;"><strong>Por qué funciona este reparto:</strong> LinkedIn hace el <em>descubrimiento</em> (volumen + intención), el video largo hace el <em>trabajo pesado de creencia</em> (sube el nivel de consciencia), y la llamada hace el <em>cierre</em>. Cada pieza hace solo lo que mejor sabe hacer.</p>
+    </div>
+  </section>
+
+  <!-- 3. POSICIONAMIENTO -->
+  <section id="s3">
+    <div class="sec-head"><div class="sec-num">3</div><h2>Posicionamiento y mensaje</h2></div>
+
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0;">Avatar</h4>
+        <p style="margin:0;">Profesional bilingüe de LatAm, 25-40 años, perfil creativo/digital (marketing, diseño, estrategia, account management — perfiles tipo Upwork). Tiene talento pero <strong>techo salarial en moneda local</strong>. Quiere <strong>ingresos en USD + libertad geográfica</strong> y sospecha que "trabajar para afuera" es posible, pero no sabe cómo.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0;">Promesa (resultado)</h4>
+        <p style="margin:0;">"Consigue trabajo remoto facturando <strong>USD $3.000–$5.000/mes</strong> para empresas de USA y Europa — desde donde estés." El foco es siempre <strong>lo que gana</strong> la persona: dólares, libertad, elegir su vida.</p>
+      </div>
+    </div>
+
+    <div class="callout rose">
+      <h4>Regla de oro: vender el RESULTADO, no el MECANISMO</h4>
+      <p><span class="badtag">EVITAR</span> "Te enseño mi método de 90 días con optimización de perfil y mindset."</p>
+      <p style="margin:0;"><span class="goodtag">USAR</span> "Mafe pasó de pelear por proyectos de $50 a facturar $3.000/mes desde su casa. Esto fue lo que cambió."</p>
+    </div>
+
+    <h4>El modelo a copiar: Lucas Saud / Job Surfers</h4>
+    <ul>
+      <li><strong>Primera persona</strong> + historia real &gt; tips genéricos.</li>
+      <li><strong>Casos con nombre, cifra y empresa</strong> — la prueba hace la venta.</li>
+      <li>Consistencia orgánica diaria como activo (no campañas pagadas).</li>
+    </ul>
+
+    <h4>Ventaja narrativa: el dúo</h4>
+    <p style="margin-bottom:0;"><strong>Stefano</strong> (visión, oferta, autoridad de negocio) + <strong>Soad</strong> (marketing/branding, lado humano y operativo). El relato de pareja construyendo libertad desde la vida nómada (Bali · Barcelona · Bangkok) es altamente narrable y diferencia. <strong>Activar a Soad como segunda voz es prioridad.</strong></p>
+  </section>
+
+  <!-- 4. PERFILES -->
+  <section id="s4">
+    <div class="sec-head"><div class="sec-num">4</div><h2>Reposicionamiento de perfiles</h2></div>
+    <p class="lead">Antes de publicar, el perfil tiene que "vender" en 3 segundos. Un visitante que llega desde un post decide en el headline + banner si te sigue o se va.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0;">Stefano — el Neneko</h4>
+        <p class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Headline propuesto</p>
+        <p>"Ayudo a profesionales bilingües de LatAm a conseguir trabajo remoto en USD $3-5k/mes · +300 historias de libertad · Co-fundador de Neneko Remoto"</p>
+        <p class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Pendiente</p>
+        <p style="margin:0;">Archivar/ocultar el legacy (JS, Cleanzy). Que el perfil hable solo de la transformación que vende.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0;">Soad — la Neneka</h4>
+        <p class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Headline propuesto</p>
+        <p>"Construí mi libertad desde el marketing — hoy ayudo a profesionales de LatAm a facturar en USD trabajando remoto · Co-fundadora de Neneko Remoto"</p>
+        <p class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Pendiente</p>
+        <p style="margin:0;">Activar su voz: su historia de agencia es autoridad real. Segunda fuente de contenido desde el día 1.</p>
+      </div>
+    </div>
+
+    <h4>Checklist de cada perfil</h4>
+    <ul>
+      <li><strong>Banner:</strong> promesa + CTA visual al video largo / "comenta REMOTO".</li>
+      <li><strong>"Acerca de":</strong> formato historia → de dónde venían → la transformación → la oferta → link. Empezar con un gancho ("Hace 4 años no podía pagar un café sin revisar la cuenta…").</li>
+      <li><strong>Destacados:</strong> el video largo + 2-3 casos de éxito + el lead magnet.</li>
+      <li><strong>Foto:</strong> profesional, cercana, coherente entre ambos.</li>
+    </ul>
+  </section>
+
+  <!-- 5. PILARES -->
+  <section id="s5">
+    <div class="sec-head"><div class="sec-num">5</div><h2>Pilares de contenido</h2></div>
+    <p class="lead">Cinco pilares que, juntos, construyen <strong>creencia + urgencia + autoridad + deseo + conexión</strong>. Todo apunta al mismo destino: el video largo y la llamada.</p>
+
+    <div class="pillar p1">
+      <div class="p-top"><h4>1 · Prueba / Casos</h4><span class="role">Creencia · peso alto</span></div>
+      <p class="muted" style="margin:6px 0 0;">Alumnos con nombre, cifra y antes/después. El pilar que más vende.</p>
+      <ul class="ej">
+        <li>"Mafe tenía 24 y peleaba por proyectos de $50 en Upwork. Hoy factura $3.000/mes desde Medellín. Esto fue lo que cambió 👇"</li>
+        <li>"Camilo era diseñador de interiores ganando en pesos. En 90 días facturaba en dólares para una empresa de Estados Unidos."</li>
+        <li>"300 profesionales después, esta es la única diferencia real entre los que lo logran y los que se quedan."</li>
+      </ul>
+    </div>
+
+    <div class="pillar p2">
+      <div class="p-top"><h4>2 · Despertar / Costo de no actuar</h4><span class="role">Urgencia · peso medio</span></div>
+      <p class="muted" style="margin:6px 0 0;">Conecta directo con el ángulo del lead magnet.</p>
+      <ul class="ej">
+        <li>"Cada mes que sigues cobrando en moneda local mientras alguien factura en dólares por el mismo trabajo… es un mes que no vuelve."</li>
+        <li>"El trabajo remoto no es trabajar desde casa. Es dejar de tener un techo salarial que decidió alguien más."</li>
+        <li>"Tu inglés no es el problema. Tu portafolio no es el problema. El problema es esperar el 'momento ideal' que nunca llega."</li>
+      </ul>
+    </div>
+
+    <div class="pillar p3">
+      <div class="p-top"><h4>3 · Cómo se hace (educativo)</h4><span class="role">Autoridad · Soad brilla</span></div>
+      <p class="muted" style="margin:6px 0 0;">Tips reales sin regalar el 100%. Posiciona como experta.</p>
+      <ul class="ej">
+        <li>"Optimicé +300 perfiles para trabajo remoto. Estos son los 3 errores que el 90% comete en su perfil."</li>
+        <li>"No necesitas más certificados. Necesitas posicionar lo que ya sabes como la solución a un problema que una empresa paga en dólares."</li>
+        <li>"Cómo encontrar vacantes remotas reales (y no las saturadas con 800 aplicantes)."</li>
+      </ul>
+    </div>
+
+    <div class="pillar p4">
+      <div class="p-top"><h4>4 · Libertad / Lifestyle</h4><span class="role">Deseo + marca · rota</span></div>
+      <p class="muted" style="margin:6px 0 0;">La vida que compran. Aquí el dúo nómada destaca.</p>
+      <ul class="ej">
+        <li>"Escribo esto desde Bali. Hace tres años no podía pagar un café sin revisar la cuenta. Esto no es suerte: es un sistema."</li>
+        <li>"La gente cree que la libertad es no trabajar. Para nosotros fue elegir desde dónde, con quién y por cuánto."</li>
+      </ul>
+    </div>
+
+    <div class="pillar p5">
+      <div class="p-top"><h4>5 · Detrás de cámaras / Personal</h4><span class="role">Conexión · rota</span></div>
+      <p class="muted" style="margin:6px 0 0;">Humaniza la marca y construye relación.</p>
+      <ul class="ej">
+        <li>"Montamos este negocio como pareja. No fue fácil. Estos son los 3 errores que casi nos cuestan todo."</li>
+        <li>"Nos fuimos del país con dos maletas y mucho miedo. Lo que aprendimos sobre construir libertad."</li>
+      </ul>
+    </div>
+
+    <h4>Mezcla semanal sugerida (rotación de 7 días)</h4>
+    <table>
+      <thead><tr><th>Día</th><th>Pilar</th><th>Formato sugerido</th></tr></thead>
+      <tbody>
+        <tr><td>Lunes</td><td>Prueba / Caso</td><td>Texto-historia</td></tr>
+        <tr><td>Martes</td><td>Cómo se hace</td><td>Carrusel</td></tr>
+        <tr><td>Miércoles</td><td>Despertar</td><td>Video nativo</td></tr>
+        <tr><td>Jueves</td><td>Prueba / Caso</td><td>Texto-historia</td></tr>
+        <tr><td>Viernes</td><td>Libertad / Lifestyle</td><td>Video / imagen</td></tr>
+        <tr><td>Sábado</td><td>Personal / BTS</td><td>Texto corto</td></tr>
+        <tr><td>Domingo</td><td>Despertar o Caso</td><td>Texto / carrusel</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Al pasar a 2 posts/día, el segundo post del día es de <strong>otro formato</strong> (ej. AM = texto, PM = video) para no canibalizar alcance.</p>
+  </section>
+
+  <!-- 6. FORMATOS Y HOOKS -->
+  <section id="s6">
+    <div class="sec-head"><div class="sec-num">6</div><h2>Formatos y banco de hooks</h2></div>
+
+    <table>
+      <thead><tr><th>Formato</th><th>Cuándo usarlo</th><th>Claves</th></tr></thead>
+      <tbody>
+        <tr><td><b>Texto-historia</b></td><td>Casos, despertar, personal</td><td>Workhorse de LinkedIn. Gancho en la línea 1; 1 idea por línea.</td></tr>
+        <tr><td><b>Carrusel (documento)</b></td><td>Educativo, listas, paso a paso</td><td>Alto guardado/compartido. Portada con promesa fuerte.</td></tr>
+        <tr><td><b>Video nativo</b></td><td>Despertar, lifestyle, autoridad</td><td><b>Prioridad.</b> Subtitulado, vertical/cuadrado, gancho en 3 seg.</td></tr>
+        <tr><td><b>Imagen única</b></td><td>Frase potente, momento</td><td>Copy fuerte + visual simple.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <h4>Anatomía de un post ganador</h4>
+      <p style="margin:0;"><strong>Gancho</strong> (línea 1, detiene el scroll) → <strong>contexto/historia</strong> → <strong>giro o lección</strong> → <strong>prueba</strong> (cifra/nombre) → <strong>CTA por comentario</strong> ("comenta REMOTO y te envío el video").</p>
+    </div>
+
+    <h4>Banco de hooks (plantillas para rellenar)</h4>
+    <div class="hook"><span class="var">[Nombre]</span> tenía <span class="var">[situación inicial]</span>. Hoy <span class="var">[resultado con cifra]</span>. Esto fue lo que cambió 👇</div>
+    <div class="hook">Todos te dicen <span class="var">[creencia común]</span>. La verdad es <span class="var">[postura contraria]</span>.</div>
+    <div class="hook">Cómo <span class="var">[lograr resultado deseado]</span> sin <span class="var">[obstáculo temido]</span>.</div>
+    <div class="hook">El error #1 que veo en <span class="var">[avatar]</span> que quiere <span class="var">[objetivo]</span>.</div>
+    <div class="hook">Hace <span class="var">[tiempo]</span> yo <span class="var">[situación dolorosa]</span>. Hoy <span class="var">[transformación]</span>. Si estás en <span class="var">[punto A]</span>, esto es para ti.</div>
+  </section>
+
+  <!-- 7. RITMO -->
+  <section id="s7">
+    <div class="sec-head"><div class="sec-num">7</div><h2>Ritmo de publicación</h2></div>
+
+    <table>
+      <thead><tr><th>Cadencia</th><th>Detalle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Semanas 1-2</b></td><td><b>1 post/día por perfil</b> (arranque inmediato) · ≈2/día combinados Stefano + Soad</td></tr>
+        <tr><td><b>Semana 3+</b></td><td>Subir a <b>2 posts/día por perfil</b> — AM + PM, <b>formatos distintos</b> para no canibalizar alcance · ≈4/día combinados</td></tr>
+        <tr><td><b>Engagement diario (c/u)</b></td><td>Publicar en hora pico · <b>golden hour</b>: responder todos los comentarios en los primeros 60-90 min · interactuar con 5-10 cuentas del avatar · invitaciones a ICP — bloque de 15-20 min</td></tr>
+        <tr><td><b>Video</b></td><td>1-2 videos nativos/semana c/u + captura de footage para el video largo</td></tr>
+        <tr><td><b>Setter</b></td><td>Opera el embudo en LinkedIn a diario: DMs, entrega del lead magnet, agenda</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Ritmo semanal de operación</h4>
+    <table>
+      <thead><tr><th>Día</th><th>Qué pasa</th></tr></thead>
+      <tbody>
+        <tr><td><b>Viernes</b></td><td>Mateo entrega el lote de borradores de la semana siguiente (90-95% listo)</td></tr>
+        <tr><td><b>Finde / Lunes</b></td><td>Stefano + Soad pulen frases (5-10%) y graban los videos</td></tr>
+        <tr><td><b>Lunes</b></td><td>Reunión semanal: métricas, ganadores, ajustes, aprobar el lote</td></tr>
+        <tr><td><b>Mar – Vie</b></td><td>Ejecución: publicar + engagement diario + setting</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout amber">
+      <p style="margin:0;"><strong>Buenas prácticas en el 2/día:</strong> validamos el <strong>alcance</strong> en la reunión semanal. Si el segundo post canibaliza vistas (efecto común en LinkedIn), espaciamos AM/PM, alternamos formatos, o ajustamos a la baja — sin perder consistencia.</p>
+    </div>
+  </section>
+
+  <!-- 8. GANADORES -->
+  <section id="s8">
+    <div class="sec-head"><div class="sec-num">8</div><h2>Identificación de ganadores</h2></div>
+    <p class="lead">"Hacer más de lo que funciona" requiere medir lo correcto y doblar la apuesta con método.</p>
+
+    <h4>Métricas que importan (no vanity)</h4>
+    <table>
+      <thead><tr><th>Métrica</th><th>Qué indica</th></tr></thead>
+      <tbody>
+        <tr><td>Impresiones</td><td>Alcance del hook / formato</td></tr>
+        <tr><td><b>Tasa de comentarios</b></td><td>Resonancia real (la señal #1 del algoritmo)</td></tr>
+        <tr><td>Comentarios/clics al lead magnet</td><td>Intención: cuántos quieren el video</td></tr>
+        <tr><td>Visitas al perfil + conexiones ICP</td><td>Crecimiento de audiencia correcta</td></tr>
+        <tr><td><b>Llamadas agendadas</b> ⭐</td><td>El norte. Lo único que paga.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Metodología (mix)</h4>
+    <ol>
+      <li><strong>Semana 1 — arranque con ventaja:</strong> el cliente pasa sus <strong>top piezas de TikTok</strong> (+ el material que conserven de Instagram, ya que la cuenta fue cerrada), ordenadas por guardados/compartidos. Las convertimos en los primeros posts de LinkedIn con el hook adaptado al tono profesional.</li>
+      <li><strong>Cada 2 semanas — doblar:</strong> revisamos los ganadores de LinkedIn y producimos <strong>2-3 variantes</strong> de cada formato/hook que funcionó.</li>
+    </ol>
+
+    <div class="callout">
+      <h4>Tablero de control (Google Sheet / Notion)</h4>
+      <p style="margin:0;">Columnas: <strong>fecha · perfil · pilar · formato · hook · impresiones · comentarios · clics al LM · llamadas</strong> → marcar ganadores. Se revisa cada lunes.</p>
+    </div>
+  </section>
+
+  <!-- 9. SETTING -->
+  <section id="s9">
+    <div class="sec-head"><div class="sec-num">9</div><h2>Embudo de setting y SOP de la setter</h2></div>
+    <p class="lead">El canal más rentable porque <strong>no hay chatbots</strong>: siempre hablas con una persona. Mateo entrena a la setter (que nunca usó LinkedIn) y entrega el SOP.</p>
+
+    <h4>SOP — paso a paso de la setter</h4>
+    <ol>
+      <li><strong>Monitorear</strong> comentarios y DMs en tiempo real (responder dentro de la primera hora).</li>
+      <li><strong>Abrir con calidez humana</strong> (plantilla de saludo personalizada, nunca sonar a bot).</li>
+      <li><strong>Entregar el lead magnet</strong> (link al video largo) por DM.</li>
+      <li><strong>Calificar</strong> con 2-3 preguntas: situación actual, nivel de inglés, urgencia/ganas.</li>
+      <li><strong>Invitar a agendar</strong> la llamada (link de calendario), con el porqué.</li>
+      <li><strong>Seguimiento</strong> si no agenda: secuencia humana de 2-3 toques.</li>
+    </ol>
+
+    <h4>Plan de entrenamiento (Mateo)</h4>
+    <ul>
+      <li><strong>Semana 1:</strong> onboarding LinkedIn (navegación, DMs, normas), tono de marca, plantillas, role-play.</li>
+      <li><strong>SOP escrito</strong> + ejemplos de buenas/malas respuestas.</li>
+      <li><strong>Shadowing</strong> de las primeras conversaciones reales antes de soltar.</li>
+    </ul>
+
+    <div class="callout indigo">
+      <p style="margin:0;"><strong>Argumento de venta integrado:</strong> "Aquí no hablas con un bot — hablas con una persona real que te va a ayudar." Eso se comunica y se cumple.</p>
+    </div>
+  </section>
+
+  <!-- 10. ROADMAP -->
+  <section id="s10">
+    <div class="sec-head"><div class="sec-num">10</div><h2>Hoja de ruta 90 días</h2></div>
+    <p class="lead">Marquen cada tarea a medida que la completen. <strong>El progreso se guarda solo en este navegador</strong> — cada persona ve su propio avance.</p>
+    <div class="progwrap">
+      <div class="progmeta"><b>Progreso de ejecución</b><span id="proglabel">0 / 0 completado</span></div>
+      <div class="progtrack"><div class="progfill" id="progbar"></div></div>
+    </div>
+
+    <div class="phase-group">
+      <div class="phase-h"><span class="phase-tag">Semana 1 · Setup</span></div>
+      <label class="check"><input type="checkbox" data-task="w1-perfil-stefano"><span>Reposicionar el perfil de <b>Stefano</b> (headline, banner, Acerca de, Destacados)</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-perfil-soad"><span>Reposicionar el perfil de <b>Soad</b> (headline, banner, Acerca de, Destacados)</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-legacy"><span>Limpiar el legacy de Stefano (JS / Cleanzy)</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-avatar"><span>Cerrar avatar + mensaje central</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-hooks"><span>Banco de hooks v1</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-guion"><span>Guion del video largo de YouTube</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-leadmagnet"><span>Configurar el lead magnet (CTA → entrega del video)</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-setter"><span>Iniciar entrenamiento de la setter + SOP</span></label>
+      <label class="check"><input type="checkbox" data-task="w1-toppiezas"><span>Pedir top piezas de TikTok + material guardado de IG</span></label>
+    </div>
+
+    <div class="phase-group">
+      <div class="phase-h"><span class="phase-tag">Semanas 2-4 · Arranque</span></div>
+      <label class="check"><input type="checkbox" data-task="w2-cadencia1"><span>Activar cadencia <b>1 post/día</b> por perfil</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-cadencia2"><span>Subir a <b>2 posts/día</b> por perfil (semana 3+)</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-reciclar"><span>Reciclar top piezas de TikTok como primeros posts</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-engagement"><span>Implementar el bloque de engagement diario (golden hour)</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-grabar"><span>Grabar el video largo de YouTube</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-publicar"><span>Publicar el video largo de YouTube</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-tablero"><span>Abrir el tablero de ganadores y empezar a medir</span></label>
+      <label class="check"><input type="checkbox" data-task="w2-dms"><span>Primeras conversaciones / DMs de setting</span></label>
+    </div>
+
+    <div class="phase-group">
+      <div class="phase-h"><span class="phase-tag">Mes 2 · Escala</span></div>
+      <label class="check"><input type="checkbox" data-task="m2-consolidar"><span>Consolidar el ritmo de 2/día</span></label>
+      <label class="check"><input type="checkbox" data-task="m2-ganadores"><span>Identificar 3-5 formatos ganadores</span></label>
+      <label class="check"><input type="checkbox" data-task="m2-variantes"><span>Producir 2-3 variantes de cada ganador</span></label>
+      <label class="check"><input type="checkbox" data-task="m2-setter"><span>Setter operando el embudo completo</span></label>
+      <label class="check"><input type="checkbox" data-task="m2-llamadas"><span><b>Primeras llamadas agendadas desde LinkedIn</b></span></label>
+    </div>
+
+    <div class="phase-group">
+      <div class="phase-h"><span class="phase-tag">Mes 3 · Optimización</span></div>
+      <label class="check"><input type="checkbox" data-task="m3-doblar"><span>Doblar la apuesta en los ganadores</span></label>
+      <label class="check"><input type="checkbox" data-task="m3-sop"><span>SOP / plantillas maduros</span></label>
+      <label class="check"><input type="checkbox" data-task="m3-empresa"><span>Evaluar la página de empresa (fase 2)</span></label>
+      <label class="check"><input type="checkbox" data-task="m3-revision"><span>Revisión de resultados (ajustar fee / alcance)</span></label>
+    </div>
+    <button class="reset-btn" id="resetBtn" type="button">Reiniciar mi progreso</button>
+  </section>
+
+  <!-- 11. ROLES -->
+  <section id="s11">
+    <div class="sec-head"><div class="sec-num">11</div><h2>Roles y cadencia de trabajo</h2></div>
+    <table>
+      <thead><tr><th>Actividad</th><th>Mateo</th><th>Stefano &amp; Soad</th><th>Setter</th></tr></thead>
+      <tbody>
+        <tr><td>Base de contenido (90-95%)</td><td>✅ Lidera</td><td>Pulen frases (5-10%)</td><td>—</td></tr>
+        <tr><td>Banco de hooks, calendario, SOP</td><td>✅</td><td>Validan voz</td><td>Usa SOP</td></tr>
+        <tr><td>Grabación de video (prioridad)</td><td>Guía</td><td>✅ Graban</td><td>—</td></tr>
+        <tr><td>Publicar + engagement diario</td><td>Supervisa</td><td>✅</td><td>Apoya DMs</td></tr>
+        <tr><td>Setting (DMs, agenda)</td><td>Entrena</td><td>—</td><td>✅ Opera</td></tr>
+        <tr><td>Métricas / ganadores</td><td>✅</td><td>Revisan</td><td>Reporta</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <p style="margin:0;"><strong>Soporte:</strong> WhatsApp on-demand para dudas + <strong>reunión 1×/semana</strong> (lunes) para revisar métricas, ganadores y aprobar el lote.</p>
+    </div>
+  </section>
+
+  <!-- 12. KPIs -->
+  <section id="s12">
+    <div class="sec-head"><div class="sec-num">12</div><h2>KPIs y metas</h2></div>
+    <p class="lead">Norte: <strong>llamadas agendadas desde LinkedIn</strong>. Metas a calibrar en la sesión 1 con su volumen real.</p>
+    <div class="pill-row">
+      <div class="kpi"><div class="m">Mes 1 — Cimientos</div><div class="v">Perfiles reposicionados · ritmo 1→2/día · video largo publicado · tablero activo</div></div>
+      <div class="kpi"><div class="m">Mes 2 — Tracción</div><div class="v">Primeras llamadas desde LinkedIn · 3-5 formatos ganadores identificados</div></div>
+      <div class="kpi"><div class="m">Mes 3 — Repetible</div><div class="v">Flujo constante de llamadas/semana · decisión de escalar / ajustar fee</div></div>
+    </div>
+    <h4>Indicadores líderes (semanales)</h4>
+    <p style="margin:0;">Posts publicados vs. plan · impresiones · tasa de comentarios · pedidos del lead magnet · nuevas conexiones ICP · conversaciones de setting abiertas → todo rueda hacia el norte.</p>
+  </section>
+
+  <!-- 13. ANEXOS -->
+  <section id="s13">
+    <div class="sec-head"><div class="sec-num">13</div><h2>Anexos y fuentes</h2></div>
+
+    <h4>Activos digitales actuales</h4>
+    <table>
+      <thead><tr><th>Activo</th><th>Handle / URL</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td>LinkedIn — Stefano</td><td>linkedin.com/in/stefano-manzi-94936a103</td><td>Reposicionar (legacy JS/Cleanzy)</td></tr>
+        <tr><td>LinkedIn — Soad</td><td>linkedin.com/in/soad-marun-84297a104</td><td>Activar como 2ª voz</td></tr>
+        <tr><td>YouTube</td><td>youtube.com/@LosNenekos</td><td>Casa del video largo</td></tr>
+        <tr><td>TikTok</td><td>tiktok.com/@nenekoremoto</td><td>Fuente de ganadores</td></tr>
+        <tr><td>Web / VSL</td><td>losnenekos.com · freedom.losnenekos.com</td><td>Oferta + embudo</td></tr>
+        <tr><td>Podcast</td><td>El Podcast de Los Nenekos (Spotify)</td><td>Nurturing</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Referentes a modelar</h4>
+    <ul>
+      <li><strong>Lucas Saud — Job Surfers</strong> (linkedin.com/in/lucas-saud): el comparable #1, orgánico, primera persona + casos.</li>
+      <li><strong>Instituto Setter</strong> (Toni de la Torre): marca + página de empresa en el nicho de setters.</li>
+      <li><strong>Esteban Lagos / Deity Agency</strong>: setting + high-ticket closing.</li>
+    </ul>
+
+    <h4>Preguntas abiertas (a cerrar en la sesión 1, no bloquean el arranque)</h4>
+    <ul>
+      <li><strong>¿Instagram entra en alcance?</strong> La cuenta fue cerrada; el foco hoy es LinkedIn. Confirmar si quieren reconstrucción de IG en paralelo (posible fase 2).</li>
+      <li><strong>Meta numérica de llamadas/mes</strong> — calibrar con su volumen actual.</li>
+      <li><strong>Acceso al material</strong> — analytics de TikTok + lo que conserven de IG + analytics de LinkedIn, para arrancar el componente de ganadores.</li>
+    </ul>
+
+    <p class="note">Nota de método: las cifras de seguidores/vistas de sus redes no se pudieron verificar por bloqueo de las plataformas a herramientas automáticas; se confirmarán con acceso a sus cuentas. El resto de los datos de la oferta y el embudo están verificados con fuentes públicas (web, prensa, perfiles).</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b>Plan de acción — LinkedIn · Neneko Remoto</b><br>Preparado por Mateo Eguiguren · Junio 2026</div>
+    <div style="text-align:right;">Documento de trabajo · Confidencial<br>v1 — sujeto a ajustes en la sesión semanal</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PREFIX='nenekos-plan:';
+  function update(){
+    var all=document.querySelectorAll('input[type=checkbox][data-task]');
+    var done=0; all.forEach(function(c){ if(c.checked) done++; });
+    var pct=all.length?Math.round(done/all.length*100):0;
+    var bar=document.getElementById('progbar'); var lbl=document.getElementById('proglabel');
+    if(bar) bar.style.width=pct+'%';
+    if(lbl) lbl.textContent=done+' / '+all.length+' completado ('+pct+'%)';
+  }
+  function init(){
+    var all=document.querySelectorAll('input[type=checkbox][data-task]');
+    all.forEach(function(c){
+      var k=PREFIX+c.getAttribute('data-task');
+      try{ if(localStorage.getItem(k)==='1') c.checked=true; }catch(e){}
+      c.addEventListener('change',function(){
+        try{ localStorage.setItem(k, c.checked?'1':'0'); }catch(e){}
+        update();
+      });
+    });
+    var rb=document.getElementById('resetBtn');
+    if(rb) rb.addEventListener('click',function(){
+      if(!confirm('¿Reiniciar tu progreso en este navegador?')) return;
+      all.forEach(function(c){ c.checked=false; try{ localStorage.removeItem(PREFIX+c.getAttribute('data-task')); }catch(e){} });
+      update();
+    });
+    update();
+  }
+  if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded',init);
+})();
+</script>
+
+</body>
+</html>
