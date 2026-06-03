@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursos · Tablero de ganadores + Alumno nuevo — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--rose-l:#ffe4e6;--sky:#0ea5e9;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:48px 0 42px;}
+  .back{display:inline-block;color:#6ee7b7;font-size:14px;font-weight:600;margin-bottom:18px;text-decoration:none;}
+  .back:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:33px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero p{color:#cbd5e1;font-size:17px;max-width:680px;}
+  section{padding:28px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .sec-num{width:42px;height:42px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 auto;}
+  .sec-head h2{font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h3{font-size:19px;color:var(--ink);margin:22px 0 6px;}
+  h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:16px 0 7px;}
+  p{margin-bottom:11px;} .lead{font-size:17px;margin-bottom:14px;}
+  ul,ol{margin:0 0 14px 20px;} li{margin-bottom:6px;} strong{color:var(--ink);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:14px 18px;margin:16px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .callout h4{margin-top:0;}
+  .copyblock{position:relative;margin:9px 0 6px;}
+  .copytext{white-space:pre-wrap;background:#0f172a;color:#e8edf4;border-radius:10px;padding:14px 16px;font-size:14.5px;line-height:1.6;border-left:3px solid var(--primary);font-family:"Segoe UI",system-ui,sans-serif;overflow-x:auto;}
+  .copyblock.opt .copytext{background:#f8fafc;color:var(--slate);border:1px solid var(--line);border-left:3px solid var(--primary);}
+  .copyblock.mono .copytext{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:pre;}
+  .copybtn{margin-top:7px;font-size:13px;font-weight:600;color:#fff;background:var(--primary);border:none;border-radius:8px;padding:7px 15px;cursor:pointer;transition:background .15s;}
+  .copybtn:hover{background:var(--primary-d);} .copybtn.ok{background:var(--ink);}
+  .var{color:#0f172a;background:#fde68a;padding:0 4px;border-radius:4px;font-weight:600;}
+  .copytext .var{color:#fde68a;background:rgba(253,230,138,.18);}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{background:var(--ink);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.03em;}
+  tbody tr:last-child td{border-bottom:none;}
+  .note{font-size:13.5px;color:var(--muted);font-style:italic;}
+  footer{background:var(--ink);color:#94a3b8;padding:30px 0;margin-top:36px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:25px;}.sec-head h2{font-size:19px;}}
+  @media print{body{background:#fff;}.copytext{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.copybtn{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <a class="back" href="https://eguigurenmateo-lamaison.github.io/plan-neneko-remoto/">← Volver al plan de acción</a>
+    <div><span class="eyebrow">Recursos operativos</span></div>
+    <h1>Tablero de ganadores <span>+ Alumno nuevo</span></h1>
+    <p>Dos herramientas para que el sistema se retroalimente solo: medir qué funciona para hacer más de eso, y convertir a cada alumno nuevo en un punto de descubrimiento.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- TABLERO -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">1</div><h2>Tablero de ganadores</h2></div>
+    <p class="lead">"Hacer más de lo que funciona" solo se puede si se mide. Una fila por post. Se revisa <strong>cada lunes</strong> y de ahí salen las variantes del siguiente lote.</p>
+
+    <h4>Columnas</h4>
+    <table>
+      <thead><tr><th>Columna</th><th>Qué va</th></tr></thead>
+      <tbody>
+        <tr><td><b>Fecha</b></td><td>Día de publicación</td></tr>
+        <tr><td><b>Perfil</b></td><td>Stefano / Soad</td></tr>
+        <tr><td><b>Pilar</b></td><td>Prueba · Despertar · Cómo se hace · Lifestyle · Personal</td></tr>
+        <tr><td><b>Formato</b></td><td>Texto+imagen · Carrusel(PDF) · Idea-tweet · Video</td></tr>
+        <tr><td><b>Hook</b></td><td>La primera línea del post (para identificarlo)</td></tr>
+        <tr><td><b>Impresiones</b></td><td>Alcance del post</td></tr>
+        <tr><td><b>Comentarios</b></td><td>⭐ La señal #1 del algoritmo y de resonancia</td></tr>
+        <tr><td><b>Clics / pedidos del LM</b></td><td>Cuántos pidieron el video (intención)</td></tr>
+        <tr><td><b>Llamadas</b></td><td>⭐ Agendas atribuibles a ese contenido. Lo único que paga.</td></tr>
+        <tr><td><b>¿Ganador?</b></td><td>Sí / No — marcar para producir variantes</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Encabezado listo para pegar en Google Sheets / Notion</h4>
+    <p class="note">Copien esta línea y péguenla en la celda A1 de un Sheet nuevo: al estar separada por tabulaciones, se reparte sola en columnas.</p>
+    <div class="copyblock mono"><div class="copytext">Fecha	Perfil	Pilar	Formato	Hook	Impresiones	Comentarios	Clics/LM	Llamadas	¿Ganador?</div><button class="copybtn" type="button">Copiar encabezado</button></div>
+
+    <h4>Fila de ejemplo</h4>
+    <div class="copyblock mono opt"><div class="copytext">02/06	Stefano	Prueba	Texto+imagen	"Daniela llevaba la admin de una pyme por $600…"	4200	38	21	2	Sí</div><button class="copybtn" type="button">Copiar ejemplo</button></div>
+
+    <div class="callout">
+      <h4>Cómo leerlo cada lunes</h4>
+      <ul style="margin:0 0 0 18px;">
+        <li>Ordenar por <strong>Comentarios</strong> y por <strong>Llamadas</strong>. Esos son los ganadores reales (no las impresiones).</li>
+        <li>De los 2-3 ganadores → pedirle a Mateo <strong>variantes del mismo hook/pilar/formato</strong> para el siguiente lote.</li>
+        <li>Lo que no traccionó en 2 semanas → se pausa, no se repite.</li>
+      </ul>
+    </div>
+    <div class="callout indigo"><p style="margin:0;"><strong>Métrica norte:</strong> Llamadas agendadas (lag — qué tan bien nos fue). <strong>Métrica líder:</strong> Comentarios (lead — qué tan bien nos va a ir). Si suben los comentarios, el alcance y las llamadas vienen detrás.</p></div>
+  </section>
+
+  <!-- ALUMNO NUEVO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">2</div><h2>Alumno nuevo = embajador en LinkedIn</h2></div>
+    <p class="lead">Cada alumno que entra recibe un diseño para anunciar en su LinkedIn que invirtió en la mentoría. Sube el alcance (su red nos descubre) y <strong>aumenta su compromiso</strong> con completar el programa (lo dijo en público).</p>
+
+    <h4>Plantilla de texto para el alumno (la comparte Kris al hacer onboarding)</h4>
+    <div class="copyblock"><div class="copytext">Tomé una decisión.
+
+Durante mucho tiempo sentí que mi trabajo tenía un techo que yo no había puesto. Que daba igual cuánto me esforzara: el número no se movía.
+
+Hoy empiezo un camino distinto. Entré a la mentoría de <span class="var">@Neneko Remoto</span> para conseguir trabajo remoto facturando en dólares, llevando lo que ya sé hacer a empresas de afuera.
+
+No lo escribo para presumir. Lo escribo para comprometerme en público — y porque quizás alguien que me lee está sintiendo lo mismo que yo sentía.
+
+Les iré contando el proceso por aquí. Vamos por eso 🚀</div><button class="copybtn" type="button">Copiar texto</button></div>
+    <p class="note">El alumno etiqueta a <strong>Neneko Remoto</strong> y a Stefano/Soad. Eso manda una notificación gratis a la plataforma y expone el post a su red.</p>
+
+    <h4>Brief de diseño para Kris (plantilla Canva reutilizable)</h4>
+    <ul>
+      <li><strong>Formato:</strong> imagen cuadrada (1080×1080) coherente con la marca (misma paleta verde/oscuro del kit).</li>
+      <li><strong>Elementos fijos:</strong> logo de Neneko Remoto + texto "Nuevo miembro FREEDOM" o "Empezó su camino al trabajo remoto".</li>
+      <li><strong>Campo variable:</strong> espacio para el <strong>nombre del alumno</strong> (y opcional su rol: "Project Manager", "Finanzas"…).</li>
+      <li><strong>Versión simple:</strong> Kris duplica la plantilla y cambia el nombre a mano (1 min por alumno).</li>
+      <li><strong>Versión automatizada (fase 2):</strong> se genera solo al completar el <strong>formulario de onboarding</strong> (autocompletando el nombre) — vía Canva bulk / una automatización con los datos del form.</li>
+    </ul>
+
+    <div class="callout green"><p style="margin:0;"><strong>El gancho de compromiso:</strong> al entregarlo, anclarlo a resultados — "los alumnos que publican esto y cuentan su proceso son los que mejor terminan el programa". Vincula el anuncio público con la disciplina de completar FREEDOM.</p></div>
+
+    <h4>Mensaje de Kris al entregar el diseño</h4>
+    <div class="copyblock opt"><div class="copytext">¡Bienvenid@ a FREEDOM <span class="var">[nombre]</span>! 🎉 Te dejo un diseño para que anuncies en tu LinkedIn que empezaste este camino. Te paso también un texto base (adáptalo a tu voz). Un dato: los alumnos que publican esto y van contando su proceso suelen ser los que mejores resultados tienen — porque se comprometen en público. ¿Te animas a publicarlo hoy?</div><button class="copybtn" type="button">Copiar</button></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Recursos · Tablero de ganadores + Alumno nuevo — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var block=btn.closest('.copyblock'); if(!block) return;
+    var el=block.querySelector('.copytext'); if(!el) return;
+    var text=el.innerText;
+    function ok(){ var o=btn.textContent; btn.textContent='✓ ¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('ok'); },1800); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var r=document.createRange(); r.selectNode(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand('copy'); ok(); }catch(e){}
+      s.removeAllRanges();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
