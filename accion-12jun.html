@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de acción · Llamada 12-jun — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--rose-l:#ffe4e6;--sky:#0ea5e9;--teal:#0d9488;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  /* nav */
+  .docnav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.97);border-bottom:1px solid rgba(255,255,255,.08);}
+  .docnav-inner{max-width:920px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:12px;height:50px;}
+  .dn-brand{color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  .dn-brand b{color:#5eead4;}
+  .dn-links{display:flex;gap:3px;overflow-x:auto;margin-left:auto;scrollbar-width:none;}
+  .dn-links::-webkit-scrollbar{display:none;}
+  .dn-links a{color:#cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;}
+  .dn-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .dn-links a.active{color:#0f172a;background:#5eead4;}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 55%,#0d9488 100%);color:#fff;padding:42px 0 36px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#5eead4;background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:32px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#5eead4;}
+  .hero p{color:#cbd5e1;font-size:16px;max-width:680px;}
+  section{padding:26px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .sec-num{width:40px;height:40px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex:0 0 auto;}
+  .sec-head h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h3{font-size:18px;color:var(--ink);margin:18px 0 6px;}
+  h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px;}
+  p{margin-bottom:10px;} .lead{font-size:16px;margin-bottom:12px;}
+  ul,ol{margin:0 0 12px 20px;} li{margin-bottom:5px;} strong{color:var(--ink);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:13px 16px;margin:14px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  .callout.rose{border-color:var(--rose);background:var(--rose-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .note{font-size:13px;color:var(--muted);font-style:italic;}
+  /* person cards */
+  .person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);margin:16px 0;}
+  .person > h3{margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;}
+  .role{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--teal);padding:3px 10px;border-radius:999px;}
+  .axiom{border-left:3px solid var(--accent);background:var(--accent-l);padding:7px 12px;border-radius:8px;margin:7px 0;font-weight:600;color:var(--ink);font-size:14.5px;}
+  .axiom::before{content:"⚡ ";}
+  .tasks{margin-top:10px;}
+  .task{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:9px 0;align-items:flex-start;}
+  .task .t{flex:1;font-size:14.5px;}
+  .task .t b{color:var(--ink);}
+  .task .when{font-size:12px;color:var(--muted);display:block;margin-top:2px;}
+  .time{white-space:nowrap;font-size:12px;font-weight:700;color:var(--primary-d);background:var(--primary-l);padding:4px 10px;border-radius:999px;flex:0 0 auto;}
+  .copyblock{position:relative;margin:8px 0;}
+  .copytext{white-space:pre-wrap;background:#0f172a;color:#e8edf4;border-radius:10px;padding:13px 15px;font-size:14px;line-height:1.55;border-left:3px solid var(--teal);}
+  .copybtn{margin-top:7px;font-size:13px;font-weight:600;color:#fff;background:var(--teal);border:none;border-radius:8px;padding:6px 14px;cursor:pointer;}
+  .copybtn:hover{filter:brightness(1.08);} .copybtn.ok{background:var(--ink);}
+  .var{color:#0f172a;background:#fde68a;padding:0 4px;border-radius:4px;font-weight:600;}
+  .copytext .var{color:#fde68a;background:rgba(253,230,138,.18);}
+  .steps{counter-reset:s;list-style:none;margin-left:0;}
+  .steps li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:10px;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;background:var(--teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;}
+  footer{background:var(--ink);color:#94a3b8;padding:28px 0;margin-top:30px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:25px;}.sec-head h2{font-size:19px;}.task{flex-direction:column;gap:4px;}}
+</style>
+</head>
+<body>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="dn-brand" href="index.html">📋 <b>Neneko</b> Remoto</a>
+    <div class="dn-links">
+      <a href="accion-12jun.html" class="active">📌 12-jun</a>
+      <a href="index.html">Plan</a>
+      <a href="kit-arranque.html">Kit de arranque</a>
+      <a href="guion-video.html">Guion video</a>
+      <a href="sop-setting.html">SOP setting</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="tablero.html">Tablero</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <div><span class="eyebrow">Plan de acción · Llamada del 12 de junio</span></div>
+    <h1>Qué hace cada uno <span>esta semana</span></h1>
+    <p>Resumen de la llamada en formato accionable: el axioma (la regla que guía a cada quien), el próximo paso concreto y cuánto toma. La grabación del video de YouTube es lo más urgente — es este sábado.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- DECISIONES CLAVE -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">✓</div><h2>Decisiones clave de la llamada</h2></div>
+    <ol>
+      <li><strong>Los leads llegan "crudos"</strong> (comentan pero no saben qué es una mentoría). La solución no es calificarlos en frío en el chat, sino <strong>redirigirlos 100% al video de YouTube</strong> que genera la consciencia y la confianza.</li>
+      <li><strong>El video de YouTube se graba el sábado</strong> (Stefano + Soad, tipo podcast). Es un <strong>activo evergreen</strong>: no menciona LinkedIn para que sirva por +1 año sin regrabarse.</li>
+      <li><strong>Nuevo CTA de 2 pasos:</strong> (1) enviar solicitud de conexión, (2) comentar la palabra clave. Sin conexión no podemos escribirles, y la solicitud además empuja el alcance.</li>
+      <li><strong>Una sola ruta, sin opciones:</strong> comentario → conexión → DM → video de YouTube → (descripción) → Instagram → calificación → llamada. Cada decisión extra hace que se pierdan personas.</li>
+      <li><strong>Objeción "busco un headhunter" = candidato ideal</strong> de Freedom. No descartar: reencuadrar (script abajo).</li>
+      <li><strong>Estrategia 4-1:</strong> cada 4 contenidos (quotes + notas), 1 creativo tipo historia (pauta de Ghosty adaptada a LinkedIn).</li>
+      <li><strong>Cadencia LinkedIn: lunes a viernes</strong> (sin finde). Soad le pasa accesos a Kris para que gestione su perfil igual que el de Stefano.</li>
+    </ol>
+  </section>
+
+  <!-- URGENTE: VIDEO YOUTUBE -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🎥</div><h2>Guía express del video de YouTube (sábado)</h2></div>
+    <p class="lead"><strong>Objetivo único del video:</strong> que la persona <em>quiera agendar la llamada</em>. Nada más. El "qué incluye Freedom" se ve después, en el video de preparación previo a la llamada.</p>
+    <div class="callout green"><p style="margin:0;"><strong>Formato:</strong> Stefano y Soad <strong>juntos</strong>, conversación tipo <strong>podcast</strong>. Guiarse por <strong>puntos</strong> (no teleprompter, no guion palabra por palabra) para que suene orgánico. <strong>Edición mínima</strong>: no cortar, si dura 30+ min está perfecto — la confianza se construye con el tiempo. <strong>NO mencionar LinkedIn</strong> ni ninguna plataforma.</p></div>
+
+    <h4>Estructura (los 6 tiempos)</h4>
+    <ol class="steps">
+      <li><strong>Quiénes son y cómo llegaron.</strong> Empezar la historia unos pasos antes de donde está la gente: "yo tenía una agencia, hoy ayudamos a profesionales de LatAm a conseguir trabajo remoto en dólares… así llegué hasta acá". Genera confianza y transparencia: <em>"no te vendo magia, este camino lo recorrí yo"</em>.</li>
+      <li><strong>La situación actual del avatar.</strong> Describir su realidad (profesional bilingüe atrapado en el mercado local, no le gusta su trabajo, siente que vale más). Que se reconozca: "yo ya me sentí así".</li>
+      <li><strong>El costo de NO actuar.</strong> ¿Qué pierdes si te quedas en el mercado local sin salir al extranjero? ¿Qué dejas de ganar al no cobrar en dólares siendo bilingüe?</li>
+      <li><strong>El camino, a grandes rasgos.</strong> El <strong>QUÉ</strong>, no el cómo: qué van a sentir, qué retos se encontrarán. Analogía: "si vas de Bogotá a Medellín, te vas a encontrar con X" — sin resolver el cómo (eso es la mentoría).</li>
+      <li><strong>Qué es Freedom — al final, corto.</strong> Sintetizado y enfocado en lo que <strong>GANAN</strong> (no lo que incluye). Dejar claro: es una <strong>mentoría, no un headhunter</strong>.</li>
+      <li><strong>CTA único en la descripción:</strong> una sola línea → "Escribe REMOTO por DM en Instagram" + el link. Una palabra, un destino.</li>
+    </ol>
+
+    <div class="callout"><p style="margin:0;"><strong>Sembrar el reencuadre del headhunter en el video:</strong> un headhunter te consigue un trabajo, te cobra y se va; Freedom te enseña un método que te sirve por años — nunca te quedas varado. (Caso real: alumna cuya agencia en NY cerró → volvió a Upwork y consiguió 2 trabajos sola.)</p></div>
+  </section>
+
+  <!-- POR PERSONA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">👥</div><h2>Axiomas + próximo paso por persona</h2></div>
+
+    <!-- SOAD -->
+    <div class="person">
+      <h3>Soad <span class="role">Fundadora</span></h3>
+      <div class="axiom">Entro como confianza, no como venta: el video es una conversación, no un pitch.</div>
+      <div class="axiom">Lo que no soy constante, lo delego (le paso mi LinkedIn a Kris).</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Armar la guía de puntos del video</b> siguiendo los 6 tiempos y enviársela a Mateo para feedback.<span class="when">📅 Hoy/mañana, antes de grabar</span></div><div class="time">1.5–2 h</div></div>
+        <div class="task"><div class="t"><b>Grabar el video con Stefano</b> (montar las 2 sillas + fondo del podcast, edición mínima).<span class="when">📅 Sábado en la tarde</span></div><div class="time">1–1.5 h</div></div>
+        <div class="task"><div class="t"><b>Pasarle los accesos de LinkedIn a Kris</b> + fotos nuevas e historias de Ghosty.<span class="when">📅 Hoy</span></div><div class="time">20 min</div></div>
+        <div class="task"><div class="t"><b>Avisar a Ghosty</b> el ajuste del "comenta REMOTO": misma tipografía, otro color, sin emojis, subir un poco el texto.<span class="when">📅 Hoy</span></div><div class="time">10 min</div></div>
+      </div>
+    </div>
+
+    <!-- STEFANO -->
+    <div class="person">
+      <h3>Stefano <span class="role">Fundador</span></h3>
+      <div class="axiom">Co-protagonizo la confianza: el video es una conversación real entre los dos.</div>
+      <div class="axiom">Las mejores ideas de contenido salen de la voz del avatar.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Preparar sus puntos para el video</b> (su historia: de la agencia a Freedom) y grabar con Soad.<span class="when">📅 Sábado</span></div><div class="time">45 min + grabación</div></div>
+        <div class="task"><div class="t"><b>Idea de contenido entregada</b> ("$2.000+ en oficina, cansado del jefe/sin tiempo → migra remoto, comenta FREEDOM"). Kris la convierte en post.<span class="when">✅ Hecho — seguimiento con Kris</span></div><div class="time">—</div></div>
+      </div>
+    </div>
+
+    <!-- KRIS -->
+    <div class="person">
+      <h3>Kris <span class="role">Contenido / Marketing</span></h3>
+      <div class="axiom">Un humano detrás de cada interacción: editar posts no penaliza, LinkedIn premia lo humano.</div>
+      <div class="axiom">Conexión antes que palabra clave: sin conexión no hay DM (y la solicitud empuja el alcance).</div>
+      <div class="axiom">Una sola red, un solo siguiente paso.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Cambiar el CTA a 2 pasos</b> (conexión → palabra clave) en las plantillas, y pegarlo como comentario/edición en los posts que ya van bien.<span class="when">📅 Hoy/lunes</span></div><div class="time">45 min–1 h</div></div>
+        <div class="task"><div class="t"><b>Usar la plantilla "no estamos conectados"</b> con quienes comentan sin conexión (script abajo).<span class="when">📅 Continuo</span></div><div class="time">15 min setup</div></div>
+        <div class="task"><div class="t"><b>Gestionar el LinkedIn de Soad</b> igual que el de Stefano cuando reciba accesos; replicar el lote.<span class="when">📅 Esta semana</span></div><div class="time">30 min setup + continuo</div></div>
+        <div class="task"><div class="t"><b>Producir contenido L–V:</b> 2 notas/día + quotes + imágenes (ya en marcha).<span class="when">📅 Diario</span></div><div class="time">1–1.5 h/día</div></div>
+        <div class="task"><div class="t"><b>Implementar la estrategia 4-1:</b> 1 creativo tipo historia ~cada miércoles; +2 en la última semana del mes y 1 el día 1.<span class="when">📅 Continuo</span></div><div class="time">20 min/creativo</div></div>
+        <div class="task"><div class="t"><b>Nuevos posts:</b> calendario comparativo (remoto vs. oficina) y "$2.000 bilingüe que se siente infravalorado".<span class="when">📅 Esta semana</span></div><div class="time">en su flujo</div></div>
+      </div>
+    </div>
+
+    <!-- MERARI -->
+    <div class="person">
+      <h3>Merari <span class="role">Setter</span></h3>
+      <div class="axiom">Quien pide un headhunter es candidato ideal de Freedom: no descartar, reencuadrar.</div>
+      <div class="axiom">Las objeciones reales del lead se vuelven contenido.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Estudiar y usar el reencuadre headhunter → Freedom</b> (script abajo) en las conversaciones.<span class="when">📅 Esta semana</span></div><div class="time">15 min</div></div>
+        <div class="task"><div class="t"><b>Recibir los DMs del flujo de YouTube</b> (palabra clave) y operar el setting hacia la llamada. Confirmar el flujo con Kris.<span class="when">📅 Continuo</span></div><div class="time">parte del rol</div></div>
+      </div>
+    </div>
+
+    <!-- RUTH -->
+    <div class="person">
+      <h3>Ruth <span class="role">Setter</span></h3>
+      <div class="axiom">Setting con guion compartido: mismo proceso y calificación que Merari.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Revisar el SOP + el nuevo CTA + el reencuadre headhunter</b> para quedar alineada.<span class="when">📅 Esta semana</span></div><div class="time">20 min</div></div>
+        <div class="task"><div class="t"><b>Operar el embudo</b> (DM → video → Instagram → calificar → llamada).<span class="when">📅 Continuo</span></div><div class="time">parte del rol</div></div>
+      </div>
+    </div>
+
+    <!-- MATEO -->
+    <div class="person">
+      <h3>Mateo <span class="role">Operador</span></h3>
+      <div class="axiom">Eliminar decisiones del usuario: una sola ruta en el embudo.</div>
+      <div class="axiom">Construir activos que duren (el video evergreen).</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Dar feedback a la guía de puntos de Soad</b> cuando la envíe, y revisar el video antes de subir.<span class="when">📅 Antes del sábado / antes de publicar</span></div><div class="time">2 × 30 min</div></div>
+        <div class="task"><div class="t"><b>Enviar por escrito</b> la regla de fin de mes (última semana ×2 + día 1) y el plan 4-1.<span class="when">✅ En este tablero</span></div><div class="time">hecho</div></div>
+        <div class="task"><div class="t"><b>Confirmar el día de la próxima reunión</b> (en la llamada quedó entre viernes y miércoles).<span class="when">📅 Hoy</span></div><div class="time">5 min</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">📋</div><h2>Scripts listos para copiar</h2></div>
+
+    <h3>Nuevo CTA de publicación (2 pasos)</h3>
+    <div class="copyblock"><div class="copytext">¿Quieres saber cómo dar el primer paso?
+
+1. Envíame una solicitud de conexión 🤝
+2. Comenta la palabra <span class="var">REMOTO</span> 👇
+
+(Necesito que estemos conectados para poder enviarte el video con los siguientes pasos por mensaje.)</div><button class="copybtn" type="button">Copiar CTA</button></div>
+
+    <h3>Mensaje para quien comenta sin estar conectado</h3>
+    <div class="copyblock"><div class="copytext">Hola <span class="var">[nombre]</span> 👋 Vi tu comentario, ¡gracias! Todavía no estamos conectados, así que no puedo escribirte directo. Acéptame la solicitud de conexión y te envío el video con los siguientes pasos. ¿Me confirmas por aquí cuando la aceptes? 🙌</div><button class="copybtn" type="button">Copiar mensaje</button></div>
+
+    <h3>Reencuadre "busco un headhunter" → Freedom (setters)</h3>
+    <div class="copyblock"><div class="copytext">Buenísimo que estés buscando un headhunter — déjame mostrarte algo que casi nadie te dice.
+
+Un headhunter te consigue UN trabajo, te cobra tu primer sueldo y se va. Si en 6 meses te quedas sin empleo, vuelves a pagar y a depender de alguien más.
+
+En Freedom no te "conseguimos" un trabajo: te enseñamos el método para conseguir trabajos remotos en dólares las veces que lo necesites — para siempre.
+
+Te cuento un caso: una alumna cuya empresa en Nueva York cerró volvió a aplicar por su cuenta y consiguió 2 trabajos en Upwork. Eso es lo que te llevas: no volver a sentirte varado.
+
+¿Te muestro cómo funciona?</div><button class="copybtn" type="button">Copiar reencuadre</button></div>
+  </section>
+
+  <!-- 4-1 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🔁</div><h2>Estrategia 4-1 y fin de mes</h2></div>
+    <ul>
+      <li><strong>Ritmo 4-1:</strong> por cada <strong>4 contenidos</strong> normales (quotes + notas), publicar <strong>1 creativo tipo historia</strong> (la pauta de Ghosty que ataca dolores, adaptada a LinkedIn). En la práctica L–V cae ~<strong>cada miércoles</strong>, alternando con lunes/viernes la semana siguiente.</li>
+      <li><strong>Estética del creativo:</strong> que parezca una historia, no un anuncio. "Comenta REMOTO" en la <strong>misma tipografía</strong> que el resto, solo con <strong>otro color</strong>, <strong>sin emojis</strong>, y el texto un poco más arriba para que no pelee con la barra de respuesta.</li>
+      <li><strong>Fin de mes:</strong> la <strong>última semana del mes, publicar 2</strong> de estos creativos (la gente cobra), y el <strong>día 1 de cada mes, 100% uno</strong>.</li>
+    </ul>
+    <div class="callout indigo"><p style="margin:0;"><strong>Recordatorio de aprendizaje:</strong> los virales de esta primera semana fueron por <em>arrastre</em> de imágenes antiguas con reacciones; el orgánico nuevo (viernes) recién despegó el domingo. Es normal: el comentario tarda en acumular. Sigan respondiendo TODO en la golden hour.</p></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Plan de acción · Llamada del 12 de junio — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var block=btn.closest('.copyblock'); if(!block) return;
+    var el=block.querySelector('.copytext'); if(!el) return;
+    var text=el.innerText;
+    function ok(){ var o=btn.textContent; btn.textContent='✓ ¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('ok'); },1800); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok).catch(function(){fallback();}); } else { fallback(); }
+    function fallback(){ var r=document.createRange(); r.selectNode(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); try{document.execCommand('copy');ok();}catch(e){} s.removeAllRanges(); }
+  });
+});
+</script>
+
+</body>
+</html>
