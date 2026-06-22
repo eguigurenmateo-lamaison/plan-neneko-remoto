@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minuta + FODA · Llamada 22-jun — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--rose-l:#ffe4e6;--sky:#0ea5e9;--teal:#0d9488;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  /* nav */
+  .docnav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.97);border-bottom:1px solid rgba(255,255,255,.08);}
+  .docnav-inner{max-width:920px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:12px;height:50px;}
+  .dn-brand{color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  .dn-brand b{color:#5eead4;}
+  .dn-links{display:flex;gap:3px;overflow-x:auto;margin-left:auto;scrollbar-width:none;}
+  .dn-links::-webkit-scrollbar{display:none;}
+  .dn-links a{color:#cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;}
+  .dn-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .dn-links a.active{color:#0f172a;background:#5eead4;}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 55%,#0d9488 100%);color:#fff;padding:42px 0 36px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#5eead4;background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:32px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#5eead4;}
+  .hero p{color:#cbd5e1;font-size:16px;max-width:680px;}
+  .hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;color:#94a3b8;}
+  .hero .meta b{color:#e2e8f0;font-weight:600;}
+  section{padding:26px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .sec-num{width:40px;height:40px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex:0 0 auto;}
+  .sec-head h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h3{font-size:18px;color:var(--ink);margin:18px 0 6px;}
+  h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px;}
+  p{margin-bottom:10px;} .lead{font-size:16px;margin-bottom:12px;}
+  ul,ol{margin:0 0 12px 20px;} li{margin-bottom:5px;} strong{color:var(--ink);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:13px 16px;margin:14px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  .callout.rose{border-color:var(--rose);background:var(--rose-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .note{font-size:13px;color:var(--muted);font-style:italic;}
+  /* FODA grid */
+  .foda{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+  .foda-box{border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--card);border-top:5px solid var(--ink);}
+  .foda-box h3{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px;}
+  .foda-box .tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px;display:block;}
+  .foda-box ul{margin:0 0 0 18px;} .foda-box li{font-size:14px;margin-bottom:6px;}
+  .foda-f{border-top-color:var(--primary);} .foda-f h3{color:var(--primary-d);}
+  .foda-o{border-top-color:var(--sky);} .foda-o h3{color:#0369a1;}
+  .foda-d{border-top-color:var(--accent);} .foda-d h3{color:#b45309;}
+  .foda-a{border-top-color:var(--rose);} .foda-a h3{color:var(--rose);}
+  /* person cards */
+  .person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);margin:16px 0;}
+  .person > h3{margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;}
+  .role{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--teal);padding:3px 10px;border-radius:999px;}
+  .axiom{border-left:3px solid var(--accent);background:var(--accent-l);padding:7px 12px;border-radius:8px;margin:7px 0;font-weight:600;color:var(--ink);font-size:14.5px;}
+  .axiom::before{content:"⚡ ";}
+  .tasks{margin-top:10px;}
+  .task{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:9px 0;align-items:flex-start;}
+  .task .t{flex:1;font-size:14.5px;}
+  .task .t b{color:var(--ink);}
+  .task .next{display:block;margin-top:3px;font-size:13px;color:var(--primary-d);}
+  .task .next::before{content:"→ ";font-weight:800;}
+  .task .when{font-size:12px;color:var(--muted);display:block;margin-top:2px;}
+  .time{white-space:nowrap;font-size:12px;font-weight:700;color:var(--primary-d);background:var(--primary-l);padding:4px 10px;border-radius:999px;flex:0 0 auto;}
+  .onion{margin:14px 0;display:flex;flex-direction:column;gap:6px;}
+  .ring{border:1px solid var(--line);border-radius:10px;padding:10px 16px;box-shadow:var(--shadow);background:var(--card);}
+  .ring b{color:var(--ink);} .ring span{font-size:13px;color:var(--muted);display:block;}
+  .ring.r1{background:var(--ink);color:#fff;} .ring.r1 b{color:#5eead4;} .ring.r1 span{color:#94a3b8;}
+  footer{background:var(--ink);color:#94a3b8;padding:28px 0;margin-top:30px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:25px;}.sec-head h2{font-size:19px;}.task{flex-direction:column;gap:4px;}.foda{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="dn-brand" href="index.html">📋 <b>Neneko</b> Remoto</a>
+    <div class="dn-links">
+      <a href="minuta-22jun.html" class="active">📝 22-jun</a>
+      <a href="accion-12jun.html">📌 12-jun</a>
+      <a href="index.html">Plan</a>
+      <a href="kit-arranque.html">Kit de arranque</a>
+      <a href="guion-video.html">Guion video</a>
+      <a href="sop-setting.html">SOP setting</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="tablero.html">Tablero</a>
+      <a href="gestion-tiempo.html">⏳ Tiempo</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <div><span class="eyebrow">Minuta + análisis FODA · Llamada del 22 de junio</span></div>
+    <h1>Lo que se habló, lo que decidimos<br><span>y qué hace cada uno</span></h1>
+    <p>Minuta de la sesión (37 min) con el análisis FODA del momento actual y la lista de pendientes por asistente — con el próximo paso concreto y las horas estimadas para completarlo.</p>
+    <div class="meta">
+      <div><b>Asistentes:</b> Soad · Stefano (Neneko) · Kris · Merari · Mateo</div>
+      <div><b>Fecha:</b> 22-jun-2026</div>
+      <div><b>Duración:</b> 37 min</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- DECISIONES CLAVE -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">✓</div><h2>Decisiones y acuerdos de la llamada</h2></div>
+    <ol>
+      <li><strong>Diferenciar las dos cuentas por expertise:</strong> el <strong>Neneko (Stefano)</strong> habla de lo laboral/admin — profesiones, reclutamiento, herramientas, tecnología, trucos de plataforma y de búsqueda. <strong>Soad</strong> habla de mentalidad, marca personal, creencias limitantes y el rol de las emociones en la búsqueda. Mismo destino (trabajo remoto), distinta perspectiva → se acaba la duplicación de contenido.</li>
+      <li><strong>Diferenciación visual:</strong> el Neneko mantiene los detalles <strong>naranja</strong>; Soad pasa a detalles <strong>morados</strong>, para que se distingan a simple vista.</li>
+      <li><strong>Foco del mensaje = trabajo remoto, directo.</strong> Aunque la "cebolla" (capas más amplias: cambio de trabajo, dinero, estilo de vida) sirve para generar demanda futura, los leads están llegando "crudos" (creen que somos bolsa de empleo). Decisión: priorizar hablar <strong>específicamente de trabajo remoto</strong> para atraer <strong>menos mensajes pero más conscientes</strong>, y construir hacia las capas externas con el tiempo.</li>
+      <li><strong>Video de YouTube se graba mañana en la noche</strong> (~6:30pm), en la oficina branded, con <strong>1 cámara (iPhone)</strong>, tipo podcast (~media hora), <strong>edición mínima</strong>. Los puntos ya están listos.</li>
+      <li><strong>Contenido lifestyle:</strong> Soad renueva el banco de fotos (trabajando, terraza, café, de espaldas/frente con el portátil) esta semana. Se integran en quotes y en posts normales.</li>
+      <li><strong>Reunión de revisión de contenidos el viernes</strong> (Kris + Soad + Mateo; no hace falta Neneko, Merari ni Ruth). Mateo pasa el nuevo lote mañana para revisarlo.</li>
+      <li><strong>Gestión del tiempo:</strong> el equipo arranca el ejercicio de Mateo (matriz energía × dinero + EADDD + valor/hora). Mandan sus calendarios; el foco es <strong>limitar el wellness</strong> (exceso de ejercicio/meditación) y <strong>agruparlo en un solo momento del día</strong> para liberar horas hacia lo que genera dinero y energía.</li>
+    </ol>
+    <div class="callout green"><p style="margin:0;"><strong>Estado del mes:</strong> mes complicado en ventas; la energía se ha ido mucho hacia ese lado. El decaimiento de leads tras el pico inicial es <strong>natural</strong> (se agota el público listo para comprar) — la jugada es capturar primero la "fruta madura" y construir demanda hacia atrás.</p></div>
+  </section>
+
+  <!-- FODA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🧭</div><h2>Análisis FODA</h2></div>
+    <p class="lead">Foto del momento actual a partir de lo conversado: lo que tenemos a favor por dentro, lo que el entorno nos abre, y lo que hay que corregir o vigilar.</p>
+    <div class="foda">
+      <div class="foda-box foda-f">
+        <h3>💪 Fortalezas</h3>
+        <span class="tag">Internas · a favor</span>
+        <ul>
+          <li><strong>Constancia de Kris:</strong> posts diarios en ambas cuentas; ya implementó quotes (Soad) e historias (Neneko).</li>
+          <li><strong>Impresiones en crecimiento</strong> sostenido en los dos perfiles.</li>
+          <li><strong>Expertise complementaria del dúo:</strong> Soad (marca personal, mentalidad, emociones) + Neneko (herramientas, tecnología, trucos de plataforma).</li>
+          <li><strong>Oficina branded + puntos del video listos</strong> para grabar el podcast/video evergreen.</li>
+          <li><strong>FREEDOM sólido:</strong> +300 alumnos y casos reales que sostienen la prueba.</li>
+        </ul>
+      </div>
+      <div class="foda-box foda-o">
+        <h3>🚀 Oportunidades</h3>
+        <span class="tag">Externas · a favor</span>
+        <ul>
+          <li><strong>Interés real por trabajo remoto en LinkedIn</strong> — es donde quieren ser reconocidos.</li>
+          <li><strong>Diferenciar por expertise</strong> amplía la cobertura temática sin canibalizarse.</li>
+          <li><strong>Estrategia "cebolla":</strong> construir hacia públicos más amplios (cambio de trabajo, bilingües, dinero, estilo de vida) para generar demanda en los próximos meses.</li>
+          <li><strong>Video largo de YouTube</strong> como activo evergreen que educa y filtra al lead antes de la llamada.</li>
+          <li><strong>Contenido lifestyle</strong> (trabajar desde café/terraza) rinde muy bien en LinkedIn.</li>
+        </ul>
+      </div>
+      <div class="foda-box foda-d">
+        <h3>🛠️ Debilidades</h3>
+        <span class="tag">Internas · a corregir</span>
+        <ul>
+          <li><strong>Video de YouTube pendiente</strong> desde hace varias semanas.</li>
+          <li><strong>Contenido muy similar</strong> entre las dos cuentas (casi duplicado).</li>
+          <li><strong>Quotes e historias con baja interacción</strong> hasta ahora.</li>
+          <li><strong>Gestión del tiempo:</strong> energía drenada por ventas, exceso de wellness (correr 1.5h + gym 1h) y dividido en dos momentos del día.</li>
+          <li><strong>Llamadas de "salvación"</strong> con alumnos drenan energía sin generar dinero directo.</li>
+          <li><strong>Las tareas que generan dinero</strong> (las que deja Mateo) no se están ejecutando por falta de tiempo.</li>
+        </ul>
+      </div>
+      <div class="foda-box foda-a">
+        <h3>⚠️ Amenazas</h3>
+        <span class="tag">Externas · a vigilar</span>
+        <ul>
+          <li><strong>Leads con idea errada:</strong> creen que somos bolsa de empleo, mandan CV, agendan y cancelan.</li>
+          <li><strong>Mes flojo en ventas</strong> desvía la energía del equipo.</li>
+          <li><strong>Decaimiento natural del pico de leads</strong> al agotar al público listo para comprar.</li>
+          <li><strong>Tensión estratégica:</strong> hablar muy amplio (dinero/estilo de vida) atrae volumen poco calificado; hablar muy específico limita el alcance. Hay que calibrar el balance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJERCICIO DE LA CEBOLLA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🧅</div><h2>El marco de la "cebolla" (de dónde sale el mensaje)</h2></div>
+    <p class="lead">Casi nadie está listo <em>hoy</em> para el trabajo remoto, pero todos caben en un círculo más amplio. Los posts arrancan en el aro grande y van cerrando hacia el centro. <strong>Decisión de esta llamada:</strong> empezar foco en el centro (trabajo remoto), y abrir capas con el tiempo.</p>
+    <div class="onion">
+      <div class="ring"><b>Aro 4 · Más / mejor</b><span>Todos quieren más dinero, mejor salud, mejores relaciones y crecer (estilo de vida + libertad + flexibilidad).</span></div>
+      <div class="ring"><b>Aro 3 · Profesionales bilingües</b><span>Talento con techo salarial local; muchos buscando un cambio o desempleados.</span></div>
+      <div class="ring"><b>Aro 2 · Quieren cambiar de trabajo</b><span>Cansados de su empleo — no necesariamente remoto todavía.</span></div>
+      <div class="ring r1"><b>Aro 1 · Centro · Buscan trabajo remoto en USD</b><span>La fruta madura: listos para agendar. Aquí ponemos el foco AHORA.</span></div>
+    </div>
+    <div class="callout indigo"><p style="margin:0;"><strong>Cómo se traduce:</strong> capturar primero a los que ya están listos (foco trabajo remoto, mensajes específicos), y en paralelo ir produciendo contenido de capas más externas para alimentar la demanda de los próximos meses.</p></div>
+  </section>
+
+  <!-- PENDIENTES POR PERSONA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">👥</div><h2>Lista de pendientes por asistente</h2></div>
+    <p class="lead">Para cada uno: el axioma que lo guía, el <strong>próximo siguiente paso</strong> concreto y las <strong>horas estimadas</strong> para completarlo.</p>
+
+    <!-- SOAD -->
+    <div class="person">
+      <h3>Soad <span class="role">Fundadora</span></h3>
+      <div class="axiom">Hablo desde mi expertise: marca personal, mentalidad y emociones.</div>
+      <div class="axiom">Construyo alrededor de lo que da energía y limito el wellness para liberar horas de dinero.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Grabar el video de YouTube con Stefano</b> (oficina branded, iPhone, edición mínima).<span class="next">Próximo paso: montar las 2 sillas + fondo del podcast y grabar de corrido.</span><span class="when">📅 Mañana en la noche (~6:30pm)</span></div><div class="time">1–1.5 h</div></div>
+        <div class="task"><div class="t"><b>Renovar el banco de fotos lifestyle</b> para historias y posts (trabajando, terraza, café, con el portátil).<span class="next">Próximo paso: agendar una mini-sesión de fotos esta semana y mandárselas a Kris.</span><span class="when">📅 Esta semana</span></div><div class="time">1 h</div></div>
+        <div class="task"><div class="t"><b>Alinear con Kris su línea de contenido morada</b> (mentalidad / marca / emociones) y darle accesos si faltan.<span class="next">Próximo paso: pasarle a Kris los temas clave de su expertise para el nuevo lote.</span><span class="when">📅 Esta semana</span></div><div class="time">20 min</div></div>
+        <div class="task"><div class="t"><b>Enviar su calendario a Mateo</b> para el ejercicio de gestión del tiempo.<span class="next">Próximo paso: exportar/compartir el calendario y marcar lo que drena energía.</span><span class="when">📅 Esta semana</span></div><div class="time">15 min</div></div>
+        <div class="task"><div class="t"><b>Reunión del viernes</b> de revisión de contenidos con Kris y Mateo.<span class="next">Próximo paso: confirmar hora del viernes.</span><span class="when">📅 Viernes</span></div><div class="time">20–30 min</div></div>
+      </div>
+    </div>
+
+    <!-- STEFANO -->
+    <div class="person">
+      <h3>Stefano (Neneko) <span class="role">Fundador</span></h3>
+      <div class="axiom">Mi voz es laboral/admin: profesiones, reclutamiento, herramientas y trucos de plataforma.</div>
+      <div class="axiom">Reviso métricas y llamadas porque eso genera dinero — y construyo alrededor de lo que da energía.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Preparar sus puntos y grabar el video con Soad.</b><span class="next">Próximo paso: repasar los 6 tiempos del guion antes de grabar.</span><span class="when">📅 Mañana en la noche</span></div><div class="time">45 min + grabación</div></div>
+        <div class="task"><div class="t"><b>Enviar su calendario a Mateo</b> para el ejercicio de tiempo.<span class="next">Próximo paso: compartir el calendario y marcar el wellness actual.</span><span class="when">📅 Esta semana</span></div><div class="time">15 min</div></div>
+        <div class="task"><div class="t"><b>Limitar el tiempo de ejercicio/meditación</b> y agruparlo en un solo momento del día.<span class="next">Próximo paso: definir 1 bloque de wellness/día (no dos) y respetarlo.</span><span class="when">📅 Continuo (ajuste de hábito)</span></div><div class="time">ajuste</div></div>
+        <div class="task"><div class="t"><b>Sostener revisión de métricas y llamadas de ventas</b> (lo que más genera dinero hoy).<span class="next">Próximo paso: mantener el ritmo; identificar qué documentar para delegar luego.</span><span class="when">📅 Continuo</span></div><div class="time">parte del rol</div></div>
+      </div>
+    </div>
+
+    <!-- KRIS -->
+    <div class="person">
+      <h3>Kris <span class="role">Contenido / Marketing</span></h3>
+      <div class="axiom">Diferencio las dos cuentas por expertise y por color (Neneko naranja · Soad morado).</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Diferenciar las líneas de contenido</b> en el próximo lote: Neneko = laboral/admin/reclutamiento; Soad = mentalidad/marca/emociones.<span class="next">Próximo paso: clasificar los temas pendientes por cuenta antes de producir.</span><span class="when">📅 Próximo lote (esta semana)</span></div><div class="time">en su flujo</div></div>
+        <div class="task"><div class="t"><b>Diferenciación visual:</b> detalles naranja (Neneko) vs. morado (Soad).<span class="next">Próximo paso: ajustar la plantilla de Soad al color morado.</span><span class="when">📅 Próximo lote</span></div><div class="time">30 min setup</div></div>
+        <div class="task"><div class="t"><b>Integrar las fotos lifestyle de Soad</b> en quotes y posts normales (ya tiene material).<span class="next">Próximo paso: maquetar 2–3 posts con foto lifestyle para probar.</span><span class="when">📅 Esta semana</span></div><div class="time">en su flujo</div></div>
+        <div class="task"><div class="t"><b>Preparar el nuevo lote para la revisión del viernes.</b><span class="next">Próximo paso: dejar el lote 90% listo para revisar con Soad y Mateo.</span><span class="when">📅 Antes del viernes</span></div><div class="time">1–1.5 h</div></div>
+        <div class="task"><div class="t"><b>Reunión del viernes</b> con Soad y Mateo.<span class="next">Próximo paso: confirmar hora.</span><span class="when">📅 Viernes</span></div><div class="time">20–30 min</div></div>
+      </div>
+    </div>
+
+    <!-- MERARI / SETTERS -->
+    <div class="person">
+      <h3>Merari (y Ruth) <span class="role">Setters</span></h3>
+      <div class="axiom">Prefiero menos mensajes pero más conscientes: el lead llega educado por el video.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Operar el setting hacia la llamada</b> con leads ya más conscientes (vienen del video, no de un mensaje en frío).<span class="next">Próximo paso: seguir reencuadrando al que cree que somos bolsa de empleo.</span><span class="when">📅 Continuo</span></div><div class="time">parte del rol</div></div>
+        <div class="task"><div class="t"><b>Reportar las objeciones reales</b> de los leads para volverlas contenido.<span class="next">Próximo paso: anotar las 3 dudas más repetidas de la semana y pasarlas a Kris.</span><span class="when">📅 Continuo</span></div><div class="time">10 min/sem</div></div>
+      </div>
+    </div>
+
+    <!-- MATEO -->
+    <div class="person">
+      <h3>Mateo <span class="role">Operador</span></h3>
+      <div class="axiom">Capturo primero la fruta madura y construyo demanda hacia las capas externas de la cebolla.</div>
+      <div class="axiom">Construyo activos que duran y le quito decisiones al equipo.</div>
+      <div class="tasks">
+        <div class="task"><div class="t"><b>Pasar el nuevo lote de contenidos diferenciado</b> (Neneko admin vs. Soad mentalidad) para la revisión del viernes.<span class="next">Próximo paso: entregar el lote mañana con la línea por cuenta marcada.</span><span class="when">📅 Mañana</span></div><div class="time">en ejecución</div></div>
+        <div class="task"><div class="t"><b>Entregable de Gestión del Tiempo</b> (matriz energía/dinero + EADDD + calculadora valor/hora) para el equipo y la clase de Soad.<span class="next">Próximo paso: publicarlo en el sitio.</span><span class="when">✅ Hecho — ver botón ⏳ Tiempo</span></div><div class="time">hecho</div></div>
+        <div class="task"><div class="t"><b>Dar feedback al video</b> antes de publicar.<span class="next">Próximo paso: revisar la grabación tras el sábado.</span><span class="when">📅 Tras la grabación</span></div><div class="time">30 min</div></div>
+        <div class="task"><div class="t"><b>Recibir los calendarios</b> de los fundadores y armar una propuesta de time blocking.<span class="next">Próximo paso: al recibirlos, mapearlos sobre la matriz energía/dinero.</span><span class="when">📅 Al recibirlos</span></div><div class="time">1 h</div></div>
+        <div class="task"><div class="t"><b>Reunión del viernes</b> de revisión con Kris y Soad.<span class="next">Próximo paso: confirmar hora.</span><span class="when">📅 Viernes</span></div><div class="time">20–30 min</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREGABLE NUEVO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">⏳</div><h2>Entregable que ya dejé listo</h2></div>
+    <p class="lead">Para que lo puedan visualizar igual que el resto de documentos del proyecto, dejé armado el marco de gestión del tiempo que expliqué en la llamada — listo también para que Soad lo use en su clase de alumnos.</p>
+    <a href="https://eguigurenmateo-lamaison.github.io/plan-neneko-remoto/gestion-tiempo.html" style="display:block;text-decoration:none;background:linear-gradient(135deg,#0f172a,#0d9488);color:#fff;border-radius:14px;padding:18px 22px;margin:4px 0 0;box-shadow:0 10px 30px rgba(13,148,136,.25);">
+      <div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#99f6e4;font-weight:700;margin-bottom:4px;">⏳ Recompra tu tiempo</div>
+      <div style="font-size:18px;font-weight:800;">Gestión del tiempo — matriz energía × dinero + EADDD + calculadora de valor/hora &nbsp;→</div>
+    </a>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Minuta + FODA · Llamada del 22 de junio — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo
+  </div>
+</footer>
+
+</body>
+</html>

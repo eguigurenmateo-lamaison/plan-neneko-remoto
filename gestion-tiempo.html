@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión del tiempo · Recompra tu tiempo — Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;
+    --primary:#059669;--primary-l:#d1fae5;--primary-d:#047857;--accent:#f59e0b;--accent-l:#fef3c7;
+    --indigo:#4f46e5;--indigo-l:#e0e7ff;--rose:#e11d48;--rose-l:#ffe4e6;--sky:#0ea5e9;--teal:#0d9488;
+    --radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);}
+  /* nav */
+  .docnav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.97);border-bottom:1px solid rgba(255,255,255,.08);}
+  .docnav-inner{max-width:920px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:12px;height:50px;}
+  .dn-brand{color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  .dn-brand b{color:#5eead4;}
+  .dn-links{display:flex;gap:3px;overflow-x:auto;margin-left:auto;scrollbar-width:none;}
+  .dn-links::-webkit-scrollbar{display:none;}
+  .dn-links a{color:#cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;}
+  .dn-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .dn-links a.active{color:#0f172a;background:#5eead4;}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 55%,#4f46e5 100%);color:#fff;padding:42px 0 36px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#c7d2fe;background:rgba(199,210,254,.12);border:1px solid rgba(199,210,254,.3);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{font-size:32px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:#c7d2fe;}
+  .hero p{color:#cbd5e1;font-size:16px;max-width:680px;}
+  section{padding:26px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .sec-num{width:40px;height:40px;border-radius:11px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex:0 0 auto;}
+  .sec-head h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+  h3{font-size:18px;color:var(--ink);margin:18px 0 6px;}
+  p{margin-bottom:10px;} .lead{font-size:16px;margin-bottom:12px;}
+  ul,ol{margin:0 0 12px 20px;} li{margin-bottom:5px;} strong{color:var(--ink);}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-l);border-radius:10px;padding:13px 16px;margin:14px 0;}
+  .callout.green{border-color:var(--primary);background:var(--primary-l);}
+  .callout.rose{border-color:var(--rose);background:var(--rose-l);}
+  .callout.indigo{border-color:var(--indigo);background:var(--indigo-l);}
+  .note{font-size:13px;color:var(--muted);font-style:italic;}
+  /* matrix */
+  .matrix-shell{margin:18px 0;}
+  .axis-top{text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;}
+  .matrix-row{display:flex;align-items:stretch;gap:10px;}
+  .axis-left{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);flex:0 0 22px;}
+  .matrix{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1;}
+  .q{border-radius:14px;padding:15px 16px;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--card);position:relative;min-height:150px;}
+  .q .qh{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:2px;}
+  .q .qs{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:block;}
+  .q ul{margin:0 0 0 16px;} .q li{font-size:13.5px;margin-bottom:4px;}
+  .q .ord{position:absolute;top:-11px;right:-11px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;box-shadow:var(--shadow);}
+  .q-energy-low{border-top:5px solid var(--primary);} /* da energia + poco dinero */
+  .q-energy-high{border-top:5px solid var(--indigo);} /* da energia + mucho dinero */
+  .q-drain-high{border-top:5px solid var(--accent);} /* quita energia + mucho dinero */
+  .q-drain-low{border-top:5px solid var(--rose);} /* quita energia + poco dinero */
+  .ord-1{background:var(--rose);} .ord-2{background:var(--accent);color:#7c2d12;}
+  .axis-bottom{text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:8px;}
+  .colcap{display:flex;gap:10px;margin:8px 0 0 32px;}
+  .colcap div{flex:1;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  /* EADDD funnel */
+  .eaddd{margin:14px 0;}
+  .estep{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);margin:7px 0;}
+  .estep .en{width:30px;height:30px;border-radius:8px;background:var(--indigo);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 auto;}
+  .estep b{color:var(--ink);} .estep span{font-size:13.5px;color:var(--muted);}
+  .eaddd-arrow{text-align:center;color:var(--indigo);font-size:18px;line-height:1;margin:-2px 0;}
+  /* calc */
+  .calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow);margin:16px 0;}
+  .calc .field{margin-bottom:14px;}
+  .calc label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px;}
+  .calc label small{font-weight:500;color:var(--muted);}
+  .calc input,.calc select{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink);background:#f8fafc;font-family:inherit;}
+  .calc input:focus,.calc select:focus{outline:none;border-color:var(--indigo);background:#fff;}
+  .calc-out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;}
+  .calc-card{border-radius:12px;padding:14px 16px;text-align:center;}
+  .calc-card.a{background:var(--indigo-l);border:1px solid rgba(79,70,229,.25);}
+  .calc-card.b{background:var(--primary-l);border:1px solid rgba(5,150,105,.25);}
+  .calc-card .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;}
+  .calc-card .val{font-size:26px;font-weight:800;color:var(--ink);margin-top:4px;font-variant-numeric:tabular-nums;}
+  .calc-card.a .val{color:#3730a3;} .calc-card.b .val{color:var(--primary-d);}
+  .calc-card .sub{font-size:12px;color:var(--muted);margin-top:2px;}
+  footer{background:var(--ink);color:#94a3b8;padding:28px 0;margin-top:30px;font-size:14px;}
+  footer b{color:#e2e8f0;}
+  @media(max-width:680px){.hero h1{font-size:25px;}.sec-head h2{font-size:19px;}.matrix{grid-template-columns:1fr;}.calc-out{grid-template-columns:1fr;}.colcap{display:none;}}
+</style>
+</head>
+<body>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="dn-brand" href="index.html">📋 <b>Neneko</b> Remoto</a>
+    <div class="dn-links">
+      <a href="minuta-22jun.html">📝 22-jun</a>
+      <a href="accion-12jun.html">📌 12-jun</a>
+      <a href="index.html">Plan</a>
+      <a href="kit-arranque.html">Kit de arranque</a>
+      <a href="guion-video.html">Guion video</a>
+      <a href="sop-setting.html">SOP setting</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="tablero.html">Tablero</a>
+      <a href="gestion-tiempo.html" class="active">⏳ Tiempo</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <div><span class="eyebrow">Gestión del tiempo · Time management</span></div>
+    <h1>Recompra tu tiempo:<br><span>energía, dinero y qué soltar primero</span></h1>
+    <p>El marco que expliqué en la llamada, listo para visualizar y aplicar. Antes de empresarios somos personas: primero cumplimos lo de la persona y construimos todo lo demás alrededor. Sirve también para la clase de alumnos de Soad.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- PRINCIPIO -->
+  <section style="border-top:none;">
+    <div class="sec-head"><div class="sec-num">💡</div><h2>El principio: la energía no se acumula, el dinero sí</h2></div>
+    <p class="lead">Somos como un celular: desde que salimos de la cama, cada minuto fuera de ella tenemos un poco menos de energía. Por eso comemos, dormimos y hacemos ejercicio — para recargar. <strong>El dinero sí se acumula en el tiempo; la energía no.</strong> De ahí salen dos reglas que cambian todo cómo organizas tu semana.</p>
+    <div class="callout green"><p style="margin:0;"><strong>Regla 1 — Proteger:</strong> lo que <em>da energía aunque genere poco dinero</em> (dormir, comer, ejercicio) NO se elimina. Es lo primero que se prioriza y alrededor de lo cual construyes el día.</p></div>
+    <div class="callout rose"><p style="margin:0;"><strong>Regla 2 — Soltar:</strong> lo que <em>quita energía y genera poco dinero</em> es lo primero que sacas de encima (delegas/eliminas). Después subes a lo que quita energía pero sí genera dinero.</p></div>
+  </section>
+
+  <!-- MATRIZ -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🧩</div><h2>La matriz: energía × dinero</h2></div>
+    <p class="lead">Clasifica cada actividad de tu calendario en uno de los 4 cuadrantes. El orden de recompra va <strong>de abajo hacia arriba y de derecha a izquierda</strong>: primero sueltas lo de la derecha (lo que drena), empezando por lo que menos dinero genera.</p>
+
+    <div class="matrix-shell">
+      <div class="axis-top">⬆ Genera MUCHO dinero</div>
+      <div class="matrix-row">
+        <div class="axis-left">Eje vertical: dinero</div>
+        <div class="matrix">
+          <!-- top-left: da energia + mucho dinero -->
+          <div class="q q-energy-high">
+            <div class="qh">😍 Da energía · 💰 Mucho dinero</div>
+            <span class="qs">Tu zona de genialidad — protégela y crece aquí</span>
+            <ul>
+              <li>Lo que disfrutas y a la vez mueve el negocio.</li>
+              <li>Ej.: para un director de ventas, revisar llamadas y métricas (le paga y le da energía).</li>
+              <li>Aquí quieres pasar la mayor parte del tiempo.</li>
+            </ul>
+          </div>
+          <!-- top-right: quita energia + mucho dinero -->
+          <div class="q q-drain-high">
+            <div class="ord ord-2">2</div>
+            <div class="qh">😮‍💨 Quita energía · 💰 Mucho dinero</div>
+            <span class="qs">Recomprar en 2º lugar</span>
+            <ul>
+              <li>Genera dinero pero te drena.</li>
+              <li>Neneko hoy: <strong>revisión de métricas y de llamadas de ventas</strong>.</li>
+              <li>Lo haces tú ahora, pero el objetivo es delegarlo cuando esté documentado.</li>
+            </ul>
+          </div>
+          <!-- bottom-left: da energia + poco dinero -->
+          <div class="q q-energy-low">
+            <div class="qh">😍 Da energía · 🪙 Poco dinero</div>
+            <span class="qs">PRIORIZAR — construye el día alrededor</span>
+            <ul>
+              <li>Dormir, comer, hacer ejercicio, comer con la pareja.</li>
+              <li>No se eliminan: recargan la energía que no se acumula.</li>
+              <li>Pero <strong>con límite</strong>: agrupar el wellness en un solo momento del día.</li>
+            </ul>
+          </div>
+          <!-- bottom-right: quita energia + poco dinero -->
+          <div class="q q-drain-low">
+            <div class="ord ord-1">1</div>
+            <div class="qh">😩 Quita energía · 🪙 Poco dinero</div>
+            <span class="qs">Soltar PRIMERO</span>
+            <ul>
+              <li>Lavar los platos, sacar al perro, tareas admin sueltas.</li>
+              <li>Las "llamadas de salvación" de alumnos que drenan.</li>
+              <li>Aquí empieza la recompra de tiempo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="colcap"><div>😍 Da energía</div><div>😮‍💨 Quita energía</div></div>
+      <div class="axis-bottom">⬇ Genera POCO dinero &nbsp;·&nbsp; eje horizontal: energía</div>
+    </div>
+
+    <div class="callout indigo"><p style="margin:0;"><strong>Aplicación Neneko (de la llamada):</strong> hacen demasiado wellness (correr 1.5h + gym 1h + meditación, repartido en dos momentos). El cambio: <strong>mantenerlo pero limitarlo y agruparlo en un solo bloque</strong> del día, y meter esas horas liberadas a lo que genera dinero + energía. Construir el día alrededor de dormir/comer/ejercicio, no al revés.</p></div>
+  </section>
+
+  <!-- EADDD -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🔻</div><h2>El filtro EADDD: qué hacer con cada tarea</h2></div>
+    <p class="lead">Antes de "hacer y hacer y hacer", cada tarea pasa por 5 filtros en orden. Solo lo que sobrevive a los cuatro primeros lo haces tú.</p>
+    <div class="eaddd">
+      <div class="estep"><div class="en">E</div><div><b>Eliminar</b> — <span>¿Cuál es la consecuencia real de NO hacerlo? Muchos "incendios" pueden seguir ardiendo y el negocio sigue funcionando.</span></div></div>
+      <div class="eaddd-arrow">▼</div>
+      <div class="estep"><div class="en">A</div><div><b>Automatizar</b> — <span>¿Lo puede hacer una herramienta (Claude Code, Zapier, Make)? Si sí, ahí se acaba.</span></div></div>
+      <div class="eaddd-arrow">▼</div>
+      <div class="estep"><div class="en">D</div><div><b>Documentar</b> — <span>No se puede delegar lo que no está documentado: sin instrucciones, la primera vez se hace mal. Documenta antes de soltar.</span></div></div>
+      <div class="eaddd-arrow">▼</div>
+      <div class="estep"><div class="en">D</div><div><b>Delegar</b> — <span>Ya documentado, ¿lo puede hacer otra persona? Pásalo.</span></div></div>
+      <div class="eaddd-arrow">▼</div>
+      <div class="estep"><div class="en">H</div><div><b>Hacer</b> — <span>Solo lo que no se pudo eliminar, automatizar ni delegar lo haces tú (ej. aparecer en cámara grabando los videos).</span></div></div>
+    </div>
+    <div class="callout"><p style="margin:0;"><strong>Pocas tareas pasan los 4 filtros</strong> y terminan en "Hacer". Esas son las que sí o sí dependen de ti — protégelas; el resto se va soltando.</p></div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">🧮</div><h2>¿Cuánto vale tu hora? ¿Cuánto puedes pagar?</h2></div>
+    <p class="lead">La regla para saber a quién y cuánto pagarle para recomprar tu tiempo. Lo que te llegó al bolsillo en los últimos 30 días ÷ <strong>176 horas</strong> (22 días hábiles × 8 h) = el valor de tu hora. Eso ÷ 4 = lo que puedes pagarle a alguien por recomprarla (recompras 4× tu tiempo).</p>
+
+    <div class="calc">
+      <div class="field">
+        <label for="income">💵 Lo que te llegó al bolsillo en los últimos 30 días <small>(neto, en tu moneda)</small></label>
+        <input type="number" id="income" inputmode="decimal" placeholder="Ej. 3000" />
+      </div>
+      <div class="field">
+        <label for="hours">🕐 Horas hábiles al mes <small>(por defecto 176 = 22 días × 8 h)</small></label>
+        <input type="number" id="hours" value="176" inputmode="decimal" />
+      </div>
+      <div class="field">
+        <label for="factor">♻️ Factor de recompra <small>(÷4 = full metodología · ÷2–3 = más conservador)</small></label>
+        <select id="factor">
+          <option value="4">÷ 4 — recomprar 4× (recomendado)</option>
+          <option value="3">÷ 3 — intermedio</option>
+          <option value="2">÷ 2 — conservador (empezar aquí)</option>
+        </select>
+      </div>
+      <div class="calc-out">
+        <div class="calc-card a"><div class="lbl">Valor de tu hora</div><div class="val" id="outHour">—</div><div class="sub">ingreso ÷ horas</div></div>
+        <div class="calc-card b"><div class="lbl">Puedes pagar / hora</div><div class="val" id="outPay">—</div><div class="sub">valor ÷ factor</div></div>
+      </div>
+      <p class="note" id="calcNote" style="margin-top:12px;">Escribe tu ingreso para ver los números.</p>
+    </div>
+
+    <div class="callout green"><p style="margin:0;"><strong>Cómo usarlo:</strong> empieza recomprando las tareas del cuadrante <em>"quita energía + poco dinero"</em> (las más baratas de delegar). Para esa persona, esa tarea muchas veces <strong>sí le da energía y sí le genera dinero</strong> — y a un costo por hora menor que el tuyo. Ganan los dos.</p></div>
+  </section>
+
+  <!-- POR QUE IMPORTA -->
+  <section>
+    <div class="sec-head"><div class="sec-num">⚖️</div><h2>Por qué no aplazarlo</h2></div>
+    <p>Cuando aplazamos esto, empezamos a odiar todo lo de alrededor. Trabajar de 9 a 9 y "si sobra tiempo, duermo y hago ejercicio" funciona económicamente un rato, pero arriesga la salud, las relaciones y la familia — y eso no compensa. Primero cumples lo de la persona (dormir, comer, ejercicio, comer con quien quieres, hora fija de dormir, no tomar llamadas después) y construyes el negocio alrededor.</p>
+    <div class="callout"><p style="margin:0;"><strong>Próximo paso del equipo:</strong> manden su calendario a Mateo. Clasifiquen cada bloque en la matriz, marquen lo que cae en "quita energía + poco dinero" y empiecen a soltarlo con el filtro EADDD.</p></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Gestión del tiempo — Neneko Remoto</b><br>
+    Preparado por Mateo Eguiguren · Junio 2026 · Documento de trabajo
+  </div>
+</footer>
+
+<script>
+(function(){
+  var inc=document.getElementById('income'),hrs=document.getElementById('hours'),fac=document.getElementById('factor');
+  var oH=document.getElementById('outHour'),oP=document.getElementById('outPay'),note=document.getElementById('calcNote');
+  function fmt(n){ if(!isFinite(n))return'—'; return n.toLocaleString('es-CO',{maximumFractionDigits:0}); }
+  function calc(){
+    var i=parseFloat(inc.value),h=parseFloat(hrs.value)||176,f=parseFloat(fac.value)||4;
+    if(!i||i<=0){ oH.textContent='—'; oP.textContent='—'; note.textContent='Escribe tu ingreso para ver los números.'; return; }
+    var hour=i/h, pay=hour/f;
+    oH.textContent=fmt(hour); oP.textContent=fmt(pay);
+    note.textContent='Tu hora vale ≈ '+fmt(hour)+'. Para recomprar '+f+'× tu tiempo, paga hasta ≈ '+fmt(pay)+' por hora a quien te quite de encima las tareas que drenan.';
+  }
+  [inc,hrs,fac].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
+})();
+</script>
+
+</body>
+</html>
