@@ -2,6 +2,7 @@
 
 > Análisis con el **Closer Framework (C.L.O.S.E.R.) de Alex Hormozi** + **FODA**.
 > Referencia metodológica: `docs/closer-framework.md`.
+> Versión visual didáctica: `analisis-llamada-01-octavio.html`.
 
 ## Ficha
 - **Prospecto:** Octavio Zavala — Ciudad de México, ~39 años (cumple 40 este año), gerente de marketing en agencia (desde 2021) + proyectos independientes como consultor.
@@ -18,11 +19,11 @@
 
 ### 🟢 Fortalezas (lo que hizo bien el closer)
 - **Rapport excelente.** Small talk genuino (tacos, México, "como mi amigo de toda la vida") que abre confianza; Octavio termina compartiendo cosas muy personales (terapia, burnout, su hobby de modelismo).
-- **Diagnóstico emocional profundo (lo mejor de la llamada).** Excava burnout, deterioro de salud, relaciones descuidadas, el viaje a Japón, el sueño de crear contenido de modelismo. Munición emocional de sobra.
+- **Diagnóstico emocional profundo.** Excava burnout, deterioro de salud, relaciones descuidadas, el viaje a Japón, el sueño de crear contenido de modelismo. Munición emocional de sobra.
 - **Buen uso de "asociar/disociar"** (paso O): rescata lo bueno (en Japón el remoto SÍ funcionó) y amplifica lo malo (12–14 h, salud, pareja).
 - **Reencuadres sólidos** en objeciones blandas: edad ("al mercado le gustan los resultados, no las credenciales"), inglés ("ya te comunicas con gente de India, eso basta"), legalidad de dos trabajos.
 - **Social proof con números y casos nominales** afines al avatar: Maffe ($3,800), Gerardo (2 proyectos = $3,500), Eric ($4,800), Tomás ($2,500), Natalia ($2,400).
-- **Tie-downs constantes** ("¿hace sentido?", "¿te queda claro?") y prueba de la plataforma (School, prensa) cuando pide evidencia.
+- **✅ GRAN MOVIDA — aislar el dinero (min 1:07:59):** "Aparte de la inversión, ¿alguna pregunta sobre el programa en sí?" Separa las **preguntas** (sobre estructura) del **dinero**. Regla de oro: *todo lo que pasa **antes** del precio son preguntas; todo lo que pasa **después** son objeciones.* Queremos llegar al precio con la menor cantidad de dudas posibles.
 - **Cierre con takeaway honesto y fecha:** retira el bono ($3,500 → $4,500) si no decide antes de fin de mes. Movida correcta de escasez real.
 
 ### 🟡 Oportunidades (palancas del prospecto, aún capitalizables)
@@ -34,20 +35,24 @@
 - **Compromiso autodeclarado 7→9** con claridad de metodología: dejó dicho qué le falta para subir.
 
 ### 🔴 Debilidades (errores de ejecución del closer)
+- **Exploración demasiado larga y repetitiva.** En 45 min preguntó **4 veces** lo mismo: *"¿estás dispuesto a iniciar ahora?"* — sin haber explicado aún el servicio. La respuesta natural del lead es *"me llama la atención, pero me gustaría saber cómo trabajan"*, y el closer vuelve a preguntar lo mismo. Efecto contraproducente: el propio lead concluye *"siento que esto va a requerir de mucho compromiso por lo que me estás preguntando"* — cuando no es el mensaje que queríamos sembrar. (Nota de Soad: esa pregunta busca medir **urgencia para decidir/pagar en llamada**, no el tiempo del programa; pero mal ejecutada genera fricción.)
 - **CERO calificación de presupuesto antes del precio (falla raíz).** Llamada de 92 min y el precio aparece en el min ~74; recién ahí se descubre que tiene ~$1,000 líquidos. El dinero era objeción **real**, no humo.
-- **No resolvió la brecha de compromiso ni el timeline propio del prospecto.** Octavio repitió "estoy saturado, necesito ~1 mes para cerrar proyectos"; Simón le sobreescribió "30–45 días" sin negociar ese mes. Quedó un "7" disfrazado de "9".
-- **Decisor no aislado.** "Las decisiones importantes las consulto con mi pareja" quedó como objeción futura abierta; Simón preguntó pero no la neutralizó.
-- **Feature-dumping en el paso S.** Monólogos largos (3 pilares, framework AIDA, School, implementación) = vender "el vuelo" y diluir "las vacaciones". Octavio responde en piloto automático ("sí", "las preguntas irán surgiendo").
-- **ROI no martillado.** Tenía los números servidos (gana $3–4k, aceptaría $2,300, el programa $3,500 ≈ una quincena buena) y casi no construyó el "esto se paga solo en X semanas".
-- **Objeción de credibilidad mal cerrada.** "Es contradictorio que alguien sin experiencia pagara $4,500" → se desvió con la analogía de la universidad; Octavio no quedó satisfecho.
-- **Cierre sin micro-compromiso concreto.** Terminó en "me avisas el finde" en vez de asegurar un depósito/seña o un siguiente paso accionable.
+- **⚠️ Inconsistencia peligrosa sobre las horas (min 45:32).** Le dice al lead que basta con **5 h/semana**. La realidad del programa (Soad) es **mínimo 12 h/semana**: 4 sesiones grupales (4h) + primeras 2 semanas (2h fotos, 2h portafolio/case studies, 3h módulo Upwork) + etapa de búsqueda ~2h/día aplicando (~10h/sem) + sesiones 1:1 y grupales. **Hay que alinear el discurso**: prometer 5h y pedir 12h genera fricción y posibles reembolsos una vez dentro del servicio.
+- **No compartió pantalla en NINGÚN momento.** Todo el pitch (3 pilares, casos, plataforma) fue verbal. Se pierde el refuerzo visual y la credibilidad de "mostrar" en vez de "contar".
+- **Bajó el precio demasiado rápido (min 1:14:30).** Presenta $4,500; el lead dice que tiene **$1,000 para iniciar** (no objetó el total, solo comentó su liquidez inicial) y el closer **baja de inmediato a $3,500**. Probable nervio post-precio. No hubo un "pero" sobre el total que justificara ceder.
+- **Se ancló en una cifra que el lead nunca dijo ($1,500).** El lead fue claro: tenía **$1,000** para iniciar. El closer construyó todo el plan sobre $1,500 de primer pago.
+- **No resolvió la brecha de compromiso ni el timeline propio del prospecto** (dijo necesitar ~1 mes para cerrar proyectos; se le sobreescribió "30–45 días").
+- **Decisor no aislado.** "Las decisiones importantes las consulto con mi pareja" quedó como objeción futura abierta.
+- **Feature-dumping en el paso S.** Monólogos largos (3 pilares, AIDA, School) = vender "el vuelo" y diluir "las vacaciones".
+- **ROI no martillado.** Tenía los números servidos (gana $3–4k, aceptaría $2,300, el programa ≈ una quincena) y casi no construyó el "esto se paga solo".
 
 ### ⚫ Amenazas (riesgos que pusieron/ponen en peligro el cierre)
-- **Falta de liquidez real** (~$1,000 vs. $3,500): la principal y más difícil de mover por teléfono.
-- **Carga de trabajo Q3/Q4** con viajes y producciones: tiempo y atención comprometidos los próximos meses.
-- **Perfil "pensador / cauto"** ("no quiero decisiones apresuradas", "me sentiría más cómodo teniendo el dinero"): alto riesgo de procrastinación indefinida (el propio Simón lo nombra: "1 mes, 2, 3… y a los 6 quizá").
+- **Falta de liquidez real** (~$1,000 vs. $3,500): la principal y más difícil de mover por teléfono. El lead dice que necesitaría **ahorrar ~medio año** para juntarlo todo (min 1:20:30).
+- **Objeción de credibilidad del precio:** "suena contradictorio que una persona sin experiencia tuviera $4,500 para invertir en un programa que le ayuda a conseguir trabajo" — quedó sin cerrar del todo.
+- **La propia dinámica de la llamada sembró miedo al compromiso** (por las 4 preguntas repetidas): el lead entra al cierre con la sensación de "esto es muy demandante".
+- **Carga de trabajo Q3/Q4** con viajes y producciones: tiempo y atención comprometidos.
+- **Perfil "pensador / cauto"** ("me sentiría más cómodo teniendo el dinero"): alto riesgo de procrastinación indefinida.
 - **Pareja como filtro pendiente** que puede frenar tras la llamada.
-- **Aversión al riesgo / escepticismo** sobre estabilidad y estafas del mercado remoto: si reaparece, congela la decisión.
 
 ---
 
@@ -55,40 +60,49 @@
 
 | Paso | Punt. | Notas |
 |---|:---:|---|
-| **C** Clarify | 4/5 | Abre bien ("¿por qué agendaste?"); obtiene motivo (probar perfil, menos responsabilidad, más tiempo, remoto). Podría haber clarificado expectativa de resultado concreto antes. |
-| **L** Label | 4/5 | Etiqueta y devuelve (no sabe por dónde empezar, burnout, salud, tiempo) y confirma con el prospecto. |
-| **O** Overview | 5/5 | Lo más fuerte: excava intentos pasados (nada formal), Japón, Volcom, costo en salud/pareja/proyecto personal. Asocia y disocia bien. |
-| **S** Sell | 3/5 | Vende el resultado (vida equilibrada, +ingresos, libertad) y usa casos, **pero** se va a feature-dump largo de pilares/plataforma. Mezcla vacaciones con vuelo. |
-| **E** Explain | 2/5 | Resuelve bien objeciones blandas (edad, inglés, legalidad, estafa), **pero falla en la objeción raíz (dinero):** nunca la calificó antes y, cuando aparece, no logra disolverla; deja al decisor (pareja) abierto. |
-| **R** Reinforce | N/A | No hubo venta. El cierre se maneja como takeaway con fecha, correcto, pero sin micro-compromiso. |
-
-**Total (C-S-E): 18/25 útiles · Calificación previa: deficiente.**
+| **C** Clarify | 4/5 | Abre bien ("¿por qué agendaste?"); obtiene motivo (probar perfil, menos responsabilidad, más tiempo, remoto). |
+| **L** Label | 4/5 | Etiqueta y devuelve (no sabe por dónde empezar, burnout, salud, tiempo) y confirma. |
+| **O** Overview | 4/5 | Muy fuerte en excavar dolor (Japón, Volcom, salud/pareja), **pero se alarga y repite** la misma pregunta de cierre 4 veces. |
+| **S** Sell | 3/5 | Vende el resultado (vida equilibrada, +ingresos) y usa casos, **pero** feature-dump largo, sin pantalla, y con el dato erróneo de "5 h/semana". |
+| **E** Explain | 2/5 | Resuelve objeciones blandas (edad, inglés, estafa) y aísla bien el dinero en 1:07:59, **pero falla en la objeción raíz (dinero):** no la calificó antes, baja el precio por nervio y no la disuelve; decisor abierto. |
+| **R** Reinforce | N/A | No hubo venta. Cierre como takeaway con fecha (correcto), pero sin micro-compromiso/seña. |
 
 **Checklist crítico:**
 - [ ] Presupuesto calificado antes del precio → **NO** ❌
 - [ ] Decisor identificado y aislado → **Parcial** (identificado, no aislado)
-- [x] Disponibilidad de tiempo confirmada → Sí (5–6 h/sem, suficiente)
-- [ ] Compromiso (1–10) bloqueado y brecha resuelta → **NO** (quedó en 7→9 sin resolver)
+- [ ] Disponibilidad de tiempo confirmada de forma **honesta** → **NO** (se dijo 5 h; el programa pide 12 h)
+- [ ] Compromiso (1–10) bloqueado y brecha resuelta → **NO** (quedó 7→9 sin resolver)
 - [ ] Precio revelado a tiempo → **NO** (min ~74 de 92)
 
 ---
 
 ## Diagnóstico del resultado (causa raíz)
-No se cerró por **un fallo de calificación, no de persuasión.** La llamada construyó deseo genuino (Octavio "se convence de la metodología"), pero llegó al precio **sin haber verificado capacidad de pago ni bloqueado compromiso/timeline**. La objeción de dinero era **real** (tenía ~$1,000 de ~$3,500) y apareció demasiado tarde para trabajarse con margen. Sumado a un perfil cauto y a su propio plan de "cerrar proyectos en ~1 mes", el desenlace natural fue el aplazamiento ("lo pienso el fin de semana").
+No se cerró por **un fallo de calificación y de ritmo, no de persuasión.** La exploración fue larga y repetitiva (sembró miedo al compromiso), y se llegó al precio **sin verificar capacidad de pago ni bloquear compromiso/timeline**. La objeción de dinero era **real** (~$1,000 de ~$3,500) y apareció demasiado tarde. El nervio post-precio (bajar de inmediato, anclar en $1,500) debilitó la posición. Sumado a un perfil cauto, el desenlace natural fue el aplazamiento.
 
 ---
 
-## Recomendaciones (para la próxima llamada / playbook)
-1. **Calificar presupuesto y decisor en los primeros 15 min** (idealmente en el setting): "Programas como este rondan los $X; ¿es algo para lo que hoy podrías destinar recursos o tendríamos que ver un plan?" Evita 90 min sin saber que hay $1,000.
-2. **Bloquear el compromiso ANTES del precio** y resolver la brecha: cuando dijo "7→9", preguntar "¿qué exactamente te lleva del 7 al 9?" y cerrar eso primero.
-3. **Negociar el timeline propio del prospecto**, no sobreescribirlo: "necesito un mes" → "perfecto, arrancamos el posicionamiento ahora mientras cierras proyectos; en 30 días estás listo para postular sin perder ese mes."
-4. **Aislar a la pareja**: "Cuando le cuentes a tu pareja, ¿qué crees que preguntaría? Resolvámoslo ahora."
-5. **Acortar el paso S**: menos pilares/AIDA/School, más "vacaciones" (su natación, su pareja, su proyecto de modelismo) atadas a números suyos.
-6. **Martillar el ROI**: $3,500 ≈ ~1 mes de su ingreso actual; con un solo proyecto remoto de $2,300–$3,800 se recupera en semanas. Hacer que él diga el número.
-7. **Cerrar con micro-compromiso**: en vez de "me avisas el finde", asegurar una seña/depósito hoy que arranque el perfil Done-For-You, o agendar fecha+hora exacta de decisión con la pareja presente.
+## Recomendaciones (playbook)
+1. **Calificar presupuesto y decisor en los primeros 15 min** (idealmente en el setting).
+2. **Acortar la exploración y no repetir** "¿estás dispuesto a iniciar ahora?": preguntarlo **una vez, bien ubicado** (después del pitch, para medir urgencia de decidir en llamada), no 4 veces antes de explicar nada.
+3. **Alinear el discurso de horas a la realidad (12 h/sem):** venderlo como inversión de tiempo que se paga sola, no minimizarlo a 5 h. Prometer 5 y pedir 12 genera reembolsos.
+4. **Compartir pantalla en el pitch.** Tener un documento vivo con los 3 pilares y los casos de éxito para mostrar mientras se explica.
+5. **Ritual de papel y lápiz antes de los 3 pilares:** *"¿Tienes papel y lápiz? Anota 1, 2 y 3 con un espacio entre cada uno, porque te voy a explicar los tres pilares; mejor si los tienes a mano para que me preguntes al final."* Los pilares: **1) Posicionamiento estratégico · 2) Sistema de casa inteligente · 3) Sistema de cierre y tarifa premium.** Al terminar cada explicación: *"¿Qué dudas tienes?"* (siempre hay). Si no hay dudas de pilares → pasar a **cómo se entrega el servicio**.
+6. **Repositorio de casos de éxito en un solo documento** con los links a mano: compartir pantalla o **enviarlos por WhatsApp ANTES de la llamada** para que el lead los revise.
+7. **No bajar el precio ante el monto "para iniciar".** Si el lead dice "tengo $1,000 para empezar", eso **no** es una objeción al total: es un dato de liquidez. Mantener el precio y construir el plan de pago sobre lo que **él** dijo ($1,000), no sobre una cifra inventada ($1,500).
+8. **Aislar el dinero y luego el sí-quiere:** "Aparte del dinero, ¿esto es lo que quieres? Si lo tuvieras, ¿entrarías?" — antes de resolver el cómo-pagar.
+9. **Martillar el ROI:** $3,500 ≈ ~1 mes de su ingreso; con un proyecto de $2,300–$3,800 se recupera en semanas. Que él diga el número.
+10. **Cerrar con micro-compromiso** (seña que arranca el perfil Done-For-You / fecha+hora exacta de decisión con la pareja presente), no un "me avisas el finde" abierto.
 
 ## Plan de seguimiento para Octavio
-- **Ventana**: tiene hasta fin de mes con el bono ($3,500). Escribir por WhatsApp **antes** del fin de semana con (a) casos de éxito documentados que pidió, (b) reseñas de prensa, (c) un mensaje de ROI simple ("una quincena tuya hoy = libertad de tiempo + recuperas la inversión con el primer proyecto").
-- **Resolver el cómo-pagar**, no el si-quiere: ofrecer arranque con $1,000–$1,500 + plan, o financiamiento, y atar el primer entregable (perfil + sesión con Estefano) al primer pago.
-- **Incluir a la pareja** en la conversación de decisión para neutralizar el filtro pendiente.
-- **Fecha límite real**: confirmar día/hora concretos de respuesta, no "el finde" abierto.
+- **Ventana:** bono ($3,500) hasta fin de mes. Escribir por WhatsApp **antes** del fin de semana con: (a) casos de éxito documentados que pidió, (b) reseñas de prensa, (c) mensaje de ROI simple.
+- **Resolver el cómo-pagar**, no el si-quiere: arranque con $1,000 + plan/financiamiento, atando el primer entregable al primer pago.
+- **Incluir a la pareja** en la conversación de decisión.
+- **Fecha límite real:** día/hora concretos, no "el finde" abierto.
+
+---
+
+## Principios clave que deja esta llamada (para todo el equipo)
+- **Antes del precio = preguntas · Después del precio = objeciones.** Resolver el máximo de dudas antes de dar el número.
+- **Un monto "para iniciar" no es una objeción al total.** No bajar el precio por nervio.
+- **Coherencia de expectativas** (horas, entregables): lo que se promete en la llamada es lo que se cobra en el servicio.
+- **La exploración vende, pero en exceso asusta.** Preguntar con propósito, no repetir.
