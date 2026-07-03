@@ -62,6 +62,20 @@ Dos máximas que rigen todo:
 
 ---
 
+## 2.b Apertura de rapport — esquema N.S.F.G.A. (antes de arrancar el CLOSER)
+
+Antes del paso **C**, los primeros minutos se usan para construir rapport con un esquema fijo:
+
+1. **Name — Nombre:** "¿Cuál es tu nombre?" Usarlo desde el inicio.
+2. **Same — Qué tenemos en común:** si menciona una ciudad, buscar puntos en común con esa ciudad (¿tenemos familiares o alguien que viva ahí?, ¿la hemos visitado?). Cualquier terreno compartido baja la guardia.
+3. **Fame — Por qué lo conocen:** qué lo hace destacar / por qué la gente lo conoce.
+4. **Gain / Pain — Qué gana o qué dolor tratamos:** qué va a ganar en esta conversación o qué dolor vamos a resolver en ella.
+5. **Aim — Objetivo tras la conversación:** cuál es el objetivo después de la llamada.
+
+**Preparación previa (obligatoria):** estudiar al lead y abrir sus notas / lo conversado antes (Instagram, formulario) para comentárselo al inicio. Demuestra que hicimos la tarea y personaliza la apertura. *(Ej.: hacerlo bien = Dilan Villa; no hacerlo = Octavio Zavala.)*
+
+---
+
 ## 3. Reglas transversales de Hormozi (aplican a toda la llamada)
 - **Calificar temprano** (incluido presupuesto/decisión): nunca llegar al precio sin saber si puede y quién decide.
 - **Aislar la objeción real**: "Aparte de [X], ¿hay algo más que te detenga?" antes de resolver.
