@@ -31,7 +31,7 @@
 - **Preparación previa del lead** (abrió notas de Instagram y retomó lo hablado) → rapport N.S.F.G.A. bien ejecutado. **Es exactamente lo que faltó con Octavio.**
 - **Conexión personal genuina** (misma edad, vida nómada) atada al sueño del lead de viajar joven.
 - **Reencuadres socráticos potentes:** "¿necesitas más títulos o entender cómo perfilarte?", "¿por qué ellos sí y tú no?", "¿qué tipo de persona vas a ser?" El lead termina diciendo frases que Stefano capitaliza ("la zona de confort mata más sueños que la muerte").
-- **Cuantificó el costo de no actuar:** ~**$10,000/año** que Dilan deja sobre la mesa (el propio lead hizo el cálculo).
+- **⭐ Pregunta clave (min ~19:40): *"¿cuánto estás dejando de ganar al no tomar acción?"*** → hacen el cálculo juntos y da **~$10,000/año** que Dilan deja sobre la mesa (el propio lead saca el número). Es la mejor munición de ROI frente a los $3,000 del programa; **pregunta replicable en toda llamada.**
 - **Buen ritmo de pitch con tie-downs** tras cada pilar ("¿tiene sentido?", "¿preguntas hasta acá?") — más ordenado que en la llamada de Octavio.
 - **Aísla el dinero (min 1:07):** "dejando la inversión aparte, si tuvieras los $4,500, ¿entrarías de una?" — separa el querer del poder pagar.
 - **Manejo de objeción con arsenal escalonado:** $4,500 → $3,500 (bono acción) → $3,000 (contado) + 4 bonos (perfil done-for-you, plantillas de portafolio/case studies, 1:1 ilimitadas) + reserva para congelar.
