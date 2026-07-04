@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Análisis de llamada 05 — Emma Sánchez | Neneko Remoto</title>
+<style>
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff;
+    --green:#059669; --green-l:#d1fae5; --green-d:#047857;
+    --amber:#f59e0b; --amber-l:#fef3c7; --amber-d:#b45309;
+    --rose:#e11d48; --rose-l:#ffe4e6; --rose-d:#be123c;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff; --indigo-d:#3730a3;
+    --radius:16px; --shadow:0 1px 3px rgba(15,23,42,.08),0 12px 32px rgba(15,23,42,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3,h4{color:var(--ink);letter-spacing:-.01em;}
+  strong,b{color:var(--ink);}
+  .muted{color:var(--muted);}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#3b0764 55%,#7f1d1d 100%);color:#fff;padding:56px 0 48px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#fca5a5;background:rgba(252,165,165,.12);border:1px solid rgba(252,165,165,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{color:#fff;font-size:38px;line-height:1.14;font-weight:800;margin-bottom:12px;}
+  .hero h1 span{color:#fca5a5;}
+  .hero .sub{font-size:18px;color:#e7d5e5;max-width:660px;}
+  .verdict{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:rgba(225,29,72,.18);border:1px solid rgba(225,29,72,.5);color:#fecdd3;font-weight:700;padding:10px 18px;border-radius:12px;font-size:15px;}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:#cbb8c9;}
+  .hero .meta b{color:#f3e8f1;font-weight:600;}
+  nav.jump{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 0;}
+  nav.jump .wrap{display:flex;gap:8px;overflow-x:auto;}
+  nav.jump a{white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--slate);padding:6px 12px;border-radius:999px;text-decoration:none;}
+  nav.jump a:hover{background:var(--rose-l);color:var(--rose-d);}
+  nav.jump a.home{background:var(--ink);color:#fff;}
+  section{padding:38px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--rose);margin-bottom:6px;}
+  h2{font-size:27px;font-weight:800;margin-bottom:6px;}
+  .lead{font-size:17px;color:var(--slate);margin:10px 0 20px;}
+  h3{font-size:19px;font-weight:700;margin:22px 0 8px;}
+  p{margin:10px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:16px 0;}
+  .eli{background:#fffdf5;border:1px dashed var(--amber);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .eli b{color:var(--amber-d);}
+  .win{background:#f0fdf7;border:1px dashed var(--green);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .win b{color:var(--green-d);}
+  .alert{background:#fff1f2;border:1px dashed var(--rose);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .alert b{color:var(--rose-d);}
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;overflow-x:auto;}
+  .chart .ctitle{font-weight:800;color:var(--ink);font-size:16px;margin-bottom:2px;}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin-bottom:16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+  .foda{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px;}
+  .quad{border-radius:14px;padding:18px 20px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .quad h3{margin-top:0;font-size:17px;}
+  .quad ul{list-style:none;margin:10px 0 0;}
+  .quad li{position:relative;padding-left:20px;margin:8px 0;font-size:14.5px;}
+  .quad li::before{position:absolute;left:0;top:0;font-weight:800;}
+  .q-f{background:var(--green-l);} .q-f h3{color:var(--green-d);} .q-f li::before{content:"✓";color:var(--green-d);}
+  .q-o{background:var(--amber-l);} .q-o h3{color:var(--amber-d);} .q-o li::before{content:"➜";color:var(--amber-d);}
+  .q-d{background:var(--rose-l);} .q-d h3{color:var(--rose-d);} .q-d li::before{content:"✕";color:var(--rose-d);}
+  .q-a{background:#eef0f4;} .q-a h3{color:var(--slate);} .q-a li::before{content:"⚠";color:var(--muted);}
+  .moment{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .moment .tm{flex:0 0 auto;font-variant-numeric:tabular-nums;font-weight:800;color:#fff;background:var(--ink);border-radius:8px;padding:6px 10px;font-size:13px;min-width:78px;text-align:center;}
+  .moment.good{border-left:5px solid var(--green);} .moment.good .tm{background:var(--green-d);}
+  .moment.bad{border-left:5px solid var(--rose);} .moment.bad .tm{background:var(--rose-d);}
+  .moment.warn{border-left:5px solid var(--amber);} .moment.warn .tm{background:var(--amber-d);}
+  .moment h4{font-size:15px;margin-bottom:2px;}
+  .moment p{font-size:14px;color:var(--muted);margin:2px 0 0;}
+  .rule{background:linear-gradient(135deg,#0f172a,#7f1d1d);color:#fff;border-radius:var(--radius);padding:26px 28px;margin:16px 0;box-shadow:var(--shadow);}
+  .rule h3{color:#fff;font-size:20px;margin-bottom:12px;}
+  .todo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px 8px;margin-top:8px;}
+  .todo .item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-bottom:1px solid var(--line);}
+  .todo .item:last-child{border-bottom:none;}
+  .todo .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .todo .item p{margin:0;font-size:14.5px;}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+  @media (max-width:680px){.hero h1{font-size:30px;}.foda{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Análisis de llamada · 05</span>
+    <h1>La llamada con <span>Emma</span>: cuando la presión resta</h1>
+    <p class="sub">79 minutos revisados con el método <b style="color:#fff">CLOSER</b> de Hormozi. Buen rapport y buen ROI, pero la lección es otra: presionar a un perfil analítico y autodirigido <b style="color:#fff">alejó la venta</b>.</p>
+    <div class="verdict">🔴 Resultado: no cerró — rechazó la presión, renunció al bono y pidió decidir con calma. Extensión de 24 h.</div>
+    <div class="meta">
+      <span><b>Cliente:</b> Emma Sánchez · ingeniera, soporte IT (Barranquilla)</span>
+      <span><b>Vendedor:</b> Joselo Murakami</span>
+      <span><b>Duración:</b> 79 min</span>
+      <span><b>Precio:</b> $4,500 → $3,000</span>
+    </div>
+  </div>
+</header>
+<nav class="jump">
+  <div class="wrap">
+    <a class="home" href="analisis-llamadas.html">← Índice</a>
+    <a href="#resumen">Resumen</a>
+    <a href="#nota">La nota</a>
+    <a href="#tiempo">Línea de tiempo</a>
+    <a href="#leccion">La lección</a>
+    <a href="#dinero">El dinero</a>
+    <a href="#foda">FODA</a>
+    <a href="#momentos">Momentos</a>
+    <a href="#proxima">Qué mejorar</a>
+  </div>
+</nav>
+<main class="wrap">
+  <section id="resumen">
+    <div class="kicker">En 30 segundos</div>
+    <h2>¿Qué pasó?</h2>
+    <p class="lead">Emma es ingeniera en Barranquilla, tiene dos trabajos de soporte IT (~$3,000) y la obligan a cubrir domingos de noche. Quiere un solo empleo bien pagado con libertad. Decide sola. El vendedor, Joselo, hizo gran rapport y una calculadora de ROI clara.</p>
+    <div class="card">
+      <p><b>Lo bueno:</b> rapport cálido, la <b>analogía Louis Vuitton</b> para vender el branding, pantalla compartida con casos, y buen manejo de preguntas técnicas (filtros de IA, scams, confidencialidad).</p>
+      <p><b>El error:</b> tras un "no" claro, insistió con la reserva y el "decide ya". Emma —analítica y autodirigida— se sintió <b>abrumada</b> y lo dijo: "hay más afán en vender que en lo que se ofrece".</p>
+      <p style="margin-bottom:0"><b>La conclusión:</b> con este tipo de comprador, la presión <b>resta</b>. El camino era menos escasez, más datos y espacio. Rescatable solo si el seguimiento respeta su ritmo.</p>
+    </div>
+  </section>
+
+  <section id="nota">
+    <div class="kicker">La calificación</div>
+    <h2>¿Qué tan bien hizo cada paso?</h2>
+    <p class="lead">Muy fuerte en escuchar y etiquetar (5). El paso de resolver (E) se hundió por la presión.</p>
+    <div class="chart">
+      <div class="ctitle">Nota por paso del método CLOSER (de 0 a 5)</div>
+      <div class="csub">Rapport y diagnóstico sobresalientes; la objeción se manejó con presión y bajó a 2.</div>
+      <svg viewBox="0 0 700 300" width="100%" role="img" aria-label="Notas: Clarify 5, Label 5, Overview 4, Sell 4, Explain 2, Reinforce no aplica">
+        <g font-size="11" fill="#94a3b8" font-family="inherit">
+          <line x1="260" y1="12" x2="260" y2="252" stroke="#eef2f7"/><line x1="360" y1="12" x2="360" y2="252" stroke="#eef2f7"/><line x1="460" y1="12" x2="460" y2="252" stroke="#eef2f7"/><line x1="560" y1="12" x2="560" y2="252" stroke="#eef2f7"/><line x1="660" y1="12" x2="660" y2="252" stroke="#eef2f7"/>
+          <line x1="160" y1="252" x2="680" y2="252" stroke="#e2e8f0"/>
+          <text x="260" y="270" text-anchor="middle">1</text><text x="360" y="270" text-anchor="middle">2</text><text x="460" y="270" text-anchor="middle">3</text><text x="560" y="270" text-anchor="middle">4</text><text x="660" y="270" text-anchor="middle">5</text>
+        </g>
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="150" y="41" text-anchor="end" fill="#0f172a">C · Aclarar</text><rect x="160" y="24" width="500" height="24" rx="4" fill="#059669"/><text x="670" y="41" fill="#047857" font-weight="800">5</text>
+          <text x="150" y="81" text-anchor="end" fill="#0f172a">L · Nombrar</text><rect x="160" y="64" width="500" height="24" rx="4" fill="#059669"/><text x="670" y="81" fill="#047857" font-weight="800">5</text>
+          <text x="150" y="121" text-anchor="end" fill="#0f172a">O · Repasar</text><rect x="160" y="104" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="121" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="161" text-anchor="end" fill="#0f172a">S · Vender</text><rect x="160" y="144" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="161" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="201" text-anchor="end" fill="#0f172a">E · Resolver</text><rect x="160" y="184" width="200" height="24" rx="4" fill="#e11d48"/><text x="370" y="201" fill="#be123c" font-weight="800">2</text>
+          <text x="150" y="241" text-anchor="end" fill="#0f172a">R · Reforzar</text><rect x="160" y="224" width="100" height="24" rx="4" fill="#e2e8f0"/><text x="270" y="241" fill="#64748b" font-weight="700" font-size="12">No aplica (no hubo venta)</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#059669"></i> Impecable (5)</span><span><i class="dot" style="background:#10b981"></i> Muy bien (4)</span><span><i class="dot" style="background:#e11d48"></i> Flojo (2)</span><span><i class="dot" style="background:#e2e8f0"></i> No aplica</span></div>
+    </div>
+  </section>
+
+  <section id="tiempo">
+    <div class="kicker">Minuto a minuto</div>
+    <h2>La línea de tiempo</h2>
+    <p class="lead">Buen arranque, pero desde el precio (min 47) empezó un bucle de presión que terminó rompiendo el clima.</p>
+    <div class="chart">
+      <div class="ctitle">Los 79 minutos de la llamada</div>
+      <div class="csub">La segunda mitad fue precio + ROI + presión repetida.</div>
+      <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Línea de tiempo de 79 minutos">
+        <g font-family="inherit" font-size="11" fill="#94a3b8"><text x="24" y="26" font-size="12" font-weight="700" fill="#0f172a">min 0</text><text x="616" y="26" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">min 79</text></g>
+        <rect x="24" y="34" width="172" height="30" rx="6" fill="#e0e7ff"/><text x="110" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3730a3">Explorar (0–23)</text>
+        <rect x="200" y="34" width="176" height="30" rx="6" fill="#d1fae5"/><text x="288" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#047857">Pitch (23–47)</text>
+        <rect x="380" y="34" width="236" height="30" rx="6" fill="#ffe4e6"/><text x="498" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#be123c">Precio + presión (47–79)</text>
+        <g font-family="inherit" font-size="11.5">
+          <line x1="241" y1="64" x2="241" y2="92" stroke="#059669" stroke-width="2"/><circle cx="241" cy="96" r="5" fill="#059669"/><text x="241" y="118" text-anchor="middle" font-weight="700" fill="#047857">✓ min 29</text><text x="241" y="132" text-anchor="middle" fill="#64748b">analogía Louis Vuitton</text>
+          <line x1="376" y1="64" x2="376" y2="150" stroke="#e11d48" stroke-width="2"/><circle cx="376" cy="154" r="6" fill="#e11d48"/><text x="376" y="176" text-anchor="middle" font-weight="800" fill="#be123c">💰 min 47</text><text x="376" y="190" text-anchor="middle" fill="#64748b">precio $4,500</text>
+          <line x1="545" y1="64" x2="545" y2="112" stroke="#e11d48" stroke-width="2" stroke-dasharray="3 3"/><circle cx="545" cy="116" r="5" fill="#e11d48"/><text x="612" y="120" text-anchor="end" font-weight="700" fill="#be123c">min 68: "no funciono</text><text x="612" y="134" text-anchor="end" fill="#64748b">con este tipo de presión"</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#e0e7ff"></i> Explorar</span><span><i class="dot" style="background:#d1fae5"></i> Presentar</span><span><i class="dot" style="background:#ffe4e6"></i> Precio y presión</span></div>
+    </div>
+  </section>
+
+  <section id="leccion">
+    <div class="kicker">El aprendizaje del equipo</div>
+    <h2>Cuándo la presión resta (y no suma)</h2>
+    <p class="lead">La técnica de urgencia/escasez funciona con quien procrastina por miedo. Pero con un comprador analítico y autodirigido, hace lo contrario.</p>
+    <div class="alert">🧠 <b>Lo que pasó:</b> Emma dijo "no" con claridad y el vendedor insistió (reserva, "¿qué dato te falta para que sea un 10?", "esto se acaba"). Ella se sintió <b>abrumada</b>: "creo que hay más afán en vender que en lo que se ofrece". La escasez, en este perfil, <b>destruye confianza.</b></div>
+    <div class="rule">
+      <h3>Regla: primero lee al comprador</h3>
+      <p style="color:#f3e8f1;margin:0">Hay dos tipos. Al que <b style="color:#fca5a5">procrastina por miedo</b> lo ayuda un empujón. Al que <b style="color:#fca5a5">decide con calma y datos</b> (como Emma), el empujón lo espanta. La señal está temprano: si pide números, permanencia y garantías, baja la presión y sube la prueba.</p>
+    </div>
+  </section>
+
+  <section id="dinero">
+    <div class="kicker">El otro freno</div>
+    <h2>El dinero</h2>
+    <div class="chart">
+      <div class="ctitle">Las ofertas de precio (USD)</div>
+      <div class="csub">Emma tiene casa y deudas de remodelación: liquidez baja. Ni la reserva de $500 era viable ese día.</div>
+      <svg viewBox="0 0 640 170" width="100%" role="img" aria-label="Comparación: contado 3000, cuotas 3500, reserva 500">
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="150" y="46" text-anchor="end" fill="#0f172a">Precio de contado</text><rect x="160" y="30" width="300" height="28" rx="5" fill="#059669"/><text x="472" y="49" fill="#047857" font-weight="800">$3,000</text>
+          <text x="150" y="102" text-anchor="end" fill="#0f172a">En cuotas</text><rect x="160" y="86" width="350" height="28" rx="5" fill="#4f46e5"/><text x="522" y="105" fill="#3730a3" font-weight="800">$3,500</text>
+          <text x="150" y="158" text-anchor="end" fill="#0f172a">Reserva pedida</text><rect x="160" y="142" width="50" height="28" rx="5" fill="#e11d48"/><text x="222" y="161" fill="#be123c" font-weight="800">$500 ✕</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#e11d48"></i> Rechazó incluso la reserva de $500 (sin liquidez ese día)</span></div>
+    </div>
+  </section>
+
+  <section id="foda">
+    <div class="kicker">La foto completa</div>
+    <h2>FODA</h2>
+    <div class="foda">
+      <div class="quad q-f"><h3>💪 Fortalezas</h3><ul>
+        <li>Rapport cálido (Colombia/México, la hermana).</li>
+        <li>Analogía Louis Vuitton para vender el branding.</li>
+        <li>Compartió pantalla con casos y portafolios.</li>
+        <li>Manejó preguntas técnicas afiladas (IA, scams, confidencialidad).</li>
+        <li>Calculadora de ROI clara para una ingeniera.</li>
+      </ul></div>
+      <div class="quad q-o"><h3>🌱 Oportunidades</h3><ul>
+        <li>Dolor agudo con detonante (domingos nocturnos).</li>
+        <li>Decisora única, sin terceros.</li>
+        <li>Perfil premium (PM) → objetivo $4,000–5,000 realista.</li>
+        <li>Alta eficiencia y "recursividad".</li>
+        <li>Ya domina LinkedIn → Upwork es la palanca nueva.</li>
+      </ul></div>
+      <div class="quad q-d"><h3>🔧 Debilidades</h3><ul>
+        <li>Sobre-presión tras un "no" claro (erosionó confianza).</li>
+        <li>No confirmó presupuesto antes del precio.</li>
+        <li>ROI largo y optimista → "fantasioso" para ella.</li>
+        <li>Reserva pedida sin liquidez → rechazada.</li>
+        <li>No aisló "sí quiero" de "puedo pagar".</li>
+      </ul></div>
+      <div class="quad q-a"><h3>⚠️ Amenazas</h3><ul>
+        <li>Perfil que rechaza la presión.</li>
+        <li>Casa + deudas de remodelación (liquidez baja).</li>
+        <li>Decide con calma y datos.</li>
+        <li>Escéptica de Upwork (scams) y promesas grandes.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="momentos">
+    <div class="kicker">Con minuto exacto</div>
+    <h2>Momentos clave</h2>
+    <div class="moment good"><div class="tm">~29</div><div><h4>⭐ Analogía Louis Vuitton</h4><p>Explica el valor del branding con algo que a Emma le gusta (los bolsos). Vuelve tangible el "por qué pagar más". Replicable.</p></div></div>
+    <div class="moment bad"><div class="tm">~47</div><div><h4>Precio $4,500 sin calificar presupuesto</h4><p>Con casa y deudas, la liquidez baja era previsible; no se preguntó antes.</p></div></div>
+    <div class="moment bad"><div class="tm">~57</div><div><h4>Empieza el bucle de presión</h4><p>Reserva, "¿qué dato te falta para un 10?", "esto se acaba". A un perfil analítico, esto lo aleja.</p></div></div>
+    <div class="moment bad"><div class="tm">1:08</div><div><h4>El backfire explícito</h4><p>"No funciono con este tipo de presión" / "hay más afán en vender que en lo que se ofrece". La confianza se rompió.</p></div></div>
+  </section>
+
+  <section id="proxima">
+    <div class="kicker">El plan</div>
+    <h2>¿Qué hacer distinto?</h2>
+    <div class="todo">
+      <div class="item"><span class="num">1</span><p><b>Leer el tipo de comprador:</b> con analíticos/autodirigidos, menos presión y más datos + prueba.</p></div>
+      <div class="item"><span class="num">2</span><p><b>Confirmar presupuesto antes del precio</b> (casa + deudas ya anticipaban liquidez baja).</p></div>
+      <div class="item"><span class="num">3</span><p><b>No pedir reserva sin liquidez confirmada.</b></p></div>
+      <div class="item"><span class="num">4</span><p><b>Responder su pregunta de permanencia</b> (cuánto duran los trabajos) con datos, no con más urgencia.</p></div>
+      <div class="item"><span class="num">5</span><p><b>Seguimiento sin presión</b> en las 24 h: prueba de permanencia + ROI conservador + opción de pago que respete su liquidez.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><p><b>Neneko Remoto — Análisis de llamadas de venta.</b> Método CLOSER (Alex Hormozi) + rapport N.S.F.G.A. Documento interno de formación del equipo.</p><p style="margin-top:6px">Detalle técnico en <code>docs/analisis-llamadas/05-emma-sanchez.md</code> · <a href="analisis-llamadas.html">Volver al índice</a>.</p></div></footer>
+</body>
+</html>
