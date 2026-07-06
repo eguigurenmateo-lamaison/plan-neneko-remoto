@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de llamadas de venta | Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Análisis de las llamadas de venta del equipo con el método CLOSER de Alex Hormozi.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff;
+    --primary:#059669; --primary-l:#d1fae5; --primary-d:#047857;
+    --accent:#f59e0b; --accent-l:#fef3c7;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff;
+    --rose:#e11d48; --rose-l:#ffe4e6;
+    --radius:14px; --shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);text-decoration:none;}
+
+  .docnav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.97);border-bottom:1px solid rgba(255,255,255,.08);}
+  .docnav-inner{max-width:980px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:12px;height:50px;}
+  .dn-brand{color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  .dn-brand b{color:#5eead4;}
+  .dn-links{display:flex;gap:3px;overflow-x:auto;margin-left:auto;scrollbar-width:none;}
+  .dn-links::-webkit-scrollbar{display:none;}
+  .dn-links a{color:#cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:8px;white-space:nowrap;}
+  .dn-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .dn-links a.active{color:#0f172a;background:#5eead4;}
+
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:60px 0 52px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{font-size:38px;line-height:1.14;font-weight:800;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero .sub{font-size:18px;color:#cbd5e1;max-width:680px;}
+
+  section{padding:40px 0;}
+  .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--primary);margin-bottom:6px;}
+  h2{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+  .lead{font-size:17px;color:var(--slate);margin-bottom:22px;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .call{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;color:inherit;transition:transform .12s,box-shadow .12s;border-top:5px solid var(--rose);}
+  .call:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(15,23,42,.12);text-decoration:none;}
+  .call .n{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .call h3{font-size:21px;font-weight:800;color:var(--ink);margin:4px 0 2px;}
+  .call .role{font-size:14px;color:var(--muted);margin-bottom:12px;}
+  .call .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--primary-l);color:var(--primary-d);}
+  .tag.rose{background:var(--rose-l);color:#be123c;}
+  .tag.amber{background:var(--accent-l);color:#b45309;}
+  .call .cta{font-weight:700;color:var(--primary-d);font-size:14.5px;}
+  .call.soon{border-top-color:var(--line);opacity:.75;cursor:default;}
+  .call.soon:hover{transform:none;box-shadow:var(--shadow);}
+
+  .method{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-top:8px;}
+  .method h3{font-size:18px;color:var(--ink);margin-bottom:8px;}
+  .method p{margin:8px 0;font-size:15px;}
+  .method code{background:#f1f5f9;padding:2px 6px;border-radius:6px;font-size:13px;}
+
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:20px;}
+  @media (max-width:680px){.hero h1{font-size:29px;}.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="dn-brand" href="index.html">📋 <b>Neneko</b> Remoto</a>
+    <div class="dn-links">
+      <a href="accion-12jun.html">📌 12-jun</a>
+      <a href="index.html">Plan</a>
+      <a href="kit-arranque.html">Kit de arranque</a>
+      <a href="guion-video.html">Guion video</a>
+      <a href="sop-setting.html">SOP setting</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="tablero.html">Tablero</a>
+      <a href="analisis-llamadas.html" class="active">Análisis</a>
+      <a href="faq-ganchos.html">FAQ + Ganchos</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Formación de ventas · Método CLOSER</span>
+    <h1>Análisis de <span>llamadas de venta</span></h1>
+    <p class="sub">Revisamos cada llamada del equipo con el framework <b style="color:#fff">C.L.O.S.E.R.</b> de Alex Hormozi y el esquema de rapport <b style="color:#fff">N.S.F.G.A.</b> Cada análisis trae FODA, calificación por paso, momentos clave con minuto y un plan de mejora — en versión visual y fácil de compartir.</p>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <div class="kicker">Llamadas analizadas</div>
+    <h2>Reportes</h2>
+    <p class="lead">Haz clic en cada tarjeta para abrir el análisis visual completo.</p>
+    <div class="grid">
+
+      <a class="call" href="analisis-llamada-01-octavio.html">
+        <div class="n">Llamada 01 · 25 jun</div>
+        <h3>Octavio Zavala</h3>
+        <div class="role">Gerente de marketing · CDMX · Vendedor: Simón Mesa</div>
+        <div class="tags">
+          <span class="tag rose">No cerró</span>
+          <span class="tag amber">92 min</span>
+          <span class="tag">$4,500 → $3,500</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+      <a class="call" href="analisis-llamada-02-dilan.html">
+        <div class="n">Llamada 02 · 22 jun</div>
+        <h3>Dilan Villa</h3>
+        <div class="role">Analista IT / ServiceNow · Medellín · Vendedor: Stefano Manzi</div>
+        <div class="tags">
+          <span class="tag rose">No cerró</span>
+          <span class="tag amber">90 min</span>
+          <span class="tag">$4,500 → $3,000</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+      <a class="call" href="analisis-llamada-03-sebastian.html" style="border-top-color:#f59e0b">
+        <div class="n">Llamada 03 · 25 jun</div>
+        <h3>Sebastian Armijo</h3>
+        <div class="role">Líder de datos / estrategia · Bogotá → Madrid · Vendedor: Joselo Murakami</div>
+        <div class="tags">
+          <span class="tag amber">Cierre blando</span>
+          <span class="tag amber">95 min</span>
+          <span class="tag">$4,500 → $3,000</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+      <a class="call" href="analisis-llamada-04-fabian.html" style="border-top-color:#f59e0b">
+        <div class="n">Llamada 04 · 25 jun</div>
+        <h3>Fabian Lobaton</h3>
+        <div class="role">Arquitecto · Bogotá → Armenia · Vendedor: Simón Mesa</div>
+        <div class="tags">
+          <span class="tag amber">No cerró · 2ª llamada</span>
+          <span class="tag amber">78 min</span>
+          <span class="tag">$4,500 → $3,500</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+      <a class="call" href="analisis-llamada-05-emma.html">
+        <div class="n">Llamada 05 · 17 jun</div>
+        <h3>Emma Sánchez</h3>
+        <div class="role">Ingeniera, soporte IT · Barranquilla · Vendedor: Joselo Murakami</div>
+        <div class="tags">
+          <span class="tag rose">No cerró</span>
+          <span class="tag amber">79 min</span>
+          <span class="tag">$4,500 → $3,000</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+      <a class="call" href="analisis-llamada-06-rodrigo.html">
+        <div class="n">Llamada 06 · 20 jun</div>
+        <h3>Rodrigo Enriquez</h3>
+        <div class="role">Ex-yates, freelance · Veracruz · Vendedor: Stefano Manzi</div>
+        <div class="tags">
+          <span class="tag rose">No cerró</span>
+          <span class="tag amber">92 min</span>
+          <span class="tag">$4,500 → $3,500</span>
+        </div>
+        <div class="cta">Ver análisis →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="kicker">La base</div>
+    <h2>El método detrás del análisis</h2>
+    <div class="method">
+      <h3>C.L.O.S.E.R. (Alex Hormozi)</h3>
+      <p><b>C</b>larify · <b>L</b>abel · <b>O</b>verview · <b>S</b>ell · <b>E</b>xplain · <b>R</b>einforce. Se compra por emoción y se justifica con lógica: primero se entiende y amplifica el dolor, después se presenta la solución. Máxima: <i>"vende las vacaciones, no el vuelo"</i>.</p>
+      <h3 style="margin-top:16px;">Rapport N.S.F.G.A.</h3>
+      <p><b>N</b>ame · <b>S</b>ame · <b>F</b>ame · <b>G</b>ain/Pain · <b>A</b>im. El esquema para romper el hielo con intención en los primeros minutos.</p>
+      <p style="margin-top:12px;color:var(--muted);font-size:14px;">Referencia completa: <code>docs/closer-framework.md</code> · Detalle técnico de cada llamada en <code>docs/analisis-llamadas/</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Neneko Remoto — Formación de ventas.</b> Análisis de llamadas con el método CLOSER de Alex Hormozi. Documento interno del equipo.</p>
+  </div>
+</footer>
+</body>
+</html>

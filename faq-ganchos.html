@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ + Ganchos de contenido | Neneko Remoto</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff;
+    --primary:#059669; --primary-l:#d1fae5; --primary-d:#047857;
+    --accent:#f59e0b; --accent-l:#fef3c7; --accent-d:#b45309;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff; --indigo-d:#3730a3;
+    --rose:#e11d48; --rose-l:#ffe4e6;
+    --radius:14px; --shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px;}
+  a{color:var(--primary-d);text-decoration:none;}
+  h1,h2,h3,h4{color:var(--ink);letter-spacing:-.01em;}
+  strong,b{color:var(--ink);}
+  .muted{color:var(--muted);}
+  .docnav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.97);border-bottom:1px solid rgba(255,255,255,.08);}
+  .docnav-inner{max-width:980px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:12px;height:50px;}
+  .dn-brand{color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  .dn-brand b{color:#5eead4;}
+  .dn-links{display:flex;gap:3px;overflow-x:auto;margin-left:auto;scrollbar-width:none;}
+  .dn-links::-webkit-scrollbar{display:none;}
+  .dn-links a{color:#cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:8px;white-space:nowrap;}
+  .dn-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .dn-links a.active{color:#0f172a;background:#5eead4;}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:58px 0 50px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{font-size:38px;line-height:1.14;font-weight:800;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero .sub{font-size:18px;color:#cbd5e1;max-width:720px;}
+  section{padding:42px 0;border-top:1px solid var(--line);}
+  .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--primary);margin-bottom:6px;}
+  .big{font-size:29px;font-weight:800;margin-bottom:6px;}
+  h2{font-size:24px;font-weight:800;margin-bottom:6px;}
+  .lead{font-size:17px;color:var(--slate);margin:10px 0 22px;}
+  p{margin:10px 0;}
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;overflow-x:auto;}
+  .chart .ctitle{font-weight:800;color:var(--ink);font-size:16px;margin-bottom:2px;}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin-bottom:16px;}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 8px;margin-top:8px;}
+  .faq .row{display:flex;gap:14px;align-items:flex-start;padding:16px;border-bottom:1px solid var(--line);}
+  .faq .row:last-child{border-bottom:none;}
+  .faq .rank{flex:0 0 auto;width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .faq .qbody{flex:1;min-width:0;}
+  .faq .q{font-weight:700;color:var(--ink);font-size:16px;margin-bottom:4px;}
+  .faq .a{font-size:14.5px;color:var(--slate);margin:6px 0 0;}
+  .freq{display:inline-block;font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;margin-left:8px;vertical-align:middle;}
+  .f6{background:var(--primary);color:#fff;} .f5{background:#10b981;color:#fff;} .f4{background:var(--accent);color:#fff;} .f3{background:var(--accent-l);color:var(--accent-d);} .f2{background:var(--indigo-l);color:var(--indigo-d);} .f1{background:#eef0f4;color:var(--muted);}
+  .tagrow{margin-top:8px;}
+  .split{display:inline-block;font-size:12px;font-weight:700;color:var(--muted);background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-top:8px;}
+  .split.dec{color:var(--rose);background:var(--rose-l);border-color:transparent;}
+  .split.hook{color:var(--primary-d);background:var(--primary-l);border-color:transparent;}
+  .callout{background:#fffdf5;border:1px dashed var(--accent);border-radius:14px;padding:16px 20px;margin:16px 0;}
+  .callout b{color:var(--accent-d);}
+  .themes{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px;}
+  .theme{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;border-left:5px solid var(--primary);}
+  .theme h3{font-size:18px;margin-bottom:2px;}
+  .theme .src{font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;}
+  .hooks{list-style:none;margin:0 0 14px;}
+  .hooks li{position:relative;padding:10px 12px 10px 34px;margin:8px 0;background:#f8fafc;border:1px solid var(--line);border-radius:10px;font-size:14.5px;color:var(--slate);}
+  .hooks li::before{content:"“";position:absolute;left:12px;top:6px;font-size:22px;font-weight:800;color:var(--primary);line-height:1;}
+  .angle{font-size:14px;color:var(--slate);background:var(--primary-l);border-radius:10px;padding:12px 14px;}
+  .angle b{color:var(--primary-d);}
+  .kw{display:inline-block;font-weight:800;color:#fff;background:var(--ink);border-radius:6px;padding:1px 8px;font-size:13px;letter-spacing:.03em;}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+  @media (max-width:680px){.hero h1{font-size:29px;}}
+</style>
+</head>
+<body>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="dn-brand" href="index.html">📋 <b>Neneko</b> Remoto</a>
+    <div class="dn-links">
+      <a href="accion-12jun.html">📌 12-jun</a>
+      <a href="index.html">Plan</a>
+      <a href="kit-arranque.html">Kit de arranque</a>
+      <a href="guion-video.html">Guion video</a>
+      <a href="sop-setting.html">SOP setting</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="tablero.html">Tablero</a>
+      <a href="analisis-llamadas.html">Análisis</a>
+      <a href="faq-ganchos.html" class="active">FAQ + Ganchos</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Insumo de contenido · de las 6 llamadas</span>
+    <h1>Las dudas que se repiten <span>→ ganchos de LinkedIn</span></h1>
+    <p class="sub">Sacamos de las 6 llamadas de venta las preguntas reales de los leads (ordenadas por cuánto se repiten) y las convertimos en ganchos para atraer audiencia fría: gente en <b style="color:#fff">conciencia 1–2</b> que aún no sabe que su estancamiento tiene salida.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- APARTADO 1 -->
+  <section id="faq">
+    <div class="kicker">Apartado 1</div>
+    <h2 class="big">Preguntas frecuentes de los clientes</h2>
+    <p class="lead">De la que <b>más</b> se repite a la que <b>menos</b>. La cifra indica en cuántas de las 6 llamadas apareció.</p>
+
+    <div class="chart">
+      <div class="ctitle">¿Qué dudas se repiten más? (de 6 llamadas)</div>
+      <div class="csub">El dinero es la duda #1 y universal; garantía y "¿mi perfil sirve?" la siguen.</div>
+      <svg viewBox="0 0 700 300" width="100%" role="img" aria-label="Frecuencia de dudas en 6 llamadas">
+        <g font-size="11" fill="#94a3b8" font-family="inherit">
+          <line x1="290" y1="12" x2="290" y2="256" stroke="#eef2f7"/><line x1="360" y1="12" x2="360" y2="256" stroke="#eef2f7"/><line x1="430" y1="12" x2="430" y2="256" stroke="#eef2f7"/><line x1="500" y1="12" x2="500" y2="256" stroke="#eef2f7"/><line x1="570" y1="12" x2="570" y2="256" stroke="#eef2f7"/><line x1="640" y1="12" x2="640" y2="256" stroke="#eef2f7"/>
+          <line x1="220" y1="256" x2="660" y2="256" stroke="#e2e8f0"/>
+          <text x="290" y="272" text-anchor="middle">1</text><text x="360" y="272" text-anchor="middle">2</text><text x="430" y="272" text-anchor="middle">3</text><text x="500" y="272" text-anchor="middle">4</text><text x="570" y="272" text-anchor="middle">5</text><text x="640" y="272" text-anchor="middle">6</text>
+          <text x="440" y="290" text-anchor="middle" fill="#64748b">n.º de llamadas (de 6)</text>
+        </g>
+        <g font-family="inherit" font-weight="700" font-size="12.5">
+          <text x="210" y="39" text-anchor="end" fill="#0f172a">Precio y pago</text><rect x="220" y="24" width="420" height="22" rx="4" fill="#059669"/><text x="650" y="39" fill="#047857" font-weight="800">6</text>
+          <text x="210" y="69" text-anchor="end" fill="#0f172a">Garantía</text><rect x="220" y="54" width="350" height="22" rx="4" fill="#059669"/><text x="580" y="69" fill="#047857" font-weight="800">5</text>
+          <text x="210" y="99" text-anchor="end" fill="#0f172a">Duración</text><rect x="220" y="84" width="280" height="22" rx="4" fill="#059669"/><text x="510" y="99" fill="#047857" font-weight="800">4</text>
+          <text x="210" y="129" text-anchor="end" fill="#0f172a">¿Mi perfil sirve?</text><rect x="220" y="114" width="280" height="22" rx="4" fill="#059669"/><text x="510" y="129" fill="#047857" font-weight="800">4</text>
+          <text x="210" y="159" text-anchor="end" fill="#0f172a">¿Legal / estafa?</text><rect x="220" y="144" width="280" height="22" rx="4" fill="#059669"/><text x="510" y="159" fill="#047857" font-weight="800">4</text>
+          <text x="210" y="189" text-anchor="end" fill="#0f172a">¿Inglés alcanza?</text><rect x="220" y="174" width="210" height="22" rx="4" fill="#10b981"/><text x="440" y="189" fill="#047857" font-weight="800">3</text>
+          <text x="210" y="219" text-anchor="end" fill="#0f172a">Casos reales</text><rect x="220" y="204" width="210" height="22" rx="4" fill="#10b981"/><text x="440" y="219" fill="#047857" font-weight="800">3</text>
+          <text x="210" y="249" text-anchor="end" fill="#0f172a">En paralelo</text><rect x="220" y="234" width="210" height="22" rx="4" fill="#10b981"/><text x="440" y="249" fill="#047857" font-weight="800">3</text>
+        </g>
+      </svg>
+      <div class="muted" style="font-size:13px;">…y con menor frecuencia (2/6): competir contra los de $2/hora · cuánto duran los trabajos · empresa vs. freelance · mentor de mi área · horarios. Y (1/6): el portafolio frente a los filtros de IA/ATS.</div>
+    </div>
+
+    <div class="faq">
+      <div class="row"><div class="rank">1</div><div class="qbody"><div class="q">¿Cuánto cuesta y cómo se paga? ¿Un pago o cuotas/financiamiento? <span class="freq f6">6/6</span></div><div class="a"><b>Respuesta modelo:</b> "El programa completo (90 días) es $X. Se paga con tarjeta; y para casos comprometidos, arrancamos con una parte ahora y el resto en cuotas que financiamos nosotros." <span class="split dec">Etapa de decisión — no sirve de gancho</span></div></div></div>
+      <div class="row"><div class="rank">2</div><div class="qbody"><div class="q">¿Qué garantía hay? ¿Y si no consigo trabajo? <span class="freq f5">5/6</span></div><div class="a"><b>Respuesta modelo:</b> "90 días de acompañamiento; el estándar es 30–45 días con ~78% de asertividad. No garantizamos el resultado (depende de tu compromiso), pero te acompañamos hasta amarrar el trabajo." <span class="split dec">Decisión</span></div></div></div>
+      <div class="row"><div class="rank">3</div><div class="qbody"><div class="q">¿Cuánto dura y hasta dónde me acompañan? <span class="freq f4">4/6</span></div><div class="a"><b>Respuesta modelo:</b> "90 días. La colocación suele darse día 30–45; el resto lo usamos para capacitarte en el nuevo puesto y asegurar el pago. Sales sabiendo repetir el sistema solo." <span class="split dec">Decisión</span></div></div></div>
+      <div class="row"><div class="rank">4</div><div class="qbody"><div class="q">¿Mi perfil realmente sirve? (edad, experiencia, sin título) <span class="freq f4">4/6</span></div><div class="a"><b>Respuesta modelo:</b> "El mercado internacional paga por habilidades y resultados, no por títulos ni edad. Lo que te sobra es lo que a otros les falta; el problema es cómo lo presentas." <span class="split hook">Alimenta ganchos (Tema A/C)</span></div></div></div>
+      <div class="row"><div class="rank">5</div><div class="qbody"><div class="q">¿Es legal, estable y no es estafa? (2 trabajos, scams) <span class="freq f4">4/6</span></div><div class="a"><b>Respuesta modelo:</b> "Es legal, incluso tener dos contratos freelance. El riesgo son los clientes-estafa, por eso el método filtra: historial de pago, plataformas con contrato." <span class="split hook">Alimenta ganchos (Tema D/E)</span></div></div></div>
+      <div class="row"><div class="rank">6</div><div class="qbody"><div class="q">¿El inglés que tengo alcanza? <span class="freq f3">3/6</span></div><div class="a"><b>Respuesta modelo:</b> "No buscan acento nativo, buscan que te comuniques y resuelvas. Con B2 y experiencia estás listo; lo técnico se afina trabajando." <span class="split hook">Alimenta ganchos (Tema B)</span></div></div></div>
+      <div class="row"><div class="rank">7</div><div class="qbody"><div class="q">¿Los casos de éxito son reales y documentados? <span class="freq f3">3/6</span></div><div class="a"><b>Respuesta modelo:</b> "Sí: testimonios, prensa (El Tiempo, Semana) y la comunidad por dentro. Tip: enviar el repositorio de casos ANTES de la llamada." <span class="split hook">Alimenta ganchos (Tema D)</span></div></div></div>
+      <div class="row"><div class="rank">8</div><div class="qbody"><div class="q">¿Puedo hacerlo en paralelo con mi empleo actual? <span class="freq f3">3/6</span></div><div class="a"><b>Respuesta modelo:</b> "Sí, la mayoría lo hace en paralelo. Construyes la salida sin soltar lo que tienes y renuncias cuando ya firmaste lo nuevo." <span class="split hook">Alimenta ganchos (Tema G)</span></div></div></div>
+      <div class="row"><div class="rank">9</div><div class="qbody"><div class="q">¿Cómo compito contra gente que cobra $2–5 la hora? <span class="freq f2">2/6</span></div><div class="a"><b>Respuesta modelo:</b> "No compites por precio. Te posicionamos para el segmento premium, donde eligen por calidad y confianza." <span class="split hook">Alimenta ganchos (Tema F)</span></div></div></div>
+      <div class="row"><div class="rank">10</div><div class="qbody"><div class="q">¿Cuánto duran esos trabajos? ¿Dan seguridad? <span class="freq f2">2/6</span></div><div class="a"><b>Respuesta modelo:</b> "Buscamos trabajos indefinidos y con crecimiento. Y aprendes a conseguir el siguiente antes de que se acabe el actual." <span class="split hook">Alimenta ganchos (Tema H)</span></div></div></div>
+      <div class="row"><div class="rank">11</div><div class="qbody"><div class="q">¿Es empleo con empresas o freelance por proyectos? <span class="freq f2">2/6</span></div><div class="a"><b>Respuesta modelo:</b> "Depende de lo que busques; la mayoría quiere estable de largo plazo y hacia allá vamos, con freelance en paralelo si lo deseas." <span class="split dec">Decisión</span></div></div></div>
+      <div class="row"><div class="rank">12</div><div class="qbody"><div class="q">¿El mentor 1:1 es de mi área/nicho? <span class="freq f2">2/6</span></div><div class="a"><b>Respuesta modelo:</b> "Son casos de éxito de distintas industrias. No necesitas uno idéntico: el sistema es el mismo y sabemos adaptarlo a tu nicho." <span class="split dec">Decisión</span></div></div></div>
+      <div class="row"><div class="rank">13</div><div class="qbody"><div class="q">¿Los horarios/sesiones se adaptan a mi agenda? <span class="freq f2">2/6</span></div><div class="a"><b>Respuesta modelo:</b> "Tu 1:1 la agendas a tu horario; las grupales son L–J y te avisamos con antelación." <span class="split dec">Decisión</span></div></div></div>
+      <div class="row"><div class="rank">14</div><div class="qbody"><div class="q">¿El portafolio no choca con los filtros de IA/ATS? <span class="freq f1">1/6</span></div><div class="a"><b>Respuesta modelo:</b> "En Upwork el portafolio no es un extra, es un requisito. El CV muestra estudios; el portafolio demuestra habilidades, que es lo que paga el nivel alto." <span class="split hook">Alimenta ganchos (Tema F)</span></div></div></div>
+    </div>
+  </section>
+
+  <!-- APARTADO 2 -->
+  <section id="ganchos">
+    <div class="kicker">Apartado 2</div>
+    <h2 class="big">Ganchos de LinkedIn (conciencia 1–2)</h2>
+    <p class="lead">Para frenar el scroll de quien <b>no sabe que su estancamiento tiene salida</b> (nivel 1) o <b>sabe que está mal pagado pero no que el remoto en dólares es la vía</b> (nivel 2).</p>
+    <div class="callout">🎯 <b>Reglas:</b> el gancho abre por el <b>dolor o la creencia</b>, nunca por "Freedom" ni por el mecanismo. Son las primeras 1–2 líneas. Sin link en el post; el CTA es una <b>palabra clave en comentarios</b>. Voz de Estefano (1ª persona: el fundador que vivió el recorte y pasó de $4k a $10k como nómada). <b>Las dudas de precio, garantía y logística NO se usan como gancho</b> (son de decisión); los ganchos salen de las creencias/dolor.</p></div>
+
+    <div class="themes">
+
+      <div class="theme">
+        <h3>H · El estancamiento / techo salarial</h3>
+        <div class="src">El dolor raíz · nace de la FAQ #4 y #10</div>
+        <ul class="hooks">
+          <li>Llevas años siendo el mejor en lo que haces… y ganando lo mismo que hace 3 años. No es falta de talento. Es la moneda en la que cobras.</li>
+          <li>Ascendiste hasta donde el dueño te dejó ascender. Y ahí te quedaste. Ese techo no es tu límite: es el de tu empresa.</li>
+          <li>Me tomó un recorte de personal entenderlo: no ganaba poco por malo. Ganaba poco por el país donde cobraba.</li>
+          <li>El mismo trabajo, hecho por la misma persona, vale 3 veces más si lo cobras en dólares. Nadie te lo dijo porque a nadie a tu alrededor le convenía.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> validar la escena (años, buen desempeño, aumento por inflación) → romper la creencia (el techo es de la empresa/el país, no tuyo) → mini-prueba (alguien con menos experiencia cobrando el triple) → CTA: comenta <span class="kw">TECHO</span> y te cuento el primer paso.</div>
+      </div>
+
+      <div class="theme">
+        <h3>A · "Mi perfil ya no sirve" (edad, experiencia, título)</h3>
+        <div class="src">Nace de la FAQ #4</div>
+        <ul class="hooks">
+          <li>Cumples 40 y crees que ya es tarde para reinventarte. Un cliente pensó igual. Hoy factura en dólares desde su casa, nadando a media mañana.</li>
+          <li>En el mundo corporativo te pesaba la edad. En el mercado internacional pesa lo que sabes hacer. Nadie te pregunta el año en que naciste.</li>
+          <li>"No tengo el título que piden." Ninguna empresa que paga bien en remoto contrata un diploma. Contrata problemas resueltos.</li>
+          <li>Tienes 15 años de experiencia y sientes que no calificas para nada nuevo. El problema no es tu experiencia: es cómo la estás contando.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> desmontar "sin el título correcto no califico" → el remoto valora resultados → caso (arquitecto / VA con trayectoria) → CTA: comenta <span class="kw">PERFIL</span> y te digo qué ve un cliente cuando abre el tuyo.</div>
+      </div>
+
+      <div class="theme">
+        <h3>B · "Mi inglés no alcanza"</h3>
+        <div class="src">Nace de la FAQ #6</div>
+        <ul class="hooks">
+          <li>Crees que tu inglés no da para trabajar con gringos. Conozco gente con inglés peor que el tuyo cobrando $40 la hora. La diferencia no es el acento.</li>
+          <li>No necesitas hablar como nativo. Necesitas hacerte entender. A quien paga bien no le importa tu pronunciación si le resuelves el problema.</li>
+          <li>Llevas años estudiando inglés "para cuando esté listo". Spoiler: nunca vas a estar listo. Se aprende trabajando, no esperando.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> el inglés como excusa cómoda → lo que de verdad piden (comunicar + resolver) → caso (inglés básico con clientes directos) → CTA: comenta <span class="kw">INGLÉS</span> y te mando la verdad sobre el nivel que piden.</div>
+      </div>
+
+      <div class="theme">
+        <h3>C · "Necesito otro título / aprender a programar"</h3>
+        <div class="src">Nace de la FAQ #4</div>
+        <ul class="hooks">
+          <li>Estás por meterte a otro curso de 6 meses creyendo que ahí sí vas a calificar. Frena. Probablemente ya tienes lo que se necesita; lo que falta es cómo mostrarlo.</li>
+          <li>"Cuando termine el máster, ahí sí busco algo mejor." Yo también aplacé mi vida esperando el título perfecto. El mercado no espera títulos: espera problemas resueltos.</li>
+          <li>Crees que llegaste a tu tope con lo que sabes. Alguien con la mitad de tu experiencia gana el triple. No le sobró talento: le sobró estrategia.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> la trampa del "un curso más" → costo de oportunidad (cada mes estudiando es un mes sin cobrar mejor) → caso (ex-alto ingreso metido en un máster) → CTA: comenta <span class="kw">ATAJO</span> y te muestro por dónde empezar con lo que YA tienes.</div>
+      </div>
+
+      <div class="theme">
+        <h3>D · "¿Esas ofertas en dólares son reales o estafa?"</h3>
+        <div class="src">Nace de la FAQ #5 y #7</div>
+        <ul class="hooks">
+          <li>Ves ofertas de $3,000 al mes en remoto y piensas "eso es mentira". No lo es. Lo que sí abunda es la basura mal pagada… si no sabes filtrar.</li>
+          <li>Todo el mundo cree que el remoto en dólares es humo o estafa. Yo pensaba igual… hasta que me tocó vivir de eso 7 años.</li>
+          <li>Sí, hay estafas. Muchas. Pero confundir "hay estafas" con "todo es estafa" es la excusa perfecta para no intentarlo nunca.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> reconocer que el miedo es válido → el problema no es que no existan, es no saber filtrar → cómo se distingue una oferta real → CTA: comenta <span class="kw">REAL</span> y te paso las 3 señales de una oferta legítima.</div>
+      </div>
+
+      <div class="theme">
+        <h3>E · "¿Es legal y estable?" (dos trabajos, contratos)</h3>
+        <div class="src">Nace de la FAQ #5</div>
+        <ul class="hooks">
+          <li>"¿Es legal trabajar para una empresa de otro país desde acá?" Sí. "¿Y tener dos?" También. Lo raro no es hacerlo: es que nadie te lo explicó.</li>
+          <li>Te frena el miedo a que un día "no te contesten y ya". Ese miedo tiene solución, y se llama saber con quién firmas antes de empezar.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> normalizar (miles lo hacen legalmente) → el riesgo real es el cliente, no la modalidad → cómo se protege uno → CTA: comenta <span class="kw">LEGAL</span> y te aclaro cómo se blinda un contrato remoto.</div>
+      </div>
+
+      <div class="theme">
+        <h3>F · "¿Cómo compito contra los de $2 la hora?"</h3>
+        <div class="src">Nace de la FAQ #9 y #14</div>
+        <ul class="hooks">
+          <li>"En Upwork hay gente cobrando $2 la hora, ¿cómo compito?" No compites. Te posicionas donde no se elige por precio, sino por confianza.</li>
+          <li>Si tu única ventaja es ser barato, siempre habrá alguien más barato. La buena noticia: las empresas que pagan bien no buscan barato.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> el error de competir por precio → existen dos mercados ($5/h vs $40/h) → qué hace que caigas en uno u otro → CTA: comenta <span class="kw">PREMIUM</span> y te muestro la diferencia entre los dos mercados.</div>
+      </div>
+
+      <div class="theme">
+        <h3>G · "Tendría que renunciar y quedarme sin nada"</h3>
+        <div class="src">Nace de la FAQ #8</div>
+        <ul class="hooks">
+          <li>Crees que para buscar algo mejor tienes que renunciar y quedarte sin ingresos. No. Se construye la salida sin soltar lo que ya tienes.</li>
+          <li>"No me puedo dar el lujo de un mes sin ingresos." Nadie te lo está pidiendo. La transición se hace adentro, y renuncias cuando ya firmaste lo nuevo.</li>
+        </ul>
+        <div class="angle"><b>Ángulo:</b> desactivar el "salto al vacío" → cómo es una transición ordenada (en paralelo) → caso (consiguió la oferta antes de renunciar) → CTA: comenta <span class="kw">SALIDA</span> y te explico cómo se hace sin riesgo.</div>
+      </div>
+
+    </div>
+
+    <div class="callout" style="margin-top:22px;">📌 <b>Cómo priorizar:</b> arranca por <b>H (estancamiento)</b>, <b>A (perfil)</b> y <b>D (¿es real?)</b> — son las creencias que más aparecen y las de mayor alcance en frío. Cada tema alimenta varias publicaciones rotando los ganchos. Estructura del post: gancho → validar el dolor con una escena → romper la creencia → micro-prueba (un caso) → CTA de palabra clave.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Neneko Remoto — Insumo de contenido.</b> Derivado del análisis de 6 llamadas de venta. Detalle técnico en <code>docs/faq-y-ganchos.md</code> · Análisis en <a href="analisis-llamadas.html">/Análisis</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

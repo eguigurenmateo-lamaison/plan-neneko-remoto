@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Análisis de llamada 02 — Dilan Villa | Neneko Remoto</title>
+<style>
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff; --surface:#fcfcfb;
+    --green:#059669; --green-l:#d1fae5; --green-d:#047857;
+    --amber:#f59e0b; --amber-l:#fef3c7; --amber-d:#b45309;
+    --rose:#e11d48; --rose-l:#ffe4e6; --rose-d:#be123c;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff; --indigo-d:#3730a3;
+    --sky:#0ea5e9; --sky-l:#e0f2fe;
+    --radius:16px; --shadow:0 1px 3px rgba(15,23,42,.08),0 12px 32px rgba(15,23,42,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3,h4{color:var(--ink);letter-spacing:-.01em;}
+  strong,b{color:var(--ink);}
+  .muted{color:var(--muted);}
+
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:56px 0 48px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;
+    color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{color:#fff;font-size:38px;line-height:1.14;font-weight:800;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero .sub{font-size:18px;color:#cbd5e1;max-width:660px;}
+  .verdict{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:rgba(225,29,72,.15);
+    border:1px solid rgba(225,29,72,.4);color:#fecdd3;font-weight:700;padding:10px 18px;border-radius:12px;font-size:15px;}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:#94a3b8;}
+  .hero .meta b{color:#e2e8f0;font-weight:600;}
+
+  nav.jump{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);padding:10px 0;}
+  nav.jump .wrap{display:flex;gap:8px;overflow-x:auto;}
+  nav.jump a{white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--slate);padding:6px 12px;border-radius:999px;text-decoration:none;}
+  nav.jump a:hover{background:var(--green-l);color:var(--green-d);}
+  nav.jump a.home{background:var(--ink);color:#fff;}
+
+  section{padding:38px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:6px;}
+  h2{font-size:27px;font-weight:800;margin-bottom:6px;}
+  .lead{font-size:17px;color:var(--slate);margin:10px 0 20px;}
+  h3{font-size:19px;font-weight:700;margin:22px 0 8px;}
+  p{margin:10px 0;}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:16px 0;}
+  .eli{background:#fffdf5;border:1px dashed var(--amber);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .eli b{color:var(--amber-d);}
+  .win{background:#f0fdf7;border:1px dashed var(--green);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .win b{color:var(--green-d);}
+
+  .recipe{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px;}
+  .step{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--green);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);}
+  .step .lt{display:inline-flex;width:30px;height:30px;border-radius:8px;background:var(--indigo);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:15px;margin-bottom:6px;}
+  .step h4{font-size:15.5px;margin-bottom:2px;}
+  .step p{font-size:14px;color:var(--muted);margin:2px 0 0;}
+
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;overflow-x:auto;}
+  .chart .ctitle{font-weight:800;color:var(--ink);font-size:16px;margin-bottom:2px;}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin-bottom:16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+
+  .foda{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px;}
+  .quad{border-radius:14px;padding:18px 20px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .quad h3{margin-top:0;font-size:17px;display:flex;align-items:center;gap:8px;}
+  .quad ul{list-style:none;margin:10px 0 0;}
+  .quad li{position:relative;padding-left:20px;margin:8px 0;font-size:14.5px;}
+  .quad li::before{position:absolute;left:0;top:0;font-weight:800;}
+  .q-f{background:var(--green-l);} .q-f h3{color:var(--green-d);} .q-f li::before{content:"✓";color:var(--green-d);}
+  .q-o{background:var(--amber-l);} .q-o h3{color:var(--amber-d);} .q-o li::before{content:"➜";color:var(--amber-d);}
+  .q-d{background:var(--rose-l);} .q-d h3{color:var(--rose-d);} .q-d li::before{content:"✕";color:var(--rose-d);}
+  .q-a{background:#eef0f4;} .q-a h3{color:var(--slate);} .q-a li::before{content:"⚠";color:var(--muted);}
+
+  .moment{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .moment .tm{flex:0 0 auto;font-variant-numeric:tabular-nums;font-weight:800;color:#fff;background:var(--ink);
+    border-radius:8px;padding:6px 10px;font-size:13px;min-width:78px;text-align:center;}
+  .moment.good{border-left:5px solid var(--green);} .moment.good .tm{background:var(--green-d);}
+  .moment.bad{border-left:5px solid var(--rose);} .moment.bad .tm{background:var(--rose-d);}
+  .moment.warn{border-left:5px solid var(--amber);} .moment.warn .tm{background:var(--amber-d);}
+  .moment h4{font-size:15px;margin-bottom:2px;}
+  .moment p{font-size:14px;color:var(--muted);margin:2px 0 0;}
+
+  /* decision makers */
+  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+  .person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;box-shadow:var(--shadow);}
+  .person .ic{font-size:30px;}
+  .person b{display:block;margin-top:6px;color:var(--ink);font-size:16px;}
+  .person span{font-size:13.5px;color:var(--muted);}
+  .person.k{border-top:4px solid var(--indigo);}
+  .person.p{border-top:4px solid var(--rose);}
+  .person.t{border-top:4px solid var(--green);}
+
+  /* compare table */
+  .cmp{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+  .cmp th,.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  .cmp thead th{background:var(--ink);color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.03em;}
+  .cmp tbody tr:nth-child(even){background:#f8fafc;}
+  .cmp td:first-child{font-weight:600;color:var(--ink);}
+
+  .rule{background:linear-gradient(135deg,#0f172a,#134e4a);color:#fff;border-radius:var(--radius);padding:26px 28px;margin:16px 0;box-shadow:var(--shadow);}
+  .rule h3{color:#fff;font-size:20px;margin-bottom:12px;}
+
+  .todo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px 8px;margin-top:8px;}
+  .todo .item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-bottom:1px solid var(--line);}
+  .todo .item:last-child{border-bottom:none;}
+  .todo .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .todo .item p{margin:0;font-size:14.5px;}
+
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+
+  @media (max-width:680px){
+    .hero h1{font-size:30px;}
+    .recipe,.foda,.people{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Análisis de llamada · 02</span>
+    <h1>La llamada con <span>Dilan</span>: mejor rapport, mismo muro</h1>
+    <p class="sub">Una llamada de 90 minutos revisada con el método <b style="color:#fff">CLOSER</b> de Hormozi y el esquema de rapport <b style="color:#fff">N.S.F.G.A.</b> Aquí la apertura fue mucho mejor que en la llamada 01… pero el dinero volvió a frenar el cierre.</p>
+    <div class="verdict">🔴 Resultado: no cerró — pero es una venta rescatable (hay compromiso y una fuente de dinero clara)</div>
+    <div class="meta">
+      <span><b>Cliente:</b> Dilan Villa · analista IT / ServiceNow (Medellín)</span>
+      <span><b>Vendedor:</b> Stefano Manzi</span>
+      <span><b>Duración:</b> 90 min</span>
+      <span><b>Precio:</b> $4,500 → $3,500 → $3,000</span>
+    </div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a class="home" href="analisis-llamadas.html">← Índice</a>
+    <a href="#resumen">Resumen</a>
+    <a href="#rapport">El rapport</a>
+    <a href="#nota">La nota</a>
+    <a href="#tiempo">Línea de tiempo</a>
+    <a href="#dinero">El dinero</a>
+    <a href="#decisores">Quién decide</a>
+    <a href="#foda">FODA</a>
+    <a href="#momentos">Momentos</a>
+    <a href="#compara">vs. Llamada 01</a>
+    <a href="#proxima">Qué mejorar</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="resumen">
+    <div class="kicker">En 30 segundos</div>
+    <h2>¿Qué pasó?</h2>
+    <p class="lead">Dilan lleva 4 años como analista de IT en Medellín, gana ~$2,200 y quiere llegar a $3,000+. Está harto de su "zona de confort" y quiere viajar y pagar deudas. El vendedor, Stefano, hizo una apertura excelente: llegó con la tarea hecha y conectó de persona a persona.</p>
+    <div class="card">
+      <p><b>Lo bueno:</b> preparó la llamada, cuantificó lo que Dilan pierde por no actuar (~$10,000 al año) y llevó un buen ritmo. Dilan quedó con ganas (compromiso 8–9 de 10).</p>
+      <p><b>El muro:</b> el dinero de Dilan está en un <b>fondo compartido con su pareja</b> (que está sin empleo), tiene deudas y no dispone ni de $500 de inmediato. El precio se presentó al minuto 64.</p>
+      <p style="margin-bottom:0"><b>La conclusión:</b> otra vez faltó <b>confirmar el presupuesto antes</b>. Pero hay salida: Dilan tiene una <b>tía en EEUU</b> que suele prestarle. La venta se puede recuperar en el seguimiento.</p>
+    </div>
+  </section>
+
+  <section id="rapport">
+    <div class="kicker">El comienzo</div>
+    <h2>El rapport: cómo romper el hielo bien (N.S.F.G.A.)</h2>
+    <p class="lead">Los primeros minutos sirven para generar confianza. Este esquema de 5 piezas ayuda a hacerlo con intención.</p>
+    <div class="recipe">
+      <div class="step"><span class="lt">N</span><h4>Name — Nombre</h4><p>Preguntar y usar su nombre desde el inicio.</p></div>
+      <div class="step"><span class="lt">S</span><h4>Same — Algo en común</h4><p>Si menciona una ciudad, buscar terreno compartido (familia, si la visitamos).</p></div>
+      <div class="step"><span class="lt">F</span><h4>Fame — Por qué lo conocen</h4><p>Qué lo hace destacar.</p></div>
+      <div class="step"><span class="lt">G</span><h4>Gain/Pain — Qué gana o qué le duele</h4><p>Qué va a ganar en esta conversación o qué dolor vamos a tratar.</p></div>
+      <div class="step"><span class="lt">A</span><h4>Aim — El objetivo</h4><p>Cuál es la meta después de la conversación.</p></div>
+    </div>
+    <div class="win">✅ <b>Punto a favor de Stefano:</b> estudió al lead y abrió las notas de lo que ya habían hablado por Instagram para comentárselo al inicio ("llevas 4 años… zona de confort… quieres dar el paso"). Además conectó con el <b>Same</b>: los dos tienen 33 años y él vivió como nómada en Bali, Tailandia y España, justo lo que Dilan sueña. <b>Esto no se hizo en la llamada 01 con Octavio.</b></div>
+  </section>
+
+  <section id="nota">
+    <div class="kicker">La calificación</div>
+    <h2>¿Qué tan bien hizo cada paso del método?</h2>
+    <p class="lead">Nota del 0 al 5 por paso. Verde = muy bien · Amarillo = a medias · Rojo = flojo.</p>
+    <div class="chart">
+      <div class="ctitle">Nota por paso del método CLOSER (de 0 a 5)</div>
+      <div class="csub">Escuchar y diagnosticar fue sobresaliente (C, L, O = 5). El tema del dinero (E) volvió a ser el punto débil.</div>
+      <svg viewBox="0 0 700 300" width="100%" role="img" aria-label="Notas: Clarify 5, Label 5, Overview 5, Sell 4, Explain 3, Reinforce no aplica">
+        <g font-size="11" fill="#94a3b8" font-family="inherit">
+          <line x1="260" y1="12" x2="260" y2="252" stroke="#eef2f7"/>
+          <line x1="360" y1="12" x2="360" y2="252" stroke="#eef2f7"/>
+          <line x1="460" y1="12" x2="460" y2="252" stroke="#eef2f7"/>
+          <line x1="560" y1="12" x2="560" y2="252" stroke="#eef2f7"/>
+          <line x1="660" y1="12" x2="660" y2="252" stroke="#eef2f7"/>
+          <line x1="160" y1="252" x2="680" y2="252" stroke="#e2e8f0"/>
+          <text x="260" y="270" text-anchor="middle">1</text>
+          <text x="360" y="270" text-anchor="middle">2</text>
+          <text x="460" y="270" text-anchor="middle">3</text>
+          <text x="560" y="270" text-anchor="middle">4</text>
+          <text x="660" y="270" text-anchor="middle">5</text>
+        </g>
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="150" y="41" text-anchor="end" fill="#0f172a">C · Aclarar</text>
+          <rect x="160" y="24" width="500" height="24" rx="4" fill="#059669"/>
+          <text x="670" y="41" fill="#047857" font-weight="800">5</text>
+          <text x="150" y="81" text-anchor="end" fill="#0f172a">L · Nombrar</text>
+          <rect x="160" y="64" width="500" height="24" rx="4" fill="#059669"/>
+          <text x="670" y="81" fill="#047857" font-weight="800">5</text>
+          <text x="150" y="121" text-anchor="end" fill="#0f172a">O · Repasar</text>
+          <rect x="160" y="104" width="500" height="24" rx="4" fill="#059669"/>
+          <text x="670" y="121" fill="#047857" font-weight="800">5</text>
+          <text x="150" y="161" text-anchor="end" fill="#0f172a">S · Vender</text>
+          <rect x="160" y="144" width="400" height="24" rx="4" fill="#059669"/>
+          <text x="570" y="161" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="201" text-anchor="end" fill="#0f172a">E · Resolver</text>
+          <rect x="160" y="184" width="300" height="24" rx="4" fill="#f59e0b"/>
+          <text x="470" y="201" fill="#b45309" font-weight="800">3</text>
+          <text x="150" y="241" text-anchor="end" fill="#0f172a">R · Reforzar</text>
+          <rect x="160" y="224" width="100" height="24" rx="4" fill="#e2e8f0"/>
+          <text x="270" y="241" fill="#64748b" font-weight="700" font-size="12">No aplica (no hubo venta)</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><i class="dot" style="background:#059669"></i> Muy bien (4–5)</span>
+        <span><i class="dot" style="background:#f59e0b"></i> A medias (3)</span>
+        <span><i class="dot" style="background:#e11d48"></i> Flojo (0–2)</span>
+        <span><i class="dot" style="background:#e2e8f0"></i> No aplica</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="tiempo">
+    <div class="kicker">Minuto a minuto</div>
+    <h2>La línea de tiempo de la llamada</h2>
+    <p class="lead">Igual que en la llamada 01: el precio llegó tarde (minuto 64 de 90), después de un buen arranque y un buen pitch.</p>
+    <div class="chart">
+      <div class="ctitle">Los 90 minutos de la llamada</div>
+      <div class="csub">Buen rapport y exploración; el precio y sus objeciones se comprimieron al final.</div>
+      <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Línea de tiempo de la llamada de 90 minutos con momentos clave">
+        <g font-family="inherit" font-size="11" fill="#94a3b8">
+          <text x="24" y="26" font-size="12" font-weight="700" fill="#0f172a">min 0</text>
+          <text x="616" y="26" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">min 90</text>
+        </g>
+        <!-- scale 0..90 over x 24..616 (6.578px/min) -->
+        <rect x="24" y="34" width="276" height="30" rx="6" fill="#e0e7ff"/>
+        <text x="162" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3730a3">Rapport + exploración (0–42)</text>
+        <rect x="304" y="34" width="141" height="30" rx="6" fill="#d1fae5"/>
+        <text x="374" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#047857">Pitch (42–64)</text>
+        <rect x="449" y="34" width="167" height="30" rx="6" fill="#ffe4e6"/>
+        <text x="532" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#be123c">Precio (64–90)</text>
+
+        <g font-family="inherit" font-size="11.5">
+          <!-- min 1 good prep -->
+          <line x1="31" y1="64" x2="31" y2="88" stroke="#059669" stroke-width="2"/>
+          <circle cx="31" cy="92" r="5" fill="#059669"/>
+          <text x="31" y="114" text-anchor="start" font-weight="700" fill="#047857">✓ estudió</text>
+          <text x="31" y="128" text-anchor="start" fill="#64748b">el lead</text>
+
+          <!-- min 37 5h -->
+          <line x1="267" y1="64" x2="267" y2="96" stroke="#f59e0b" stroke-width="2"/>
+          <circle cx="267" cy="100" r="5" fill="#f59e0b"/>
+          <text x="267" y="122" text-anchor="middle" font-weight="700" fill="#b45309">⚠ min 37</text>
+          <text x="267" y="136" text-anchor="middle" fill="#64748b">dijo "5h/sem"</text>
+          <text x="267" y="150" text-anchor="middle" fill="#64748b">(real: 12h)</text>
+
+          <!-- min 64 price -->
+          <line x1="449" y1="64" x2="449" y2="150" stroke="#e11d48" stroke-width="2"/>
+          <circle cx="449" cy="154" r="6" fill="#e11d48"/>
+          <text x="449" y="176" text-anchor="middle" font-weight="800" fill="#be123c">💰 min 64</text>
+          <text x="449" y="190" text-anchor="middle" fill="#64748b">$4,500→$3,500→$3,000</text>
+
+          <!-- min 78 reserve -->
+          <line x1="537" y1="64" x2="537" y2="104" stroke="#e11d48" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle cx="537" cy="108" r="5" fill="#e11d48"/>
+          <text x="612" y="130" text-anchor="end" font-weight="700" fill="#be123c">min 78: reserva $500</text>
+          <text x="612" y="144" text-anchor="end" fill="#64748b">(no la tenía)</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><i class="dot" style="background:#e0e7ff"></i> Rapport + explorar</span>
+        <span><i class="dot" style="background:#d1fae5"></i> Presentar el programa</span>
+        <span><i class="dot" style="background:#ffe4e6"></i> Precio y objeciones</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="dinero">
+    <div class="kicker">El muro</div>
+    <h2>El problema del dinero</h2>
+    <p class="lead">Dilan quería, pero su dinero no es de libre disposición: está en un fondo compartido con su pareja.</p>
+    <div class="chart">
+      <div class="ctitle">Lo que Dilan podía reunir vs. lo que costaba (USD)</div>
+      <div class="csub">Tenía ~$1,500 (pero en un fondo compartido). El precio de contado bajó a $3,000. Faltaba ~$1,500 y no era suyo solo.</div>
+      <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Comparación: disponible 1500 en fondo compartido, contado 3000, lista 4500">
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="140" y="46" text-anchor="end" fill="#0f172a">Fondo compartido</text>
+          <rect x="150" y="30" width="150" height="30" rx="5" fill="#e11d48"/>
+          <text x="312" y="51" fill="#be123c" font-weight="800">~$1,500</text>
+          <text x="140" y="106" text-anchor="end" fill="#0f172a">Precio de contado</text>
+          <rect x="150" y="90" width="300" height="30" rx="5" fill="#059669"/>
+          <text x="462" y="111" fill="#047857" font-weight="800">$3,000</text>
+          <text x="140" y="166" text-anchor="end" fill="#0f172a">Precio de lista</text>
+          <rect x="150" y="150" width="450" height="30" rx="5" fill="#94a3b8"/>
+          <text x="592" y="171" fill="#fff" font-weight="800" text-anchor="end">$4,500</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#e11d48"></i> Y ni siquiera de libre disposición: es un fondo común con la pareja</span></div>
+    </div>
+    <div class="eli">😬 <b>El paso apresurado:</b> Stefano pidió una <b>reserva de $500</b> para congelar los descuentos. Pero Dilan ya había dicho que el 40% de su salario se va en deudas y que el fondo es compartido. Que no tuviera ni $500 sueltos era predecible. Mejor que pedir reserva habría sido <b>agendar en el momento la llamada con la tía</b> (su fuente de dinero real).</div>
+  </section>
+
+  <section id="decisores">
+    <div class="kicker">Nadie decide solo</div>
+    <h2>¿Quién decide de verdad aquí?</h2>
+    <p class="lead">Para cerrar hacía falta no un "sí", sino tres. Por eso conviene identificarlos temprano.</p>
+    <div class="people">
+      <div class="person k"><div class="ic">🧑‍💻</div><b>Dilan</b><span>Quiere entrar (8–9 de 10). Pero no controla el dinero solo.</span></div>
+      <div class="person p"><div class="ic">💞</div><b>La pareja</b><span>Co-dueña del fondo (metió su liquidación). Sin empleo hoy → cautelosa.</span></div>
+      <div class="person t"><div class="ic">👩‍🦰</div><b>La tía (EEUU)</b><span>Suele prestarle y valora las mentorías. La palanca más fuerte.</span></div>
+    </div>
+    <div class="win">🔑 <b>La llave del cierre:</b> la tía. Ya lo apoya, entiende el valor de una mentoría y puede facilitar el dinero de una vez. El seguimiento debe girar en torno a ayudar a Dilan a concretar esa conversación (y ofrecerse a hablar con ella).</div>
+  </section>
+
+  <section id="foda">
+    <div class="kicker">La foto completa</div>
+    <h2>FODA: lo bueno, las oportunidades, los errores y los riesgos</h2>
+    <div class="foda">
+      <div class="quad q-f">
+        <h3>💪 Fortalezas <span class="muted" style="font-weight:600;font-size:13px">(lo que hizo bien)</span></h3>
+        <ul>
+          <li>Preparó la llamada: abrió notas de Instagram y retomó lo hablado.</li>
+          <li>Conectó de persona a persona (misma edad, vida nómada).</li>
+          <li>Reencuadres potentes: "¿más títulos o mejor perfilarte?", "¿por qué ellos sí y tú no?".</li>
+          <li>Cuantificó lo que pierde por no actuar: ~$10,000 al año.</li>
+          <li>Buen ritmo con "¿tiene sentido?" tras cada pilar.</li>
+          <li>Separó el "sí quiero" del "puedo pagar" e identificó a los decisores.</li>
+        </ul>
+      </div>
+      <div class="quad q-o">
+        <h3>🌱 Oportunidades <span class="muted" style="font-weight:600;font-size:13px">(palancas a favor)</span></h3>
+        <ul>
+          <li>Compromiso alto (8–9) y con prisa ("no quiero esperar a los 40").</li>
+          <li>Dolor claro y con número (~$10k/año, deudas).</li>
+          <li>Inglés diario con nativos: cero objeción de idioma.</li>
+          <li>Perfil de nicho (ServiceNow / IT) con demanda remota real.</li>
+          <li>Una tía en EEUU dispuesta a financiarlo.</li>
+          <li>Ya confía en la estructura (vio casos y reseñas).</li>
+        </ul>
+      </div>
+      <div class="quad q-d">
+        <h3>🔧 Debilidades <span class="muted" style="font-weight:600;font-size:13px">(errores a corregir)</span></h3>
+        <ul>
+          <li>No confirmó el presupuesto antes de presentar el precio.</li>
+          <li>Dijo "5h/semana" cuando el programa pide <b>12h/semana</b>.</li>
+          <li>Descuentos en cascada muy rápidos ($4,500→$3,500→$3,000).</li>
+          <li>Pidió reserva de $500 a quien ya había dicho que no tenía liquidez.</li>
+          <li>No convirtió el 8–9 en un paso concreto hoy (llamar a la tía).</li>
+        </ul>
+      </div>
+      <div class="quad q-a">
+        <h3>⚠️ Amenazas <span class="muted" style="font-weight:600;font-size:13px">(riesgos externos)</span></h3>
+        <ul>
+          <li>Casi sin liquidez propia: fondo compartido + 40% del sueldo en deudas.</li>
+          <li>Tres decisores: él, la pareja y la tía.</li>
+          <li>Una inversión anterior le salió mal → miedo al riesgo.</li>
+          <li>Entorno que le dice "quédate donde estás".</li>
+          <li>Perfil que piensa mucho y ejecuta poco.</li>
+          <li>Se congeló la pantalla justo en el momento del cierre.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="momentos">
+    <div class="kicker">Con minuto exacto</div>
+    <h2>Momentos clave para el equipo</h2>
+    <p class="lead">Verde = imitar · Amarillo = corregir el dato · Rojo = evitar.</p>
+
+    <div class="moment good">
+      <div class="tm">0:00</div>
+      <div><h4>Llegó con la tarea hecha</h4>
+      <p>Abrió las notas de Instagram y retomó lo conversado. Genera confianza y ahorra tiempo. <b>Replicar siempre</b> (con Octavio no se hizo).</p></div>
+    </div>
+
+    <div class="moment good">
+      <div class="tm">19:40</div>
+      <div><h4>⭐ Pregunta clave: "¿cuánto estás dejando de ganar al no tomar acción?"</h4>
+      <p>Hacen el cálculo juntos y sale <b>~$10,000 al año</b> que Dilan deja sobre la mesa (lo dijo el propio lead). Es el mejor argumento de ROI frente a los $3,000 del programa. <b>Pregunta para replicar en toda llamada.</b></p></div>
+    </div>
+
+    <div class="moment warn">
+      <div class="tm">37:31</div>
+      <div><h4>Dijo "recomiendo 5 horas a la semana"</h4>
+      <p>El programa pide <b>mínimo 12 h/semana</b>. Mismo dato inconsistente que en la llamada 01. <b>Hay que alinearlo</b> para evitar fricción al entrar al servicio.</p></div>
+    </div>
+
+    <div class="moment good">
+      <div class="tm">1:07</div>
+      <div><h4>Aisló el dinero</h4>
+      <p>"Dejando la inversión aparte, si tuvieras los $4,500, ¿entrarías de una?" Así separa el querer del poder pagar. Bien hecho.</p></div>
+    </div>
+
+    <div class="moment bad">
+      <div class="tm">1:18</div>
+      <div><h4>Pidió reserva de $500 sin liquidez confirmada</h4>
+      <p>Dilan no tenía ni $500 sueltos (dato ya conocido). El paso correcto era agendar la llamada con la tía, su fuente de dinero real.</p></div>
+    </div>
+  </section>
+
+  <section id="compara">
+    <div class="kicker">Aprendizaje de equipo</div>
+    <h2>Llamada 02 vs. Llamada 01</h2>
+    <p class="lead">Comparar las dos llamadas muestra qué mejoró y qué error se repite en el equipo.</p>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <thead><tr><th>Aspecto</th><th>01 · Octavio (Simón)</th><th>02 · Dilan (Stefano)</th></tr></thead>
+      <tbody>
+        <tr><td>Preparación / rapport</td><td>❌ No abrió notas</td><td>✅ Estudió el lead (N.S.F.G.A.)</td></tr>
+        <tr><td>Costo de no actuar</td><td>Parcial</td><td>✅ $10k/año (lo dijo el lead)</td></tr>
+        <tr><td>Ritmo del pitch</td><td>Monólogo largo</td><td>✅ Tie-downs por pilar</td></tr>
+        <tr><td>Presupuesto antes del precio</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Horas honestas (12h)</td><td>❌ dijo 5h</td><td>❌ dijo 5h</td></tr>
+        <tr><td>Manejo del decisor</td><td>❌ pareja sin aislar</td><td>⚠️ identificado, no resuelto</td></tr>
+        <tr><td>Resultado</td><td>No cierra</td><td>No cierra (rescatable)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="rule">
+      <h3>Patrón de equipo a corregir (aparece en las 2 llamadas)</h3>
+      <p style="color:#cbd5e1;margin:0">1) <b style="color:#6ee7b7">No calificar el presupuesto y al decisor antes del precio.</b><br>
+      2) <b style="color:#6ee7b7">Prometer 5 h/semana cuando el programa pide 12 h.</b></p>
+    </div>
+  </section>
+
+  <section id="proxima">
+    <div class="kicker">El plan</div>
+    <h2>¿Qué hacer para cerrar a Dilan (y en general)?</h2>
+    <div class="todo">
+      <div class="item"><span class="num">1</span><p><b>Confirmar el presupuesto del formulario al inicio:</b> "Me pusiste que tienes ~$X para invertir. ¿Es correcto? Quiero que estemos en la misma página antes de mostrarte el programa."</p></div>
+      <div class="item"><span class="num">2</span><p><b>Decir la verdad de las horas: 12h/semana</b>, no 5h.</p></div>
+      <div class="item"><span class="num">3</span><p><b>Aislar antes de descontar:</b> confirmar el "sí quiero" y solo entonces trabajar el "cómo pagar". Evitar la cascada de descuentos que parece desesperación.</p></div>
+      <div class="item"><span class="num">4</span><p><b>No pedir reserva sin liquidez confirmada.</b> Con Dilan, agendar en el momento la llamada con la tía y ofrecerse a hablar con ella.</p></div>
+      <div class="item"><span class="num">5</span><p><b>Orquestar la decisión con la pareja</b> (fondo compartido): proponer una llamada corta con ambos.</p></div>
+      <div class="item"><span class="num">6</span><p><b>Anclar el ROI que él mismo calculó:</b> ~$10k/año que pierde vs. $3,000 de inversión → se paga solo.</p></div>
+      <div class="item"><span class="num">7</span><p><b>Cerrar con un paso concreto hoy</b> (la llamada con la tía), no solo "me escribes hoy".</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Neneko Remoto — Análisis de llamadas de venta.</b> Método CLOSER (Alex Hormozi) + rapport N.S.F.G.A. Documento interno de formación del equipo.</p>
+    <p style="margin-top:6px">Detalle técnico completo en <code>docs/analisis-llamadas/02-dilan-villa.md</code> · Referencia del método en <code>docs/closer-framework.md</code> · <a href="analisis-llamadas.html">Volver al índice</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Análisis de llamada 04 — Fabian Lobaton | Neneko Remoto</title>
+<style>
+  :root{
+    --ink:#0f172a; --slate:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f1f5f9; --card:#ffffff;
+    --green:#059669; --green-l:#d1fae5; --green-d:#047857;
+    --amber:#f59e0b; --amber-l:#fef3c7; --amber-d:#b45309;
+    --rose:#e11d48; --rose-l:#ffe4e6; --rose-d:#be123c;
+    --indigo:#4f46e5; --indigo-l:#e0e7ff; --indigo-d:#3730a3;
+    --radius:16px; --shadow:0 1px 3px rgba(15,23,42,.08),0 12px 32px rgba(15,23,42,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;color:var(--slate);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3,h4{color:var(--ink);letter-spacing:-.01em;}
+  strong,b{color:var(--ink);}
+  .muted{color:var(--muted);}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#134e4a 60%,#065f46 100%);color:#fff;padding:56px 0 48px;}
+  .eyebrow{display:inline-block;letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:700;color:#6ee7b7;background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{color:#fff;font-size:38px;line-height:1.14;font-weight:800;margin-bottom:12px;}
+  .hero h1 span{color:#6ee7b7;}
+  .hero .sub{font-size:18px;color:#cbd5e1;max-width:660px;}
+  .verdict{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.45);color:#fde68a;font-weight:700;padding:10px 18px;border-radius:12px;font-size:15px;}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:#94a3b8;}
+  .hero .meta b{color:#e2e8f0;font-weight:600;}
+  nav.jump{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 0;}
+  nav.jump .wrap{display:flex;gap:8px;overflow-x:auto;}
+  nav.jump a{white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--slate);padding:6px 12px;border-radius:999px;text-decoration:none;}
+  nav.jump a:hover{background:var(--green-l);color:var(--green-d);}
+  nav.jump a.home{background:var(--ink);color:#fff;}
+  section{padding:38px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:6px;}
+  h2{font-size:27px;font-weight:800;margin-bottom:6px;}
+  .lead{font-size:17px;color:var(--slate);margin:10px 0 20px;}
+  h3{font-size:19px;font-weight:700;margin:22px 0 8px;}
+  p{margin:10px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:16px 0;}
+  .eli{background:#fffdf5;border:1px dashed var(--amber);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .eli b{color:var(--amber-d);}
+  .win{background:#f0fdf7;border:1px dashed var(--green);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .win b{color:var(--green-d);}
+  .alert{background:#fff1f2;border:1px dashed var(--rose);border-radius:14px;padding:16px 20px;margin:14px 0;}
+  .alert b{color:var(--rose-d);}
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:16px 0;overflow-x:auto;}
+  .chart .ctitle{font-weight:800;color:var(--ink);font-size:16px;margin-bottom:2px;}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin-bottom:16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+  .foda{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px;}
+  .quad{border-radius:14px;padding:18px 20px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .quad h3{margin-top:0;font-size:17px;}
+  .quad ul{list-style:none;margin:10px 0 0;}
+  .quad li{position:relative;padding-left:20px;margin:8px 0;font-size:14.5px;}
+  .quad li::before{position:absolute;left:0;top:0;font-weight:800;}
+  .q-f{background:var(--green-l);} .q-f h3{color:var(--green-d);} .q-f li::before{content:"✓";color:var(--green-d);}
+  .q-o{background:var(--amber-l);} .q-o h3{color:var(--amber-d);} .q-o li::before{content:"➜";color:var(--amber-d);}
+  .q-d{background:var(--rose-l);} .q-d h3{color:var(--rose-d);} .q-d li::before{content:"✕";color:var(--rose-d);}
+  .q-a{background:#eef0f4;} .q-a h3{color:var(--slate);} .q-a li::before{content:"⚠";color:var(--muted);}
+  .moment{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .moment .tm{flex:0 0 auto;font-variant-numeric:tabular-nums;font-weight:800;color:#fff;background:var(--ink);border-radius:8px;padding:6px 10px;font-size:13px;min-width:78px;text-align:center;}
+  .moment.good{border-left:5px solid var(--green);} .moment.good .tm{background:var(--green-d);}
+  .moment.bad{border-left:5px solid var(--rose);} .moment.bad .tm{background:var(--rose-d);}
+  .moment.warn{border-left:5px solid var(--amber);} .moment.warn .tm{background:var(--amber-d);}
+  .moment h4{font-size:15px;margin-bottom:2px;}
+  .moment p{font-size:14px;color:var(--muted);margin:2px 0 0;}
+  .todo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px 8px;margin-top:8px;}
+  .todo .item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-bottom:1px solid var(--line);}
+  .todo .item:last-child{border-bottom:none;}
+  .todo .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .todo .item p{margin:0;font-size:14.5px;}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+  @media (max-width:680px){.hero h1{font-size:30px;}.foda{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Análisis de llamada · 04</span>
+    <h1>La llamada con <span>Fabian</span>: el muro fue la confianza</h1>
+    <p class="sub">78 minutos revisados con el método <b style="color:#fff">CLOSER</b> de Hormozi y el rapport <b style="color:#fff">N.S.F.G.A.</b> Buen perfil y buen rapport, pero el freno no fue el dinero: fue el miedo a repetir un curso que ya le falló.</p>
+    <div class="verdict">🟡 Resultado: no cerró — quiere investigar la empresa. Se agendó 2ª llamada el sábado 2 pm (con la esposa).</div>
+    <div class="meta">
+      <span><b>Cliente:</b> Fabian Lobaton · arquitecto (Bogotá → Armenia)</span>
+      <span><b>Vendedor:</b> Simón Mesa</span>
+      <span><b>Duración:</b> 78 min</span>
+      <span><b>Precio:</b> $4,500 → $3,500</span>
+    </div>
+  </div>
+</header>
+<nav class="jump">
+  <div class="wrap">
+    <a class="home" href="analisis-llamadas.html">← Índice</a>
+    <a href="#resumen">Resumen</a>
+    <a href="#nota">La nota</a>
+    <a href="#tiempo">Línea de tiempo</a>
+    <a href="#confianza">El muro de confianza</a>
+    <a href="#dinero">El dinero</a>
+    <a href="#foda">FODA</a>
+    <a href="#momentos">Momentos</a>
+    <a href="#proxima">Qué mejorar</a>
+  </div>
+</nav>
+<main class="wrap">
+  <section id="resumen">
+    <div class="kicker">En 30 segundos</div>
+    <h2>¿Qué pasó?</h2>
+    <p class="lead">Fabian es arquitecto en Bogotá, gana ~$1,500 y quiere trabajar remoto en inglés y mudarse a Armenia. Tiene buen perfil (portafolio, AutoCAD) y una esposa que lo apoya. El vendedor, Simón, hizo buen rapport y le revisó el LinkedIn en vivo.</p>
+    <div class="card">
+      <p><b>Lo bueno:</b> conectó por cercanía (Medellín/Bogotá, Armenia), le dio feedback personalizado del perfil (justo lo que Fabian pedía) y usó un caso gemelo (Camilo, diseñador de interiores, 3 ofertas / $3,000).</p>
+      <p><b>El muro:</b> Fabian ya compró un curso que <b>no le funcionó</b>. Su freno real no fue el precio, fue la <b>desconfianza</b>: "que no sea otra pérdida de tiempo". Y el precio llegó tarde (min 63 de 78).</p>
+      <p style="margin-bottom:0"><b>La conclusión:</b> quedó en "consultarlo con la almohada" e investigar la empresa. Se salvó con una <b>2ª llamada el sábado</b>. Ahí la palanca no es el precio: es la <b>prueba</b>.</p>
+    </div>
+  </section>
+
+  <section id="nota">
+    <div class="kicker">La calificación</div>
+    <h2>¿Qué tan bien hizo cada paso?</h2>
+    <p class="lead">Nota del 0 al 5 por paso. Verde = muy bien · Amarillo = a medias · Rojo = flojo.</p>
+    <div class="chart">
+      <div class="ctitle">Nota por paso del método CLOSER (de 0 a 5)</div>
+      <div class="csub">Sólido en escuchar y vender (4). El punto débil fue resolver la objeción de fondo (E = 3).</div>
+      <svg viewBox="0 0 700 300" width="100%" role="img" aria-label="Notas: Clarify 4, Label 4, Overview 4, Sell 4, Explain 3, Reinforce no aplica">
+        <g font-size="11" fill="#94a3b8" font-family="inherit">
+          <line x1="260" y1="12" x2="260" y2="252" stroke="#eef2f7"/><line x1="360" y1="12" x2="360" y2="252" stroke="#eef2f7"/><line x1="460" y1="12" x2="460" y2="252" stroke="#eef2f7"/><line x1="560" y1="12" x2="560" y2="252" stroke="#eef2f7"/><line x1="660" y1="12" x2="660" y2="252" stroke="#eef2f7"/>
+          <line x1="160" y1="252" x2="680" y2="252" stroke="#e2e8f0"/>
+          <text x="260" y="270" text-anchor="middle">1</text><text x="360" y="270" text-anchor="middle">2</text><text x="460" y="270" text-anchor="middle">3</text><text x="560" y="270" text-anchor="middle">4</text><text x="660" y="270" text-anchor="middle">5</text>
+        </g>
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="150" y="41" text-anchor="end" fill="#0f172a">C · Aclarar</text><rect x="160" y="24" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="41" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="81" text-anchor="end" fill="#0f172a">L · Nombrar</text><rect x="160" y="64" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="81" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="121" text-anchor="end" fill="#0f172a">O · Repasar</text><rect x="160" y="104" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="121" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="161" text-anchor="end" fill="#0f172a">S · Vender</text><rect x="160" y="144" width="400" height="24" rx="4" fill="#10b981"/><text x="570" y="161" fill="#047857" font-weight="800">4</text>
+          <text x="150" y="201" text-anchor="end" fill="#0f172a">E · Resolver</text><rect x="160" y="184" width="300" height="24" rx="4" fill="#f59e0b"/><text x="470" y="201" fill="#b45309" font-weight="800">3</text>
+          <text x="150" y="241" text-anchor="end" fill="#0f172a">R · Reforzar</text><rect x="160" y="224" width="100" height="24" rx="4" fill="#e2e8f0"/><text x="270" y="241" fill="#64748b" font-weight="700" font-size="12">No aplica (no hubo venta)</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#10b981"></i> Muy bien (4)</span><span><i class="dot" style="background:#f59e0b"></i> A medias (3)</span><span><i class="dot" style="background:#e2e8f0"></i> No aplica</span></div>
+    </div>
+  </section>
+
+  <section id="tiempo">
+    <div class="kicker">Minuto a minuto</div>
+    <h2>La línea de tiempo</h2>
+    <p class="lead">El precio llegó al minuto 63 de 78, y justo después apareció la objeción de fondo: la confianza.</p>
+    <div class="chart">
+      <div class="ctitle">Los 78 minutos de la llamada</div>
+      <div class="csub">Buen rapport y exploración; el precio y la objeción de confianza se comprimieron al final.</div>
+      <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Línea de tiempo de 78 minutos">
+        <g font-family="inherit" font-size="11" fill="#94a3b8"><text x="24" y="26" font-size="12" font-weight="700" fill="#0f172a">min 0</text><text x="616" y="26" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">min 78</text></g>
+        <rect x="24" y="34" width="311" height="30" rx="6" fill="#e0e7ff"/><text x="179" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3730a3">Rapport + exploración (0–41)</text>
+        <rect x="339" y="34" width="163" height="30" rx="6" fill="#d1fae5"/><text x="420" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#047857">Pitch (41–63)</text>
+        <rect x="506" y="34" width="110" height="30" rx="6" fill="#ffe4e6"/><text x="561" y="54" text-anchor="middle" font-size="12.5" font-weight="700" fill="#be123c">Precio (63–78)</text>
+        <g font-family="inherit" font-size="11.5">
+          <line x1="502" y1="64" x2="502" y2="150" stroke="#e11d48" stroke-width="2"/><circle cx="502" cy="154" r="6" fill="#e11d48"/><text x="502" y="176" text-anchor="middle" font-weight="800" fill="#be123c">💰 min 63</text><text x="502" y="190" text-anchor="middle" fill="#64748b">precio $4,500→$3,500</text>
+          <line x1="525" y1="64" x2="525" y2="92" stroke="#059669" stroke-width="2"/><circle cx="525" cy="96" r="5" fill="#059669"/><text x="525" y="118" text-anchor="middle" font-weight="700" fill="#047857">✓ min 66</text><text x="525" y="132" text-anchor="middle" fill="#64748b">aísla el dinero</text>
+          <line x1="555" y1="64" x2="555" y2="112" stroke="#e11d48" stroke-width="2" stroke-dasharray="3 3"/><circle cx="555" cy="116" r="5" fill="#e11d48"/><text x="612" y="120" text-anchor="end" font-weight="700" fill="#be123c">min 70: "investigar</text><text x="612" y="134" text-anchor="end" fill="#64748b">la empresa" (desconfía)</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#e0e7ff"></i> Rapport + explorar</span><span><i class="dot" style="background:#d1fae5"></i> Presentar</span><span><i class="dot" style="background:#ffe4e6"></i> Precio y objeciones</span></div>
+    </div>
+  </section>
+
+  <section id="confianza">
+    <div class="kicker">La objeción de fondo</div>
+    <h2>El muro no fue el dinero: fue la confianza</h2>
+    <p class="lead">Fabian ya compró un curso que no le sirvió. Por eso su verdadero freno es el miedo a repetir el error.</p>
+    <div class="alert">🧱 <b>Lo que dijo Fabian:</b> "tengo que investigar más acerca de la empresa… es una inversión considerable… para que no me pase lo que con otro curso que al final no hice nada". <b>Eso no se resuelve con un descuento</b>, se resuelve con <b>prueba</b>: mostrar la plataforma en pantalla, testimonios documentados, prensa (Semana, El Tiempo) y el contrato. El vendedor lo dejó para "te lo mando después" en vez de derribarlo en vivo.</div>
+    <div class="win">✅ <b>Lo que sí hizo bien:</b> aisló el dinero ("Aparte del dinero, ¿hay algo más?"), agendó una 2ª llamada el sábado e invitó a la esposa. La puerta quedó abierta — ahora hay que entrar con pruebas, no con presión.</div>
+  </section>
+
+  <section id="dinero">
+    <div class="kicker">El otro freno</div>
+    <h2>El dinero</h2>
+    <div class="chart">
+      <div class="ctitle">Lo que Fabian podía poner vs. el precio (USD)</div>
+      <div class="csub">Podía arrancar con ~$2,000; el programa con beca cuesta $3,500.</div>
+      <svg viewBox="0 0 640 170" width="100%" role="img" aria-label="Comparación: arranque 2000, beca 3500, lista 4500">
+        <g font-family="inherit" font-weight="700" font-size="13">
+          <text x="150" y="46" text-anchor="end" fill="#0f172a">Arranque posible</text><rect x="160" y="30" width="200" height="28" rx="5" fill="#e11d48"/><text x="372" y="49" fill="#be123c" font-weight="800">$2,000</text>
+          <text x="150" y="102" text-anchor="end" fill="#0f172a">Precio con beca</text><rect x="160" y="86" width="350" height="28" rx="5" fill="#059669"/><text x="522" y="105" fill="#047857" font-weight="800">$3,500</text>
+          <text x="150" y="158" text-anchor="end" fill="#0f172a">Precio de lista</text><rect x="160" y="142" width="450" height="28" rx="5" fill="#94a3b8"/><text x="602" y="161" fill="#fff" font-weight="800" text-anchor="end">$4,500</text>
+        </g>
+      </svg>
+      <div class="legend"><span>Plan ofrecido: $2,000 ahora + $1,500 a 30 días (o $2,750 + $750)</span></div>
+    </div>
+  </section>
+
+  <section id="foda">
+    <div class="kicker">La foto completa</div>
+    <h2>FODA</h2>
+    <div class="foda">
+      <div class="quad q-f"><h3>💪 Fortalezas</h3><ul>
+        <li>Rapport de vecindad (Medellín/Bogotá, Armenia).</li>
+        <li>Revisó el perfil de LinkedIn en vivo y dio feedback concreto.</li>
+        <li>Reencuadre del inglés (B2 basta).</li>
+        <li>Caso gemelo (Camilo, diseñador, 3 ofertas / $3,000).</li>
+        <li>Aisló el dinero y agendó 2ª llamada con la esposa.</li>
+      </ul></div>
+      <div class="quad q-o"><h3>🌱 Oportunidades</h3><ul>
+        <li>Urgencia real (2º semestre 2025) y meta clara (Armenia).</li>
+        <li>Perfil fuerte con portafolio ya existente.</li>
+        <li>Pide personalización → encaja con la propuesta.</li>
+        <li>Esposa aliada (psicóloga).</li>
+        <li>Objeción nombrada: confianza + dinero (trabajables).</li>
+      </ul></div>
+      <div class="quad q-d"><h3>🔧 Debilidades</h3><ul>
+        <li>No confirmó presupuesto antes del precio.</li>
+        <li>No cuantificó el costo de no actuar (~$18k/año).</li>
+        <li>No resolvió la desconfianza en vivo (la difirió).</li>
+        <li>No compartió pantalla (clave con un escéptico).</li>
+        <li>Pitch largo, con interrupciones técnicas.</li>
+      </ul></div>
+      <div class="quad q-a"><h3>⚠️ Amenazas</h3><ul>
+        <li>Escepticismo por un curso previo que falló.</li>
+        <li>Falta de liquidez (depende de préstamo/tarjeta).</li>
+        <li>Perfil cauto que aplaza (~1.5 años dándole vueltas).</li>
+        <li>Quiere cerrar su trabajo actual primero.</li>
+        <li>Cortes técnicos que restan momentum.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="momentos">
+    <div class="kicker">Con minuto exacto</div>
+    <h2>Momentos clave</h2>
+    <div class="moment good"><div class="tm">~19</div><div><h4>Le revisó el perfil en vivo</h4><p>Feedback personalizado del LinkedIn: justo lo que Fabian pedía y lo que el curso previo no le dio.</p></div></div>
+    <div class="moment bad"><div class="tm">1:03</div><div><h4>Precio $4,500 sin calificar presupuesto</h4><p>Al minuto 63 de 78. No se sabía cuánto podía poner Fabian antes de dar el número.</p></div></div>
+    <div class="moment good"><div class="tm">1:06</div><div><h4>Aisló el dinero</h4><p>"Aparte del dinero, ¿hay algo más que te detenga?" Buen movimiento para separar el freno real.</p></div></div>
+    <div class="moment bad"><div class="tm">1:10</div><div><h4>Apareció la desconfianza y se difirió</h4><p>"Tengo que investigar la empresa". Es la objeción de fondo — y se dejó para "te mando testimonios" en vez de resolverla en vivo.</p></div></div>
+  </section>
+
+  <section id="proxima">
+    <div class="kicker">El plan</div>
+    <h2>¿Qué hacer en la 2ª llamada (sábado)?</h2>
+    <div class="todo">
+      <div class="item"><span class="num">1</span><p><b>Enviar prueba ANTES:</b> testimonios documentados + artículos de prensa; tener la plataforma lista para compartir pantalla.</p></div>
+      <div class="item"><span class="num">2</span><p><b>Con la esposa presente</b> (ya invitada).</p></div>
+      <div class="item"><span class="num">3</span><p><b>Atacar la confianza en vivo:</b> diferenciar Freedom del curso previo (personalizado, done-for-you, mentor 1:1, garantía) + contrato.</p></div>
+      <div class="item"><span class="num">4</span><p><b>Recién entonces, el cómo-pagar:</b> plan $2,000 + $1,500. Y confirmar el presupuesto del formulario al inicio.</p></div>
+      <div class="item"><span class="num">5</span><p><b>Anclar el ROI</b> (~$18k/año que deja sobre la mesa) y el deadline (2º semestre + Armenia).</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><p><b>Neneko Remoto — Análisis de llamadas de venta.</b> Método CLOSER (Alex Hormozi) + rapport N.S.F.G.A. Documento interno de formación del equipo.</p><p style="margin-top:6px">Detalle técnico en <code>docs/analisis-llamadas/04-fabian-lobaton.md</code> · <a href="analisis-llamadas.html">Volver al índice</a>.</p></div></footer>
+</body>
+</html>
